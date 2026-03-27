@@ -482,8 +482,8 @@ function submitToolVote() {
     if (!selectedTool) return;
     const feedback = document.getElementById('cta-feedback');
     const submit = document.getElementById('cta-submit');
-    // Fire-and-forget via Image beacon (avoids CORS)
-    new Image().src = APPS_SCRIPT_URL + '?tool=' + encodeURIComponent(selectedTool);
+    // Fire-and-forget via fetch (works across browsers incl. Safari ITP)
+    fetch(APPS_SCRIPT_URL + '?tool=' + encodeURIComponent(selectedTool), { mode: 'no-cors' }).catch(() => {});
     submit.disabled = true;
     submit.textContent = 'Pick Received';
     feedback.textContent = '✓ Thanks — You picked ' + selectedTool;
