@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Report — Borderless360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #f6f6ff; color: #272e42; }
+    h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .tab-btn.active { background: #6a1cf6; color: white; }
+    .tab-btn { transition: all 0.15s; }
+    .section-content { white-space: pre-wrap; }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-200 px-6 py-4 sticky top-0 z-10">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div>
+        <a href="index.html" class="text-sm text-purple-600 hover:underline">← All Reports</a>
+        <h1 id="page-title" class="text-2xl font-bold mt-1">Loading...</h1>
+      </div>
+      <div id="stats" class="hidden text-right text-sm text-gray-500"></div>
+    </div>
+  </header>
+
+  <!-- Tabs -->
+  <div class="bg-white border-b border-gray-200 px-6">
+    <div class="max-w-6xl mx-auto flex gap-2 py-3">
+      <button class="tab-btn active text-sm font-medium px-4 py-2 rounded-lg" onclick="showTab('posts')">📋 Reddit Posts</button>
+      <button class="tab-btn text-sm font-medium px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-100" onclick="showTab('analysis')">🔍 Pain Point Analysis</button>
+      <button class="tab-btn text-sm font-medium px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-100" onclick="showTab('blog')">✍️ Blog Ideas</button>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <main class="max-w-6xl mx-auto px-6 py-8">
+
+    <!-- Loading -->
+    <div id="loading" class="text-center py-20 text-gray-400">
+      <div class="text-4xl mb-4">⏳</div>
+      <p>Loading report data...</p>
+    </div>
+
+    <!-- Posts Tab -->
+    <div id="tab-posts" class="hidden">
+      <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
+    </div>
+
+    <!-- Analysis Tab -->
+    <div id="tab-analysis" class="hidden">
+      <div id="analysis-content"></div>
+    </div>
+
+    <!-- Blog Tab -->
+    <div id="tab-blog" class="hidden">
+      <div id="blog-content"></div>
+    </div>
+
+  </main>
+
+  <script>
+    // ── Helpers ──────────────────────────────────────────────────────────────
+
+    function getWeekParam() {
+      return new URLSearchParams(window.location.search).get('week');
+    }
+
+    function showTab(name) {
+      ['posts', 'analysis', 'blog'].forEach(t => {
+        document.getElementById('tab-' + t).classList.add('hidden');
+      });
+      document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+        btn.classList.remove('active');
+        btn.classList.add('text-gray-600');
+        btn.classList.remove('text-white');
+      });
+      document.getElementById('tab-' + name).classList.remove('hidden');
+
+      // Highlight active tab button
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        if (btn.getAttribute('onclick') === `showTab('${name}')`) {
+          btn.classList.add('active');
+          btn.classList.remove('text-gray-600');
+        }
+      });
+    }
+
+    // ── Parse Gemini report text into sections ────────────────────────────────
+
+    function parseReport(text) {
+      const sections = { discarded: '', analysis: '', blog: '' };
+      if (!text) return sections;
+
+      const s1 = text.indexOf('**SECTION 1:');
+      const s2 = text.indexOf('**SECTION 2:');
+      const s3 = text.indexOf('**SECTION 3:');
+
+      if (s1 !== -1 && s2 !== -1) sections.discarded = text.slice(s1, s2).trim();
+      if (s2 !== -1 && s3 !== -1) sections.analysis  = text.slice(s2, s3).trim();
+      if (s3 !== -1)               sections.blog      = text.slice(s3).trim();
+
+      return sections;
+    }
+
+    // ── Render posts ──────────────────────────────────────────────────────────
+
+    function renderPosts(posts) {
+      const grid = document.getElementById('posts-grid');
+
+      if (!posts.length) {
+        grid.innerHTML = '<p class="text-gray-400 col-span-2 text-center py-10">No posts found for this week.</p>';
+        return;
+      }
+
+      posts.forEach(post => {
+        const comments = (post.comments || []);
+        const commentPreview = comments.slice(0, 3).map((c, i) =>
+          `<div class="text-xs text-gray-500 border-l-2 border-gray-200 pl-2 mt-1">
+            <span class="font-medium text-gray-400">[${i+1}]</span> ${c.body.slice(0, 120)}${c.body.length > 120 ? '…' : ''}
+          </div>`
+        ).join('');
+
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-3 hover:shadow-md transition-shadow';
+        card.innerHTML = `
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs font-semibold bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">r/${post.subreddit}</span>
+            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">${post.matched_keyword}</span>
+          </div>
+          <a href="${post.url}" target="_blank" class="font-bold text-base leading-snug hover:text-purple-700 transition-colors">
+            ${post.title}
+          </a>
+          ${post.body ? `<p class="text-sm text-gray-600 line-clamp-3">${post.body.slice(0, 200)}${post.body.length > 200 ? '…' : ''}</p>` : ''}
+          <div class="flex gap-4 text-xs text-gray-400">
+            <span>⬆️ ${post.score}</span>
+            <span>💬 ${post.num_comments} comments</span>
+            <span>${post.created_utc ? new Date(post.created_utc).toLocaleDateString() : ''}</span>
+          </div>
+          ${comments.length ? `
+            <div class="border-t border-gray-100 pt-3">
+              <p class="text-xs font-semibold text-gray-400 mb-1">Top comments</p>
+              ${commentPreview}
+            </div>` : ''}
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // ── Render Gemini analysis section ────────────────────────────────────────
+
+    function renderAnalysis(text) {
+      const container = document.getElementById('analysis-content');
+      if (!text) {
+        container.innerHTML = '<p class="text-gray-400 text-center py-10">No analysis available.</p>';
+        return;
+      }
+      container.innerHTML = `
+        <div class="bg-white rounded-2xl border border-gray-200 p-6">
+          <div class="prose max-w-none text-sm text-gray-700 section-content">${text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</div>
+        </div>
+      `;
+    }
+
+    // ── Render blog ideas section ─────────────────────────────────────────────
+
+    function renderBlog(text) {
+      const container = document.getElementById('blog-content');
+      if (!text) {
+        container.innerHTML = '<p class="text-gray-400 text-center py-10">No blog ideas available.</p>';
+        return;
+      }
+
+      // Split into numbered items
+      const items = text.split(/\n(?=\d+\.)/).filter(s => s.trim());
+
+      if (items.length <= 1) {
+        // Fallback: render as plain text
+        container.innerHTML = `
+          <div class="bg-white rounded-2xl border border-gray-200 p-6">
+            <div class="prose max-w-none text-sm text-gray-700 section-content">${text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</div>
+          </div>
+        `;
+        return;
+      }
+
+      const cards = items.map(item => {
+        const lines = item.trim().split('\n');
+        const headline = lines[0].replace(/^\d+\.\s*\*?\*?/, '').replace(/\*\*$/, '').trim();
+        const body = lines.slice(1).join('\n').trim();
+        return `
+          <div class="bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-md transition-shadow">
+            <h3 class="font-bold text-base mb-2 text-gray-800">${headline}</h3>
+            <div class="text-sm text-gray-600 section-content">${body.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</div>
+          </div>
+        `;
+      }).join('');
+
+      container.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 gap-5">${cards}</div>`;
+    }
+
+    // ── Main loader ───────────────────────────────────────────────────────────
+
+    async function loadWeekData() {
+      const week = getWeekParam();
+      if (!week) {
+        document.getElementById('loading').textContent = 'No week specified in URL.';
+        return;
+      }
+
+      document.getElementById('page-title').textContent = week;
+
+      try {
+        const [postsRes, reportRes] = await Promise.all([
+          fetch(`data/${week}/posts.json?t=` + Date.now()),
+          fetch(`data/${week}/report.json?t=` + Date.now()),
+        ]);
+
+        const postsData  = postsRes.ok  ? await postsRes.json()  : { posts: [] };
+        const reportData = reportRes.ok ? await reportRes.json() : {};
+
+        const posts = postsData.posts || [];
+        const reportText = reportData.report_text || '';
+        const sections = parseReport(reportText);
+
+        // Update header
+        document.getElementById('loading').classList.add('hidden');
+        document.getElementById('page-title').textContent = week;
+        document.getElementById('stats').classList.remove('hidden');
+        document.getElementById('stats').innerHTML = `
+          <p>${posts.length} posts collected</p>
+          <p>Generated ${reportData.generated_at ? new Date(reportData.generated_at).toLocaleDateString() : '—'}</p>
+        `;
+
+        renderPosts(posts);
+        renderAnalysis(sections.analysis);
+        renderBlog(sections.blog);
+
+        showTab('posts');
+
+      } catch (e) {
+        document.getElementById('loading').textContent = 'Failed to load report data: ' + e.message;
+      }
+    }
+
+    loadWeekData();
+  </script>
+</body>
+</html>
