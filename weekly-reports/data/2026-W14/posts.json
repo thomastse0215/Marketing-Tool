@@ -1,0 +1,373 @@
+{
+  "metadata": {
+    "last_updated": "2026-04-02T08:57:58.420930+00:00",
+    "total_posts": 8,
+    "scraper_version": "2.0-no-api-key",
+    "subreddits_scraped": [
+      "smallbusiness",
+      "shopify",
+      "smallbusinessowner"
+    ]
+  },
+  "posts": [
+    {
+      "post_id": "1s585l6",
+      "url": "https://www.reddit.com/r/shopify/comments/1s585l6/it_seems_like_customers_always_win_a_chargeback/",
+      "subreddit": "shopify",
+      "matched_keyword": "lost package",
+      "title": "It seems like customers always win a chargeback, no matter what?",
+      "body": "I have had two charge backs in the past 3 months. \n\nThe first one, I had already refunded the customer who wanted to cancel an order, but they filed a chargeback the day after I processed the refund. \n\nDespite having documentation I had already processed their refund - I still lost this chargeback. The person seriously made money off of me, by me getting charged twice for their refund. \n\nThe 2nd one - despite having documentation submitted that the package was delivered to their address, I still lost it somehow. Customer stated they never received the item. \n\nThis doesn’t seem fair at all. ",
+      "author": "Available_World6540",
+      "score": 39,
+      "upvote_ratio": 0.96,
+      "num_comments": 69,
+      "created_utc": "2026-03-27T15:57:47+00:00",
+      "collected_at": "2026-04-02T08:46:01.205266+00:00",
+      "flair": "Shopify General Discussion",
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "ocsqxss",
+          "body": "Welcome to chargebacks.  ",
+          "score": 23,
+          "created_utc": "2026-03-27T16:28:25+00:00"
+        },
+        {
+          "comment_id": "ocsunmi",
+          "body": "Chargebacks are part of life on Shopify.\n\nIt is what it is, but Shopify should be doing more before checkout to prevent those customers from even being able to place an order.  The Shopify AI admitted to me a while back that Shopify is focused on conversions and that chargebacks are an \"unavoidable\" side effect.\n\nI lost a big one the other day.  $650 plus the chargeback fee.  The order was flagged as high-risk, but I talked with the customer and they had all of the right answers.  It was shipped and received with the customer signing their name on the courier pad.  Shame on me...I was reminded of just how sophisticated a scammer can be.\n\nTurn off automatic payment capture and use Flow to perform the capture (if you don't want to go in every day and do it manually).\n\nI set mine up so that if the order meets certain criteria (like Shopify tags it as high-risk or the customer is tagged with a blacklist tag I assign), the payment will never be captured (unless I do it manually).\n\nAll other payments are captured a few minutes later, so the customer experience is not altered.\n\nI've been adding different blacklist tags as time goes on.  I added a new one a few weeks ago to prevent a serial order canceller from making me eat the Shopify and PayPal transaction fees.  I realised that he had a pattern of placing an order and then cancelling it within 24 to 48 hours...a pattern spread across 13 orders.\n\nAnd because of that guy, I added a feature in my ERP to flag any order that is cancelled within 48 hours of it being placed...so I can then pull the customer history to see if there is any offending behaviour.",
+          "score": 15,
+          "created_utc": "2026-03-27T16:45:35+00:00"
+        },
+        {
+          "comment_id": "octeo5p",
+          "body": "I just called a customer, cursed him out and called him a thief, which he is.  Filing police report today",
+          "score": 8,
+          "created_utc": "2026-03-27T18:17:00+00:00"
+        },
+        {
+          "comment_id": "oct6qht",
+          "body": "I've won 100% of them. Go as in-depth as possible when providing documentation/don't skimp when submitting written details. And most importantly, have high buyer satisfaction/a solid reputation to back up your argument. ",
+          "score": 14,
+          "created_utc": "2026-03-27T17:40:34+00:00"
+        },
+        {
+          "comment_id": "oct4b1r",
+          "body": "Fairness has absolutely zero to do with chargebacks. You are dealing with banks who are legally obligated to protect their cardholder and they give zero ducks about your Shopify store.\n\nFor that first one, you didn't actually lose the money twice. If you refund and then get a chargeback, you have to submit the ARN of your refund as evidence. Bank sees the ARN, realizes it's already refunded, and drops the case.\n\nFor the second one, tracking showing 'delivered' means nothing to Visa without a signature. bake a 1% chargeback loss rate into unit economics and move on. \n\n",
+          "score": 6,
+          "created_utc": "2026-03-27T17:29:29+00:00"
+        },
+        {
+          "comment_id": "ocu4yo6",
+          "body": "Banks are legally bound to protect their clients, not the merchant. Avoid this risk by disabling automatic capture. Merchants can review high-risk orders before taking funds by using tools like Shopify Flow. Some sellers manually tag and block serial cancellers or high-risk profiles to prevent them from placing future orders. For high-value items, signature-on-delivery is often the only evidence Visa/Mastercard will accept to overturn a 'not received' claim. Both Visa and Mastercard have recently introduced new, specific evidentiary standards designed to help merchants fight back against first-party misuse. The core requirements are that you must provide records of two previous undisputed transactions from the same cardholder. The historical transactions must be between 120 and 365 days older than the disputed transaction. The disputed transaction and the two historical transactions must share at least two matching data points, such as the customer's IP address, device ID/fingerprint, shipping address, or customer account/login ID. Crucially, at least one of the matching elements MUST be the IP Address or Device ID. If the evidence qualifies, the chargeback is reversed, and the dispute is excluded from Visa’s Acquirer Monitoring Programme fraud ratio calculations, protecting your merchant standing.",
+          "score": 2,
+          "created_utc": "2026-03-27T20:20:55+00:00"
+        },
+        {
+          "comment_id": "oczzw39",
+          "body": "It feels like a losing battle, but there are a few 'preventative' tweaks that actually carry a lot of weight with banks. I’ve had success by making sure the **Terms &amp; Conditions** and **Return Policy** require an explicit 'I agree' checkbox at checkout, banks love seeing that the customer manually acknowledged the rules. Also, proactively **asking for reviews** after few days after delivery is a huge help. If a customer leaves a positive review and then tries to file a 'not as described' chargeback later, you have the ultimate evidence to shut it down. Hang in there!",
+          "score": 2,
+          "created_utc": "2026-03-28T18:38:11+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
+      "post_id": "1s4l72p",
+      "url": "https://www.reddit.com/r/smallbusinessowner/comments/1s4l72p/close_to_1m_in_funding_at_0_interest_and_no_tax/",
+      "subreddit": "smallbusinessowner",
+      "matched_keyword": "returns process",
+      "title": "Close to $1M In Funding at 0% Interest and No tax returns",
+      "body": "In 3 years I was able to secure over $900k in funding across traditional banks (most at 0% interest and without tax returns). Obviously there's a few banks and lending products that required documentation (bank statements and tax returns)\n\nBenefits:\n\n\\- Didn't have to give up equity \n\n\\- Took advantage of the 0% interest rate for 12 months then using a business line of credit to pay it off and repeat this process therefore conserving my cash flow\n\n  \n\\- Earn bunch of points over 4 million in combined points between Amex and Chase\n\nAsk me anything! ",
+      "author": "timebillionaire808",
+      "score": 12,
+      "upvote_ratio": 0.75,
+      "num_comments": 36,
+      "created_utc": "2026-03-26T21:56:05+00:00",
+      "collected_at": "2026-04-02T08:57:29.225152+00:00",
+      "flair": null,
+      "is_self_post": false,
+      "comments": [
+        {
+          "comment_id": "ocnxysj",
+          "body": "Ok, so funding for what? What's the business about???",
+          "score": 2,
+          "created_utc": "2026-03-26T22:10:53+00:00"
+        },
+        {
+          "comment_id": "oco4umu",
+          "body": "Can you share the spreadsheet??\n\nLooks nice.",
+          "score": 1,
+          "created_utc": "2026-03-26T22:46:21+00:00"
+        },
+        {
+          "comment_id": "oco97fh",
+          "body": "Lol 0% for a year from a bank... The Internet at its best ",
+          "score": 1,
+          "created_utc": "2026-03-26T23:08:51+00:00"
+        },
+        {
+          "comment_id": "oco9zh7",
+          "body": "I don’t get it, $1 million in debt?",
+          "score": 1,
+          "created_utc": "2026-03-26T23:12:56+00:00"
+        },
+        {
+          "comment_id": "ocof4b8",
+          "body": "where did you start? which one was first and do you keep flipping into the new one? ",
+          "score": 1,
+          "created_utc": "2026-03-26T23:39:56+00:00"
+        },
+        {
+          "comment_id": "ocokasg",
+          "body": "What do they ask to open one?",
+          "score": 1,
+          "created_utc": "2026-03-27T00:07:43+00:00"
+        },
+        {
+          "comment_id": "ocospq2",
+          "body": "Add a column that includes personal guarantee or no personal guarantee. It looks like all of these would require a personal guarantee, which means it is then based upon your credit and not the business of itself.",
+          "score": 1,
+          "created_utc": "2026-03-27T00:54:22+00:00"
+        },
+        {
+          "comment_id": "ocp3u0x",
+          "body": "Brilliant approach &amp; spreadsheet.  We rolled 0% cc balances on a much smaller scale years ago.\n\nCurious here -- last year we applied for CapOne Business cc cash back.  Years of industry experience.  Besides business docs, income &amp; liability specifics, they asked deets on personal homes, personal debt and wanted personal guarantee.  Did you encounter same?   which cc companies were your favs for ease of processing w/ more generous available credit?",
+          "score": 1,
+          "created_utc": "2026-03-27T01:56:37+00:00"
+        },
+        {
+          "comment_id": "ocs0s2w",
+          "body": "ive seen this before is this felix?",
+          "score": 1,
+          "created_utc": "2026-03-27T14:27:12+00:00"
+        },
+        {
+          "comment_id": "ocs5h4g",
+          "body": "Have fun paying it all back before the 30% interest rates kick in. \n\nSeriously, what is this supposed to show or prove?\n\nWhen you max all this out is the next step in your plan going to be to go and refinance it to a different kind of lending? \n\nBecause if you think any bank is going to refi all that to a manageable rate for you, you're going to be sadly disappointed and bankrupt.",
+          "score": 1,
+          "created_utc": "2026-03-27T14:49:31+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
+      "post_id": "1s9wsyg",
+      "url": "https://www.reddit.com/r/shopify/comments/1s9wsyg/issues_with_google_merchant_center_because_of/",
+      "subreddit": "shopify",
+      "matched_keyword": "shipping rates",
+      "title": "Issues with Google Merchant Center Because of Shipping Rates?",
+      "body": "Earlier this year I launched an updated version of our website which converged three websites into one. After the launch I reconfigured our Google Ads but noticed that our Shopping Ads were spending nothing.\n\nThen I went and checked Google Merchant Center and saw that products from our primary market (United States) weren't being synced into the system. Not sure what the heck is going in, I kept looking and inside of the Google &amp; YouTube App I see that several countries are not syncing because there are no shipping rates?\n\nFirst I am told that this is because custom shipping profiles do not work, which is odd because I had custom profiles on my prior stores that worked perfectly fine. So I start moving some products into the general profile to see if we can get it working, still nothing.\n\nI reached out to Shopify support who then tells me that Third-Party shipping apps do not work either... Which again, I was using on my two prior shopping stores before converging into this one.\n\nTheir only solution was either to do all of the Shipping manually, which isn't possible because we use dimensions based shipping, or to put flat rates for Google but then when they checkout on our store will use the app... But I am worried about misleading individuals from that.\n\nHas anyone else dealt with this issue? and if so, how did you go about it?",
+      "author": "ChickenMcDerps",
+      "score": 5,
+      "upvote_ratio": 0.86,
+      "num_comments": 7,
+      "created_utc": "2026-04-01T20:43:10+00:00",
+      "collected_at": "2026-04-02T08:48:00.387071+00:00",
+      "flair": "Shopify General Discussion",
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "ods3wp2",
+          "body": "You need shipping rates if you want to run ads. Your shipping rates just need to be slightly above the actually shipping rates to get Google approve them. I would just add flat rates into GMC and get the shopping ads running.",
+          "score": 1,
+          "created_utc": "2026-04-01T22:28:40+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
+      "post_id": "1s7kv9a",
+      "url": "https://www.reddit.com/r/smallbusiness/comments/1s7kv9a/for_sale_opencircuitnl_12_year_old_profitable/",
+      "subreddit": "smallbusiness",
+      "matched_keyword": "shipping cost",
+      "title": "[For Sale] OpenCircuit.nl – 12 year old Profitable Electronics Components Webshop",
+      "body": "Selling my electronics components webshop OpenCircuit.nl. We sell stuff like Arduino's, Raspberry Pi's, sensors and other maker supplies, mostly to Dutch hobbyists and professionals.\n\nLast year we did €357k in revenue with around €55k profit. Biggest cost is our fulfilment partner at €10k/month, the most obvious place for a new owner to improve margins.\n\nWe ship mostly from stock but have recently imported our full supplier catalog and started doing more dropshipping, so the product range has grown significantly without extra inventory risk.",
+      "author": "That_Ability_5474",
+      "score": 3,
+      "upvote_ratio": 0.81,
+      "num_comments": 7,
+      "created_utc": "2026-03-30T08:34:06+00:00",
+      "collected_at": "2026-04-02T08:50:47.434458+00:00",
+      "flair": null,
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "oda4yxy",
+          "body": "Solo traffico organico?",
+          "score": 1,
+          "created_utc": "2026-03-30T09:21:20+00:00"
+        },
+        {
+          "comment_id": "odfjyoo",
+          "body": "Interesting — the fulfilment cost stands out a lot here.\n\n€10k/month on €55k profit is a pretty big lever, so I can see why that’s the first place a buyer would look.\n\nOn the flip side, importing the full supplier catalog + expanding via dropshipping is a nice way to increase surface area without tying up cash.\n\nOut of curiosity — how involved are you day-to-day in running it?",
+          "score": 1,
+          "created_utc": "2026-03-31T02:40:26+00:00"
+        },
+        {
+          "comment_id": "odgthgh",
+          "body": "churn is almost always a sales problem before it is a product problem. wrong buyers close but do not stick. we built AI that qualifies harder upfront so closed revenue actually stays. what is your churn?",
+          "score": 1,
+          "created_utc": "2026-03-31T08:41:38+00:00"
+        },
+        {
+          "comment_id": "oda0u4v",
+          "body": "12 years, consistent profit, and a clear understanding of your cost structure. That’s rare. For a buyer, the opportunity is obvious: the business already works, the question is how much more efficient it can become. When the biggest lever is known (fulfilment), it’s less speculation and more execution.",
+          "score": 1,
+          "created_utc": "2026-03-30T08:42:34+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
+      "post_id": "1s63mni",
+      "url": "https://www.reddit.com/r/smallbusiness/comments/1s63mni/3pl_in_netherlands_recommendations/",
+      "subreddit": "smallbusiness",
+      "matched_keyword": "3PL, looking for 3PL",
+      "title": "3PL in Netherlands recommendations",
+      "body": "Hello all.\n\nHave a small drop shipping / wholesale business here in the U.K. and are looking to expand into Europe.\n\nLooking for recommendations for a 3PL based in NL? \n\nI’m kind of on the verge of signing to use a 3PL in Poland, their pricing seems good, but their response times to my emails are hit and miss.\n\nI already work with two B2B suppliers based in the Netherlands. Considered asking one of them if they’d take on some more work/brands, but not sure if it’s too close to home so to speak.\n\nFYI - products to be shipped to EU 3PL are already in the EU.\n\nThanks ",
+      "author": "PieceofPuzzle",
+      "score": 3,
+      "upvote_ratio": 1.0,
+      "num_comments": 4,
+      "created_utc": "2026-03-28T15:38:49+00:00",
+      "collected_at": "2026-04-02T08:51:25.663245+00:00",
+      "flair": null,
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "oczfdpm",
+          "body": "Poland is actually a fantastic market for EU fulfillment right now. It is significantly lower cost in terms of labor and real estate than traditional hubs like the Netherlands or Germany, but it still offers excellent transit times across the continent. That said, your gut instinct is right. If their communication is hit-and-miss before you sign a contract (ie in the dating phase!) , it will be an absolute nightmare once they have your inventory.\n\nYou definitely shouldn't settle for a bad communicator just to get the Poland pricing. I run a free, self-serve matchmaking platform called Third Person (thirdperson.co) that can help you find a better fit. You can plug in your wholesale and dropshipping volume, and filter specifically for vetted 3PLs in Poland, the Netherlands, or the broader EU. From the results screen, you can message the operators directly to test their responsiveness before ever committing.",
+          "score": 3,
+          "created_utc": "2026-03-28T16:55:45+00:00"
+        },
+        {
+          "comment_id": "ocztz1n",
+          "body": "You’re asking the **right question at the right time**—NL is one of the best hubs in Europe for 3PL, but choosing the *right type* of partner matters more than the country itself",
+          "score": 3,
+          "created_utc": "2026-03-28T18:07:54+00:00"
+        },
+        {
+          "comment_id": "odhbtdf",
+          "body": "500 MRR in month one means the problem is real and people will pay. the next bottleneck is almost always the sales motion. how are you bringing in new customers right now?",
+          "score": 1,
+          "created_utc": "2026-03-31T11:15:40+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
+      "post_id": "1s4fei9",
+      "url": "https://www.reddit.com/r/shopify/comments/1s4fei9/trying_to_ship_ddp_but_the_duties_line_show_0_at/",
+      "subreddit": "shopify",
+      "matched_keyword": "international shipping",
+      "title": "Trying to ship DDP but the duties line show $0 at checkout? (International Shipping from USA)",
+      "body": "I’m based in USA and I’ve been testing out what duties would look like at checkout for international customers (mostly canada, united kingdom/eu, and mexico) but despite setting up DDP (HS code, origin, product size/weight, enabling dhl) the duties line still show $0 despite how much ($7-$5000) is in the cart. The only country that does show duties is Mexico. \n\nIs this supposed to be correct? I would like to ship ddp for customers but don’t want to accidentally make empty promises if the shipping labels end up being ddu. Also, how would one know if the selected carrier/shipping option includes DDP since it doesn’t seem to show it explicitly for the DHL option at checkout. \n\nNot sure if it’s better to just ship DDU and let customers handle it… Does anyone who ship internationally often have any advice :0 thank you! ",
+      "author": "Angstyjay",
+      "score": 2,
+      "upvote_ratio": 1.0,
+      "num_comments": 9,
+      "created_utc": "2026-03-26T18:18:34+00:00",
+      "collected_at": "2026-04-02T08:48:23.961442+00:00",
+      "flair": "Shipping",
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "od1wqsd",
+          "body": "Is there a reason you care so much? It really doesn't matter. Either the duties are paid at Checkout or at the port. ",
+          "score": 1,
+          "created_utc": "2026-03-29T00:51:03+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
+      "post_id": "1s5c290",
+      "url": "https://www.reddit.com/r/shopify/comments/1s5c290/rental_app_recommendation/",
+      "subreddit": "shopify",
+      "matched_keyword": "return shipping",
+      "title": "Rental App Recommendation",
+      "body": "I’m a small business owner renting out silk floral arrangements for weddings, and I’m looking for a rental booking app that fits my needs.\n\nIdeally, the app would offer three fulfillment options: local pickup, local delivery (within a set radius), and shipping. For shipping orders, I also need the system to automatically block dates before and after the rental period to account for transit time also to tract return after the event. \n\nI’ve looked into Booqable, Product Rental Pro, and Flexcon. I’m especially interested in Flexcon since it’s free, but I’m unsure if it can handle everything I need - or if there’s a better option.\n\nI also need the ability to split payments into a 50% non-refundable retainer and have the remaining balance automatically charged 30 days before the rental date.\n\nAdditionally, I’d like to apply a flat fee when clients select local delivery and setup.\n\nI’d really appreciate any recommendations or guidance!",
+      "author": "Anxious-Pen4113",
+      "score": 2,
+      "upvote_ratio": 0.75,
+      "num_comments": 4,
+      "created_utc": "2026-03-27T18:15:09+00:00",
+      "collected_at": "2026-04-02T08:48:58.666775+00:00",
+      "flair": "Shipping",
+      "is_self_post": true,
+      "comments": [],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
+      "post_id": "1s7zvk5",
+      "url": "https://www.reddit.com/r/smallbusiness/comments/1s7zvk5/eu_brands_how_do_you_handle_shipping_to_norway_uk/",
+      "subreddit": "smallbusiness",
+      "matched_keyword": "shipping cost",
+      "title": "EU Brands: How do you handle shipping to Norway, UK, and Switzerland without killing your margins?",
+      "body": "Hey everyone, I’m the founder of Nomé (nome.studio). We specialize in yak wool apparel.\n\nFor those of you shipping to non-EU neighbors like Norway, Switzerland, or the UK, I’m curious how you handle the tax situation. Do you find it's better to let the customer handle the tax/VAT at the door, or do you pre-pay everything so they don't get any surprises?\n\nIf you choose the second option (pre-paying), how are you pricing your products to stay profitable? We simply don't have the margins to absorb these costs ourselves right now, but I’m keen to learn how you all are making this work.\n\nIs there a middle ground I'm missing?",
+      "author": "FixAfraid6480",
+      "score": 2,
+      "upvote_ratio": 1.0,
+      "num_comments": 4,
+      "created_utc": "2026-03-30T19:01:17+00:00",
+      "collected_at": "2026-04-02T08:50:39.637574+00:00",
+      "flair": null,
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "oddgfeq",
+          "body": "Basta spedire dalla Cina /s",
+          "score": 1,
+          "created_utc": "2026-03-30T19:59:46+00:00"
+        },
+        {
+          "comment_id": "oddrd8i",
+          "body": "the founders scaling fastest are the ones who removed themselves from the sales motion entirely. we built the system that does it. are you still doing founder-led sales?",
+          "score": 1,
+          "created_utc": "2026-03-30T20:50:27+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    }
+  ]
+}
