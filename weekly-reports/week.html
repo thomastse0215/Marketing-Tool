@@ -118,12 +118,14 @@
     }
 
     function linkPostRefs(text, posts) {
-      // Match (Post N), (Post N, M), (Post N, comment M), (Post N, M, comment K) etc.
-      return text.replace(/\(Post\s+([\d,\s]+?)(?:,?\s*comment\s+\d+)?\)/gi, (match, numStr) => {
+      // Match (Post N), (Post N, M), (Post N, comment M), (Post N, comment M text) etc.
+      return text.replace(/\(Post\s+([\d,\s]+?)(,?\s*comment[^)]+)?\)/gi, (match, numStr, commentPart) => {
         const nums = numStr.split(',').map(s => s.trim()).filter(s => /^\d+$/.test(s));
         if (!nums.length) return match;
         const buttons = nums.map(n => postButton(n)).join(' ');
-        return buttons;
+        // If there was a comment reference, append it as plain text
+        const commentLabel = commentPart ? commentPart.replace(/^,?\s*/, ', ') : '';
+        return buttons + (commentLabel ? `<span class="text-xs text-gray-400">${commentLabel}</span>` : '');
       });
     }
 
