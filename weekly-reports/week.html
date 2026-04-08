@@ -334,16 +334,18 @@
         if (!sourceStr) return '';
         // Strip any markdown asterisks, then link each Post N reference
         const clean = sourceStr.replace(/\*+/g, '').trim();
-        const linked = clean.replace(/Post\s+(\d+)/gi, (match, num) => {
-          const post = posts[parseInt(num) - 1];
-          if (post) {
-            return `<button onclick="goToPost(${num})"
-              class="inline-flex items-center gap-1 text-purple-600 hover:text-purple-800 font-semibold text-xs bg-purple-50 hover:bg-purple-100 px-2 py-0.5 rounded-full transition-colors mr-1 cursor-pointer">
-              Post ${num} ↗
-            </button>`;
-          }
-          return match;
-        });
+        const linked = clean
+          .replace(/Post\s+(\d+)/gi, (match, num) => {
+            const post = posts[parseInt(num) - 1];
+            if (post) {
+              return `<button onclick="goToPost(${num})"
+                class="inline-flex items-center gap-1 text-purple-600 hover:text-purple-800 font-semibold text-xs bg-purple-50 hover:bg-purple-100 px-2 py-0.5 rounded-full transition-colors mr-1 cursor-pointer">
+                Post ${num} ↗
+              </button>`;
+            }
+            return match;
+          })
+          .replace(/,\s*(?=<button)/g, ' ');  // remove commas between post buttons
         return `
           <div class="border-t border-gray-100 pt-3 mt-3">
             <span class="text-xs text-gray-400 font-medium mr-2">Source posts:</span>${linked}
@@ -354,7 +356,6 @@
         // Extract fields
         const headlineMatch = item.match(/(?:\d+\.\s*)?(?:\*{0,2}Headline:?\*{0,2}\s*)(.+?)(?:\n|$)/i);
         const formatMatch   = item.match(/Format:\s*(.+?)(?:\n|$)/i);
-        const summaryMatch  = item.match(/Brief Summary:\s*([\s\S]+?)(?=\n\s*(?:\*{0,2}\s*\w[\w\s]*:|$))/i);
         const painMatch     = item.match(/(?:Mapped Pain|Pain Point|Addresses):\s*(.+?)(?:\n|$)/i);
         const sourceMatch   = item.match(/Source Posts?:\s*(.+?)(?:\n|$)/i);
 
@@ -362,9 +363,22 @@
           ? headlineMatch[1].replace(/\*+/g, '').replace(/Headline:?\s*/i, '').trim()
           : '';
         const format  = formatMatch  ? formatMatch[1].replace(/\*+/g, '').trim() : '';
-        const summary = summaryMatch ? summaryMatch[1].replace(/^\s*\*+\s*/gm, '').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').trim() : '';
         const pain    = painMatch    ? painMatch[1].replace(/\*+/g, '').trim() : '';
         const source  = sourceMatch  ? sourceMatch[1].replace(/\*+/g, '').trim() : '';
+
+        // Extract summary: slice from "Brief Summary:" up to the "Source Posts:" line
+        // (avoids lookahead regex that fails on **Source Posts:** markdown format)
+        const summaryIdx = item.search(/Brief Summary:\s*/i);
+        const sourceLineIdx = item.search(/\n[\s*]*\*{0,2}\s*Source Posts?:/i);
+        let summary = '';
+        if (summaryIdx !== -1) {
+          const end = sourceLineIdx !== -1 ? sourceLineIdx : item.length;
+          summary = item.slice(summaryIdx, end)
+            .replace(/^Brief Summary:\s*/i, '')
+            .replace(/^\s*\*+\s*/gm, '')
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .trim();
+        }
 
         if (!headline) return '';
 
