@@ -202,8 +202,8 @@
       // Remove section header line (e.g. **SECTION 2: PAIN POINT ANALYSIS**)
       const bodyText = text.replace(/^\*{0,2}SECTION\s+\d+[^\n]*\n*/im, '').trim();
 
-      // Split into individual themes on "**Theme:" markers
-      const rawThemes = bodyText.split(/\n(?=\*{0,2}Theme:)/i).filter(s => s.trim());
+      // Split into individual themes on "**Theme N:" or "**Theme:" markers
+      const rawThemes = bodyText.split(/\n(?=\*{0,2}Theme\s*\d*\s*:)/i).filter(s => s.trim());
 
       if (rawThemes.length <= 1) {
         // Fallback: plain cleaned text
@@ -221,14 +221,14 @@
 
         // First line = theme name
         const themeName = lines[0]
-          .replace(/\*{0,2}Theme:\s*/i, '')
+          .replace(/\*{0,2}Theme\s*\d*\s*:\s*/i, '')
           .replace(/\*+/g, '')
           .trim();
 
         const rest = lines.slice(1).join('\n').trim();
 
         // Detect "Paraphrased Reddit Examples" section
-        const examplesIdx = rest.search(/Paraphrased Reddit Examples?/i);
+        const examplesIdx = rest.search(/(?:Paraphrased )?Reddit Examples?/i);
         let painHtml = '';
         let examplesHtml = '';
 
