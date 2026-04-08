@@ -69,6 +69,17 @@
       return new URLSearchParams(window.location.search).get('week');
     }
 
+    function goToPost(n) {
+      showTab('posts');
+      setTimeout(() => {
+        const el = document.getElementById('post-card-' + n);
+        if (!el) return;
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.add('ring-2', 'ring-purple-400');
+        setTimeout(() => el.classList.remove('ring-2', 'ring-purple-400'), 2000);
+      }, 60);
+    }
+
     function showTab(name) {
       ['posts', 'analysis', 'blog'].forEach(t => {
         document.getElementById('tab-' + t).classList.add('hidden');
@@ -101,11 +112,11 @@
     function linkPostRefs(text, posts) {
       return text.replace(/\(Post\s+(\d+)\)/gi, (match, num) => {
         const post = posts[parseInt(num) - 1];
-        if (post && post.url) {
-          return `<a href="${post.url}" target="_blank"
-            class="inline-flex items-center gap-1 text-purple-600 hover:text-purple-800 font-semibold text-xs bg-purple-50 hover:bg-purple-100 px-2 py-0.5 rounded-full transition-colors">
+        if (post) {
+          return `<button onclick="goToPost(${num})"
+            class="inline-flex items-center gap-1 text-purple-600 hover:text-purple-800 font-semibold text-xs bg-purple-50 hover:bg-purple-100 px-2 py-0.5 rounded-full transition-colors cursor-pointer">
             Post ${num} ↗
-          </a>`;
+          </button>`;
         }
         return match;
       });
@@ -141,7 +152,8 @@
         return;
       }
 
-      posts.forEach(post => {
+      posts.forEach((post, idx) => {
+        const postNum = idx + 1;
         const comments = post.comments || [];
         const commentPreview = comments.slice(0, 3).map((c, i) =>
           `<div class="text-xs text-gray-500 border-l-2 border-purple-100 pl-3 mt-2">
@@ -151,9 +163,11 @@
         ).join('');
 
         const card = document.createElement('div');
+        card.id = 'post-card-' + postNum;
         card.className = 'bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-3 hover:shadow-md transition-shadow';
         card.innerHTML = `
           <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs font-semibold bg-gray-200 text-gray-500 px-2 py-0.5 rounded-full">Post ${postNum}</span>
             <span class="text-xs font-semibold bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">r/${post.subreddit}</span>
             <span class="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">${post.matched_keyword}</span>
           </div>
@@ -224,7 +238,7 @@
 
           // Format pain points as a clean list
           const painLines = painRaw.split('\n')
-            .map(l => l.replace(/^\s*\*+\s*/g, '').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').trim())
+            .map(l => l.replace(/^\s*\*+\s*/g, '').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/^\*+$/, '').trim())
             .filter(l => l);
 
           painHtml = painLines.length ? `
@@ -318,14 +332,15 @@
 
       function renderSourcePosts(sourceStr, posts) {
         if (!sourceStr) return '';
-        // Extract all "Post N" references and link them
-        const linked = sourceStr.replace(/Post\s+(\d+)/gi, (match, num) => {
+        // Strip any markdown asterisks, then link each Post N reference
+        const clean = sourceStr.replace(/\*+/g, '').trim();
+        const linked = clean.replace(/Post\s+(\d+)/gi, (match, num) => {
           const post = posts[parseInt(num) - 1];
-          if (post && post.url) {
-            return `<a href="${post.url}" target="_blank"
-              class="inline-flex items-center gap-1 text-purple-600 hover:text-purple-800 font-semibold text-xs bg-purple-50 hover:bg-purple-100 px-2 py-0.5 rounded-full transition-colors mr-1">
+          if (post) {
+            return `<button onclick="goToPost(${num})"
+              class="inline-flex items-center gap-1 text-purple-600 hover:text-purple-800 font-semibold text-xs bg-purple-50 hover:bg-purple-100 px-2 py-0.5 rounded-full transition-colors mr-1 cursor-pointer">
               Post ${num} ↗
-            </a>`;
+            </button>`;
           }
           return match;
         });
@@ -349,7 +364,7 @@
         const format  = formatMatch  ? formatMatch[1].replace(/\*+/g, '').trim() : '';
         const summary = summaryMatch ? summaryMatch[1].replace(/^\s*\*+\s*/gm, '').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').trim() : '';
         const pain    = painMatch    ? painMatch[1].replace(/\*+/g, '').trim() : '';
-        const source  = sourceMatch  ? sourceMatch[1].trim() : '';
+        const source  = sourceMatch  ? sourceMatch[1].replace(/\*+/g, '').trim() : '';
 
         if (!headline) return '';
 
