@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trustpilot Report — Borderless360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #f6f6ff; color: #272e42; }
+    h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .tab-btn.active { background: #6a1cf6; color: white; }
+    .tab-btn { transition: all 0.15s; }
+    .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-200 px-4 sm:px-6 py-4 sticky top-0 z-10">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <div>
+        <a href="index.html" class="text-sm text-purple-600 hover:underline">← All Reports</a>
+        <h1 id="page-title" class="text-xl sm:text-2xl font-bold mt-1">Loading...</h1>
+      </div>
+      <div id="stats" class="hidden text-right text-sm text-gray-500 shrink-0"></div>
+    </div>
+  </header>
+
+  <!-- Tabs -->
+  <div class="bg-white border-b border-gray-200 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex gap-2 py-3 overflow-x-auto">
+      <button class="tab-btn active text-sm font-medium px-4 py-2 rounded-lg whitespace-nowrap" onclick="showTab('reviews')">⭐ Reviews</button>
+      <button class="tab-btn text-sm font-medium px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-100 whitespace-nowrap" onclick="showTab('analysis')">🔍 Pain Point Analysis</button>
+      <button class="tab-btn text-sm font-medium px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-100 whitespace-nowrap" onclick="showTab('blog')">✍️ Blog Ideas</button>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+
+    <!-- Loading -->
+    <div id="loading" class="text-center py-20 text-gray-400">
+      <div class="text-4xl mb-4">⏳</div>
+      <p>Loading report data...</p>
+    </div>
+
+    <!-- Reviews Tab -->
+    <div id="tab-reviews" class="hidden">
+      <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
+    </div>
+
+    <!-- Analysis Tab -->
+    <div id="tab-analysis" class="hidden">
+      <div id="analysis-content"></div>
+    </div>
+
+    <!-- Blog Tab -->
+    <div id="tab-blog" class="hidden">
+      <div id="blog-content"></div>
+    </div>
+
+  </main>
+
+  <script>
+    // ── Helpers ──────────────────────────────────────────────────────────────
+
+    function getWeekParam() {
+      return new URLSearchParams(window.location.search).get('week');
+    }
+
+    function goToReview(n) {
+      showTab('reviews');
+      setTimeout(() => {
+        const el = document.getElementById('review-card-' + n);
+        if (!el) return;
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.add('ring-2', 'ring-purple-400');
+        setTimeout(() => el.classList.remove('ring-2', 'ring-purple-400'), 2000);
+      }, 60);
+    }
+
+    function showTab(name) {
+      ['reviews', 'analysis', 'blog'].forEach(t => {
+        document.getElementById('tab-' + t).classList.add('hidden');
+      });
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.classList.add('text-gray-600');
+      });
+      document.getElementById('tab-' + name).classList.remove('hidden');
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        if (btn.getAttribute('onclick') === `showTab('${name}')`) {
+          btn.classList.add('active');
+          btn.classList.remove('text-gray-600');
+        }
+      });
+    }
+
+    // ── Clean raw Gemini text ─────────────────────────────────────────────────
+
+    function cleanText(text) {
+      return text
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/^\s*\*{1,2}\s+/gm, '')
+        .replace(/^\s*•\s+/gm, '');
+    }
+
+    // ── Link (Review N) references ────────────────────────────────────────────
+
+    function reviewButton(num) {
+      return `<button onclick="goToReview(${num})"
+        class="inline-flex items-center gap-1 text-purple-600 hover:text-purple-800 font-semibold text-xs bg-purple-50 hover:bg-purple-100 px-2 py-0.5 rounded-full transition-colors cursor-pointer">
+        Review ${num} ↗
+      </button>`;
+    }
+
+    function linkReviewRefs(text) {
+      return text.replace(/\(Review\s+([\d,\s]+?)\s*(?:—\s*\d+\s*stars?)?\)/gi, (match, numStr) => {
+        const nums = numStr.split(',').map(s => s.trim()).filter(s => /^\d+$/.test(s));
+        if (!nums.length) return match;
+        return nums.map(n => reviewButton(n)).join(' ');
+      });
+    }
+
+    // ── Star rating display ───────────────────────────────────────────────────
+
+    function starBadge(rating) {
+      const n = parseInt(rating) || 0;
+      const colors = {
+        1: 'bg-red-100 text-red-700',
+        2: 'bg-orange-100 text-orange-700',
+        3: 'bg-yellow-100 text-yellow-700',
+        4: 'bg-green-100 text-green-700',
+        5: 'bg-emerald-100 text-emerald-700',
+      };
+      const cls = colors[n] || 'bg-gray-100 text-gray-600';
+      return `<span class="text-xs font-semibold px-2 py-0.5 rounded-full ${cls}">${'★'.repeat(n)}${'☆'.repeat(5 - n)}</span>`;
+    }
+
+    // ── Parse Gemini report text into sections ────────────────────────────────
+
+    function parseReport(text) {
+      const sections = { analysis: '', blog: '' };
+      if (!text) return sections;
+
+      const s2 = text.indexOf('**SECTION 2:');
+      const s3 = text.indexOf('**SECTION 3:');
+
+      if (s2 !== -1 && s3 !== -1) sections.analysis = text.slice(s2, s3).trim();
+      else if (s2 !== -1) sections.analysis = text.slice(s2).trim();
+
+      if (s3 !== -1) sections.blog = text.slice(s3).trim();
+
+      return sections;
+    }
+
+    // ── Render reviews ────────────────────────────────────────────────────────
+
+    function renderReviews(reviews) {
+      const grid = document.getElementById('reviews-grid');
+
+      if (!reviews.length) {
+        grid.innerHTML = '<p class="text-gray-400 col-span-2 text-center py-10">No reviews found for this week.</p>';
+        return;
+      }
+
+      reviews.forEach((review, idx) => {
+        const num = idx + 1;
+        const card = document.createElement('div');
+        card.id = 'review-card-' + num;
+        card.className = 'bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-3 hover:shadow-md transition-shadow';
+
+        const dateStr = review.date
+          ? new Date(review.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+          : '';
+
+        card.innerHTML = `
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs font-semibold bg-gray-200 text-gray-500 px-2 py-0.5 rounded-full">Review ${num}</span>
+            <span class="text-xs font-semibold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">${review.company || ''}</span>
+            ${starBadge(review.rating)}
+          </div>
+          <a href="${review.url || '#'}" target="_blank" class="font-bold text-base leading-snug hover:text-purple-700 transition-colors">
+            ${review.title || '(no title)'}
+          </a>
+          ${review.text ? `<p class="text-sm text-gray-600 line-clamp-3">${review.text.slice(0, 300)}${review.text.length > 300 ? '…' : ''}</p>` : ''}
+          <div class="flex gap-4 text-xs text-gray-400 flex-wrap">
+            <span>👤 ${review.author || 'Unknown'}</span>
+            <span>📅 ${dateStr}</span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // ── Render Pain Point Analysis ────────────────────────────────────────────
+
+    function renderAnalysis(text) {
+      const container = document.getElementById('analysis-content');
+      if (!text) {
+        container.innerHTML = '<p class="text-gray-400 text-center py-10">No analysis available.</p>';
+        return;
+      }
+
+      const bodyText = text.replace(/^\*{0,2}SECTION\s+\d+[^\n]*\n*/im, '').trim();
+      const rawThemes = bodyText.split(/\n(?=\*{0,2}Theme\s*\d*\s*:)/i).filter(s => s.trim());
+
+      if (rawThemes.length <= 1) {
+        container.innerHTML = `
+          <div class="bg-white rounded-2xl border border-gray-200 p-6">
+            <div class="text-sm text-gray-700 leading-relaxed">
+              ${linkReviewRefs(cleanText(bodyText))}
+            </div>
+          </div>`;
+        return;
+      }
+
+      const cards = rawThemes.map(block => {
+        const lines = block.split('\n');
+
+        const themeName = lines[0]
+          .replace(/\*{0,2}Theme\s*\d*\s*:\s*/i, '')
+          .replace(/\*+/g, '')
+          .trim();
+
+        const rest = lines.slice(1).join('\n').trim();
+
+        const examplesIdx = rest.search(/(?:Paraphrased )?Review Examples?/i);
+        let painHtml = '';
+        let examplesHtml = '';
+
+        if (examplesIdx !== -1) {
+          const painRaw = rest.slice(0, examplesIdx).trim();
+          const examplesRaw = rest.slice(examplesIdx).trim();
+
+          const painLines = painRaw.split('\n')
+            .map(l => l.replace(/^\s*\*+\s*/g, '').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/^\*+$/, '').trim())
+            .filter(l => l);
+
+          painHtml = painLines.length ? `
+            <ul class="space-y-2 mb-4">
+              ${painLines.map(l => `<li class="flex gap-2 text-sm text-gray-700"><span class="text-purple-400 shrink-0 mt-0.5">▸</span><span>${l}</span></li>`).join('')}
+            </ul>` : '';
+
+          const exampleLines = examplesRaw.split('\n')
+            .slice(1)
+            .map(l => l.replace(/^\s*\*+\s*/g, '').trim())
+            .filter(l => l && !/^-{2,}$/.test(l));
+
+          examplesHtml = exampleLines.length ? `
+            <div class="border-t border-gray-100 pt-4 mt-2">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Paraphrased Review Examples</p>
+              <div class="space-y-2">
+                ${exampleLines.map(l => `
+                  <div class="flex gap-2 text-sm text-gray-600 bg-gray-50 rounded-lg px-3 py-2">
+                    <span class="text-gray-300 shrink-0">"</span>
+                    <span>${linkReviewRefs(l.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'))}</span>
+                  </div>`).join('')}
+              </div>
+            </div>` : '';
+
+        } else {
+          const allLines = rest.split('\n')
+            .map(l => l.replace(/^\s*\*+\s*/g, '').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').trim())
+            .filter(l => l);
+
+          painHtml = allLines.length ? `
+            <ul class="space-y-2">
+              ${allLines.map(l => `<li class="flex gap-2 text-sm text-gray-700"><span class="text-purple-400 shrink-0 mt-0.5">▸</span><span>${l}</span></li>`).join('')}
+            </ul>` : '';
+        }
+
+        return `
+          <div class="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
+            <h3 class="font-bold text-base text-gray-800 mb-4 flex items-start gap-2">
+              <span class="text-purple-500 shrink-0 mt-0.5">●</span>
+              ${themeName}
+            </h3>
+            ${painHtml}
+            ${examplesHtml}
+          </div>`;
+      }).join('');
+
+      container.innerHTML = `<div class="grid grid-cols-1 gap-5">${cards}</div>`;
+    }
+
+    // ── Render Blog Ideas ─────────────────────────────────────────────────────
+
+    function renderBlog(text, reviews) {
+      const container = document.getElementById('blog-content');
+      if (!text) {
+        container.innerHTML = '<p class="text-gray-400 text-center py-10">No blog ideas available.</p>';
+        return;
+      }
+
+      const bodyText = text.replace(/^\*{0,2}SECTION\s+\d+[^\n]*\n*/im, '').trim();
+      const rawItems = bodyText
+        .split(/\n(?=\d+\.\s|\*{0,2}Headline:)/i)
+        .filter(s => s.trim());
+
+      if (!rawItems.length) {
+        container.innerHTML = '<p class="text-gray-400 text-center py-10">No blog ideas found.</p>';
+        return;
+      }
+
+      const FORMAT_COLORS = {
+        'how-to': 'bg-blue-50 text-blue-700',
+        'listicle': 'bg-green-50 text-green-700',
+        'opinion': 'bg-orange-50 text-orange-700',
+        'case study': 'bg-yellow-50 text-yellow-700',
+        'myth': 'bg-red-50 text-red-700',
+        'checklist': 'bg-teal-50 text-teal-700',
+        'default': 'bg-gray-100 text-gray-600',
+      };
+
+      function formatBadgeColor(format) {
+        const f = (format || '').toLowerCase();
+        for (const [key, cls] of Object.entries(FORMAT_COLORS)) {
+          if (f.includes(key)) return cls;
+        }
+        return FORMAT_COLORS.default;
+      }
+
+      function renderSourceReviews(sourceStr) {
+        if (!sourceStr) return '';
+        const clean = sourceStr.replace(/\*+/g, '').trim();
+        const linked = clean
+          .replace(/Review\s+(\d+)/gi, (match, num) => {
+            const review = reviews[parseInt(num) - 1];
+            if (review) {
+              return `<button onclick="goToReview(${num})"
+                class="inline-flex items-center gap-1 text-purple-600 hover:text-purple-800 font-semibold text-xs bg-purple-50 hover:bg-purple-100 px-2 py-0.5 rounded-full transition-colors mr-1 cursor-pointer">
+                Review ${num} ↗
+              </button>`;
+            }
+            return match;
+          })
+          .replace(/,\s*(?=<button)/g, ' ');
+        return `
+          <div class="border-t border-gray-100 pt-3 mt-3">
+            <span class="text-xs text-gray-400 font-medium mr-2">Source reviews:</span>${linked}
+          </div>`;
+      }
+
+      const cards = rawItems.map(item => {
+        const headlineMatch = item.match(/(?:\d+\.\s*)?(?:\*{0,2}Headline:?\*{0,2}\s*)(.+?)(?:\n|$)/i);
+        const formatMatch   = item.match(/Format:\s*(.+?)(?:\n|$)/i);
+        const painMatch     = item.match(/(?:Mapped Pain|Pain Point|Addresses):\s*(.+?)(?:\n|$)/i);
+        const sourceMatch   = item.match(/Source Reviews?:\s*(.+?)(?:\n|$)/i);
+
+        const headline = headlineMatch
+          ? headlineMatch[1].replace(/\*+/g, '').replace(/Headline:?\s*/i, '').trim()
+          : '';
+        const format  = formatMatch  ? formatMatch[1].replace(/\*+/g, '').trim() : '';
+        const pain    = painMatch    ? painMatch[1].replace(/\*+/g, '').trim() : '';
+        const source  = sourceMatch  ? sourceMatch[1].replace(/\*+/g, '').trim() : '';
+
+        const summaryIdx = item.search(/Brief Summary:\s*/i);
+        const sourceLineIdx = item.search(/\n[\s*]*\*{0,2}\s*Source Reviews?:/i);
+        let summary = '';
+        if (summaryIdx !== -1) {
+          const end = sourceLineIdx !== -1 ? sourceLineIdx : item.length;
+          summary = item.slice(summaryIdx, end)
+            .replace(/^Brief Summary:\s*/i, '')
+            .replace(/^\s*\*+\s*/gm, '')
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .trim();
+        }
+
+        if (!headline) return '';
+
+        return `
+          <div class="bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-md transition-shadow flex flex-col gap-3">
+            ${format ? `<span class="self-start text-xs font-semibold px-2 py-0.5 rounded-full ${formatBadgeColor(format)}">${format}</span>` : ''}
+            <h3 class="font-bold text-base text-gray-800 leading-snug">${headline}</h3>
+            ${summary ? `<p class="text-sm text-gray-600 leading-relaxed">${summary}</p>` : ''}
+            ${pain ? `<p class="text-xs text-gray-400"><span class="font-medium">Pain point:</span> ${pain}</p>` : ''}
+            ${renderSourceReviews(source)}
+          </div>`;
+      }).filter(c => c).join('');
+
+      container.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 gap-5">${cards}</div>`;
+    }
+
+    // ── Main loader ───────────────────────────────────────────────────────────
+
+    async function loadWeekData() {
+      const week = getWeekParam();
+      if (!week) {
+        document.getElementById('loading').textContent = 'No week specified in URL.';
+        return;
+      }
+
+      document.getElementById('page-title').textContent = week;
+
+      try {
+        const [reviewsRes, reportRes] = await Promise.all([
+          fetch(`data/${week}/reviews.json?t=` + Date.now()),
+          fetch(`data/${week}/report.json?t=`  + Date.now()),
+        ]);
+
+        const reviewsData = reviewsRes.ok  ? await reviewsRes.json() : { reviews: [] };
+        const reportData  = reportRes.ok   ? await reportRes.json()  : {};
+
+        const reviews    = reviewsData.reviews || [];
+        const reportText = reportData.report_text || '';
+        const sections   = parseReport(reportText);
+
+        document.getElementById('loading').classList.add('hidden');
+        document.getElementById('page-title').textContent = week;
+        document.getElementById('stats').classList.remove('hidden');
+        document.getElementById('stats').innerHTML = `
+          <p>${reviews.length} reviews collected</p>
+          <p>Generated ${reportData.generated_at ? new Date(reportData.generated_at).toLocaleDateString() : '—'}</p>
+        `;
+
+        renderReviews(reviews);
+        renderAnalysis(sections.analysis);
+        renderBlog(sections.blog, reviews);
+
+        showTab('reviews');
+
+      } catch (e) {
+        document.getElementById('loading').textContent = 'Failed to load report data: ' + e.message;
+      }
+    }
+
+    loadWeekData();
+  </script>
+</body>
+</html>
