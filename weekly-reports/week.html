@@ -199,14 +199,6 @@
         return;
       }
 
-      // Build subreddit filter
-      const subreddits = [...new Set(posts.map(p => p.subreddit).filter(Boolean))].sort();
-      buildFilterPills('posts-filter', subreddits, (active) => {
-        grid.querySelectorAll('.post-card').forEach(card => {
-          card.classList.toggle('hidden', active !== null && card.dataset.subreddit !== active);
-        });
-      });
-
       posts.forEach((post, idx) => {
         const postNum = idx + 1;
         const comments = post.comments || [];
@@ -243,6 +235,14 @@
             </div>` : ''}
         `;
         grid.appendChild(card);
+      });
+
+      // Build subreddit filter AFTER cards are in the DOM
+      const subreddits = [...new Set(posts.map(p => p.subreddit).filter(Boolean))].sort();
+      buildFilterPills('posts-filter', subreddits, (active) => {
+        grid.querySelectorAll('.post-card').forEach(card => {
+          card.classList.toggle('hidden', active !== null && card.dataset.subreddit !== active);
+        });
       });
     }
 
@@ -414,25 +414,6 @@
         return format.split(/[\/,]/).map(t => t.trim()).filter(Boolean);
       }
 
-      // Build all unique tags across all items for the filter
-      const allTags = [...new Set(
-        rawItems.flatMap(item => {
-          const m = item.match(/Format:\s*(.+?)(?:\n|$)/i);
-          return m ? formatToTags(m[1].replace(/\*+/g, '')) : [];
-        })
-      )].sort();
-
-      buildFilterPills('blog-filter', allTags, (active) => {
-        document.querySelectorAll('.blog-card').forEach(card => {
-          if (active === null) {
-            card.classList.remove('hidden');
-          } else {
-            const tags = (card.dataset.tags || '').split('|');
-            card.classList.toggle('hidden', !tags.includes(active));
-          }
-        });
-      });
-
       const cards = rawItems.map(item => {
         // Extract fields
         const headlineMatch = item.match(/(?:\d+\.\s*)?(?:\*{0,2}Headline:?\*{0,2}\s*)(.+?)(?:\n|$)/i);
@@ -480,6 +461,25 @@
       }).filter(c => c).join('');
 
       container.innerHTML = `<div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5">${cards}</div>`;
+
+      // Build format tag filter AFTER cards are in the DOM
+      const allTags = [...new Set(
+        rawItems.flatMap(item => {
+          const m = item.match(/Format:\s*(.+?)(?:\n|$)/i);
+          return m ? formatToTags(m[1].replace(/\*+/g, '')) : [];
+        })
+      )].sort();
+
+      buildFilterPills('blog-filter', allTags, (active) => {
+        document.querySelectorAll('.blog-card').forEach(card => {
+          if (active === null) {
+            card.classList.remove('hidden');
+          } else {
+            const tags = (card.dataset.tags || '').split('|');
+            card.classList.toggle('hidden', !tags.includes(active));
+          }
+        });
+      });
     }
 
     // ── Main loader ───────────────────────────────────────────────────────────
