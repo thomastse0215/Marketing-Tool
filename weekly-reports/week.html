@@ -107,18 +107,23 @@
         .replace(/^\s*•\s+/gm, '');                        // leading • bullets
     }
 
-    // ── Link (Post N) references to actual Reddit URLs ────────────────────────
+    // ── Link (Post N) and (Post N, M, ...) references ────────────────────────
+    // Handles: (Post 3), (Post 7, 16), (Post 5, comment 3), etc.
+
+    function postButton(num) {
+      return `<button onclick="goToPost(${num})"
+        class="inline-flex items-center gap-1 text-purple-600 hover:text-purple-800 font-semibold text-xs bg-purple-50 hover:bg-purple-100 px-2 py-0.5 rounded-full transition-colors cursor-pointer">
+        Post ${num} ↗
+      </button>`;
+    }
 
     function linkPostRefs(text, posts) {
-      return text.replace(/\(Post\s+(\d+)\)/gi, (match, num) => {
-        const post = posts[parseInt(num) - 1];
-        if (post) {
-          return `<button onclick="goToPost(${num})"
-            class="inline-flex items-center gap-1 text-purple-600 hover:text-purple-800 font-semibold text-xs bg-purple-50 hover:bg-purple-100 px-2 py-0.5 rounded-full transition-colors cursor-pointer">
-            Post ${num} ↗
-          </button>`;
-        }
-        return match;
+      // Match (Post N), (Post N, M), (Post N, comment M), (Post N, M, comment K) etc.
+      return text.replace(/\(Post\s+([\d,\s]+?)(?:,?\s*comment\s+\d+)?\)/gi, (match, numStr) => {
+        const nums = numStr.split(',').map(s => s.trim()).filter(s => /^\d+$/.test(s));
+        if (!nums.length) return match;
+        const buttons = nums.map(n => postButton(n)).join(' ');
+        return buttons;
       });
     }
 
@@ -250,7 +255,7 @@
           const exampleLines = examplesRaw.split('\n')
             .slice(1) // skip the "Paraphrased Reddit Examples:" header line
             .map(l => l.replace(/^\s*\*+\s*/g, '').trim())
-            .filter(l => l);
+            .filter(l => l && !/^-{2,}$/.test(l)); // skip --- dividers
 
           examplesHtml = exampleLines.length ? `
             <div class="border-t border-gray-100 pt-4 mt-2">
