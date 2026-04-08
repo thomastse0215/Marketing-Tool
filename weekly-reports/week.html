@@ -47,6 +47,7 @@
 
     <!-- Posts Tab -->
     <div id="tab-posts" class="hidden">
+      <div id="posts-filter" class="flex flex-wrap gap-2 mb-5"></div>
       <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
     </div>
 
@@ -57,6 +58,7 @@
 
     <!-- Blog Tab -->
     <div id="tab-blog" class="hidden">
+      <div id="blog-filter" class="flex flex-wrap gap-2 mb-5"></div>
       <div id="blog-content"></div>
     </div>
 
@@ -149,6 +151,44 @@
       return sections;
     }
 
+    // ── Generic filter pill builder ───────────────────────────────────────────
+    // containerId: the <div> to render pills into
+    // labels: array of strings (one pill each)
+    // onFilter(active): called with the active label (or null for "All")
+
+    function buildFilterPills(containerId, labels, onFilter) {
+      const container = document.getElementById(containerId);
+      if (!labels.length) { container.innerHTML = ''; return; }
+
+      let active = null; // null = All
+
+      function pill(label) {
+        const btn = document.createElement('button');
+        btn.textContent = label;
+        btn.dataset.label = label;
+        btn.className = 'filter-pill text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors ' +
+          (label === 'All'
+            ? 'bg-purple-600 text-white border-purple-600'
+            : 'bg-white text-gray-600 border-gray-200 hover:border-purple-400 hover:text-purple-600');
+        btn.addEventListener('click', () => {
+          active = label === 'All' ? null : label;
+          container.querySelectorAll('.filter-pill').forEach(b => {
+            const isActive = (active === null && b.dataset.label === 'All') ||
+                             (active !== null && b.dataset.label === active);
+            b.className = 'filter-pill text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors ' +
+              (isActive
+                ? 'bg-purple-600 text-white border-purple-600'
+                : 'bg-white text-gray-600 border-gray-200 hover:border-purple-400 hover:text-purple-600');
+          });
+          onFilter(active);
+        });
+        return btn;
+      }
+
+      container.innerHTML = '';
+      ['All', ...labels].forEach(l => container.appendChild(pill(l)));
+    }
+
     // ── Render posts ──────────────────────────────────────────────────────────
 
     function renderPosts(posts) {
@@ -158,6 +198,14 @@
         grid.innerHTML = '<p class="text-gray-400 col-span-2 text-center py-10">No posts found for this week.</p>';
         return;
       }
+
+      // Build subreddit filter
+      const subreddits = [...new Set(posts.map(p => p.subreddit).filter(Boolean))].sort();
+      buildFilterPills('posts-filter', subreddits, (active) => {
+        grid.querySelectorAll('.post-card').forEach(card => {
+          card.classList.toggle('hidden', active !== null && card.dataset.subreddit !== active);
+        });
+      });
 
       posts.forEach((post, idx) => {
         const postNum = idx + 1;
@@ -171,7 +219,8 @@
 
         const card = document.createElement('div');
         card.id = 'post-card-' + postNum;
-        card.className = 'bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-3 hover:shadow-md transition-shadow';
+        card.dataset.subreddit = post.subreddit || '';
+        card.className = 'post-card bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-3 hover:shadow-md transition-shadow';
         card.innerHTML = `
           <div class="flex items-center gap-2 flex-wrap">
             <span class="text-xs font-semibold bg-gray-200 text-gray-500 px-2 py-0.5 rounded-full">Post ${postNum}</span>
@@ -359,6 +408,31 @@
           </div>`;
       }
 
+      // Parse format string into individual tags (split on / and ,)
+      function formatToTags(format) {
+        if (!format) return [];
+        return format.split(/[\/,]/).map(t => t.trim()).filter(Boolean);
+      }
+
+      // Build all unique tags across all items for the filter
+      const allTags = [...new Set(
+        rawItems.flatMap(item => {
+          const m = item.match(/Format:\s*(.+?)(?:\n|$)/i);
+          return m ? formatToTags(m[1].replace(/\*+/g, '')) : [];
+        })
+      )].sort();
+
+      buildFilterPills('blog-filter', allTags, (active) => {
+        document.querySelectorAll('.blog-card').forEach(card => {
+          if (active === null) {
+            card.classList.remove('hidden');
+          } else {
+            const tags = (card.dataset.tags || '').split('|');
+            card.classList.toggle('hidden', !tags.includes(active));
+          }
+        });
+      });
+
       const cards = rawItems.map(item => {
         // Extract fields
         const headlineMatch = item.match(/(?:\d+\.\s*)?(?:\*{0,2}Headline:?\*{0,2}\s*)(.+?)(?:\n|$)/i);
@@ -389,9 +463,15 @@
 
         if (!headline) return '';
 
+        const tags = formatToTags(format);
+        const tagBadges = tags.map(t =>
+          `<span class="text-xs font-semibold px-2 py-0.5 rounded-full ${formatBadgeColor(t)}">${t}</span>`
+        ).join('');
+
         return `
-          <div class="bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-md transition-shadow flex flex-col gap-3">
-            ${format ? `<span class="self-start text-xs font-semibold px-2 py-0.5 rounded-full ${formatBadgeColor(format)}">${format}</span>` : ''}
+          <div class="blog-card bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-md transition-shadow flex flex-col gap-3"
+               data-tags="${tags.join('|')}">
+            ${tagBadges ? `<div class="flex flex-wrap gap-1">${tagBadges}</div>` : ''}
             <h3 class="font-bold text-base text-gray-800 leading-snug">${headline}</h3>
             ${summary ? `<p class="text-sm text-gray-600 leading-relaxed">${summary}</p>` : ''}
             ${pain ? `<p class="text-xs text-gray-400"><span class="font-medium">Pain point:</span> ${pain}</p>` : ''}
@@ -399,7 +479,7 @@
           </div>`;
       }).filter(c => c).join('');
 
-      container.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 gap-5">${cards}</div>`;
+      container.innerHTML = `<div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5">${cards}</div>`;
     }
 
     // ── Main loader ───────────────────────────────────────────────────────────
