@@ -153,24 +153,69 @@
       });
     }
 
-    // ── Shared text utilities ─────────────────────────────────────────────────
+    // ════════════════════════════════════════════════════════════════════════
+    // PARSING UTILITIES
+    // Works with any Claude/Gemini markdown output regardless of prefix style
+    // (#, ##, ###, **, *) or whether labels are wrapped in ** or not.
+    // ════════════════════════════════════════════════════════════════════════
 
-    // Strip markdown bold/italic/bullet markers and convert **bold** to <strong>
-    function cleanText(text) {
-      return text
+    // Convert **bold** → <strong>, strip leading bullet/dash markers
+    function mdToHtml(line) {
+      return line
+        .replace(/^\s*[\*\-]\s*/g, '')           // strip bullet prefix
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/^\s*\*{1,2}\s+/gm, '')
-        .replace(/^\s*•\s+/gm, '');
+        .trim();
     }
 
-    // Strip any leading markdown prefix (#, ##, ###, **, *) from a line
-    function stripPrefix(line) {
-      return line.replace(/^(?:\*{1,2}|#{1,3})\s*/, '').replace(/\*+$/, '').trim();
+    // Strip ALL markdown prefix chars from the start/end of a line
+    function stripMd(line) {
+      return line.replace(/^[\*#\s]+/, '').replace(/[\*]+$/, '').trim();
     }
 
-    // ── Inline Post N reference → button ─────────────────────────────────────
+    // Is this line a structural separator (---, ─── etc.)?
+    function isSeparator(line) {
+      return /^[\-─*=]{3,}\s*$/.test(line.trim());
+    }
 
-    // isComment: true adds a * suffix (Post 9*)
+    // Is this line ONLY asterisks / empty after stripping bullets?
+    function isJunk(line) {
+      const s = line.trim();
+      return !s || /^\*+$/.test(s) || isSeparator(s);
+    }
+
+    // Extract value from "**Label:** value" or "Label: value" (any ** wrapping)
+    function getField(block, labelPattern) {
+      const re = new RegExp(`\\*{0,2}${labelPattern}\\*{0,2}\\s*(.+?)(?:\\n|$)`, 'i');
+      const m  = block.match(re);
+      return m ? stripMd(m[1]) : '';
+    }
+
+    // ── Section splitter ─────────────────────────────────────────────────────
+    // Finds "SECTION 2" and "SECTION 3" regardless of any prefix
+
+    function parseReport(text) {
+      const sections = { analysis: '', blog: '' };
+      if (!text) return sections;
+
+      // Match SECTION N at start of a line with any markdown prefix
+      const findSection = (n) => {
+        const m = text.match(new RegExp(`^[\\*#\\s]*SECTION\\s+${n}[^\\n]*`, 'im'));
+        return m ? m.index : -1;
+      };
+
+      const s2 = findSection(2);
+      const s3 = findSection(3);
+
+      if (s2 !== -1 && s3 !== -1) sections.analysis = text.slice(s2, s3).trim();
+      else if (s2 !== -1)          sections.analysis = text.slice(s2).trim();
+      if (s3 !== -1)               sections.blog     = text.slice(s3).trim();
+
+      return sections;
+    }
+
+    // ── Post reference buttons ────────────────────────────────────────────────
+
+    // "(Post 9)" / "(Post 9, comment)" / "(Post 47, Post 57)" / "(Post 47, 57)"
     function postButton(num, isComment) {
       const label = `Post ${num}${isComment ? '*' : ''}`;
       return `<button onclick="goToPost(${num})"
@@ -179,8 +224,7 @@
       </button>`;
     }
 
-    // Converts "(Post 47)" / "(Post 47, Post 57)" / "(Post 47, 57)" / "(Post 9, comment)" to buttons.
-    // "(Post 9, comment)" → Post 9* button (asterisk indicates it came from a comment)
+    // Replace all (Post …) references in a text string with buttons
     function linkPostRefs(text) {
       return text.replace(/\(Post[^)]+\)/gi, (match) => {
         const nums = [...match.matchAll(/\b(\d+)\b/g)].map(m => m[1]);
@@ -188,24 +232,6 @@
         const isComment = /\bcomment\b/i.test(match);
         return nums.map(n => postButton(n, isComment)).join(' ');
       });
-    }
-
-    // ── Section splitter ─────────────────────────────────────────────────────
-    // Handles: **SECTION 2: ...  /  ## SECTION 2: ...  /  # SECTION 2: ...
-
-    function parseReport(text) {
-      const sections = { analysis: '', blog: '' };
-      if (!text) return sections;
-
-      const sectionRe = (n) => new RegExp(`^(?:\\*{1,2}|#{1,3})\\s*SECTION\\s+${n}[:\\s]`, 'im');
-      const s2 = text.search(sectionRe(2));
-      const s3 = text.search(sectionRe(3));
-
-      if (s2 !== -1 && s3 !== -1) sections.analysis = text.slice(s2, s3).trim();
-      else if (s2 !== -1)          sections.analysis = text.slice(s2).trim();
-      if (s3 !== -1)               sections.blog     = text.slice(s3).trim();
-
-      return sections;
     }
 
     // ── Generic filter pill builder ───────────────────────────────────────────
@@ -300,97 +326,91 @@
     }
 
     // ── Render Pain Point Analysis ────────────────────────────────────────────
+    // Structure: Theme → Pain Points (bullet list) → Paraphrased Examples (bullet list)
 
-    function renderAnalysis(text, posts) {
+    function renderAnalysis(text) {
       const container = document.getElementById('analysis-content');
       if (!text) {
         container.innerHTML = '<p class="text-on-surface-variant text-center py-10">No analysis available.</p>';
         return;
       }
 
-      // Strip the section header line (any prefix style)
-      const bodyText = text.replace(/^(?:\*{1,2}|#{1,3})\s*SECTION\s+\d+[^\n]*\n*/im, '').trim();
+      // Drop the section header line, then split into theme blocks.
+      // A theme block starts with a line containing "Theme:" (any prefix).
+      const body = text.replace(/^[^\n]*SECTION[^\n]*\n*/i, '').trim();
+      const themeRe = /^[\*#\s]*Theme\s*\d*\s*:/im;
 
-      // Split on any line that starts a Theme (with any markdown prefix)
-      const rawThemes = bodyText
-        .split(/\n(?=(?:\*{0,2}|#{0,3})\s*Theme\s*\d*\s*:)/i)
-        .filter(s => s.trim() && /Theme\s*\d*\s*:/i.test(s));
+      // Find all theme start positions
+      const themeStarts = [];
+      let search = body;
+      let offset = 0;
+      let m;
+      const re = new RegExp(themeRe.source, 'gim');
+      while ((m = re.exec(body)) !== null) themeStarts.push(m.index);
 
-      if (!rawThemes.length) {
-        container.innerHTML = `
-          <div class="bg-white rounded-2xl border border-outline-variant/15 p-6">
-            <div class="text-sm text-on-surface leading-relaxed">${linkPostRefs(cleanText(bodyText))}</div>
-          </div>`;
+      if (!themeStarts.length) {
+        container.innerHTML = `<div class="bg-white rounded-2xl border border-outline-variant/15 p-6">
+          <div class="text-sm text-on-surface leading-relaxed">${linkPostRefs(mdToHtml(body))}</div></div>`;
         return;
       }
 
-      const cards = rawThemes.map(block => {
+      // Slice body into one block per theme
+      const blocks = themeStarts.map((start, i) =>
+        body.slice(start, themeStarts[i + 1] ?? body.length).trim()
+      );
+
+      const cards = blocks.map(block => {
         const lines = block.split('\n');
 
-        // Theme name: strip any prefix + "Theme X:" label + trailing **
-        const themeName = lines[0]
-          .replace(/^(?:\*{1,2}|#{1,3})\s*/g, '')
-          .replace(/^Theme\s*\d*\s*:\s*/i, '')
-          .replace(/\*+/g, '')
-          .trim();
+        // Line 0 is the Theme header
+        const themeName = stripMd(lines[0]).replace(/^Theme\s*\d*\s*:\s*/i, '').trim();
 
-        const rest = lines.slice(1).join('\n').trim();
+        // Find "Paraphrased … Examples" sub-header within the block
+        const exHeaderIdx = lines.findIndex((l, i) =>
+          i > 0 && /(?:paraphrased\s+)?(?:reddit|review)\s+examples?/i.test(l)
+        );
 
-        // Find the examples block (Paraphrased Reddit Examples / Review Examples)
-        const examplesIdx = rest.search(/(?:Paraphrased\s+)?(?:Reddit|Review)\s+Examples?/i);
-        let painHtml = '';
-        let examplesHtml = '';
+        let painLines = [], exampleLines = [];
 
-        if (examplesIdx !== -1) {
-          const painRaw = rest.slice(0, examplesIdx).trim();
-          const examplesRaw = rest.slice(examplesIdx).trim();
+        if (exHeaderIdx !== -1) {
+          // Everything between theme header and examples header = pain points
+          painLines = lines.slice(1, exHeaderIdx)
+            .map(mdToHtml)
+            .filter(l => !isJunk(l) && !/^(?:Pain Points?|Key Points?)\s*:?\s*$/i.test(l));
 
-          // Pain point lines: skip label-only lines and separator lines
-          const painLines = painRaw.split('\n')
-            .map(l => l.replace(/^\s*[\*\-]\s*/g, '').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').trim())
-            .filter(l => l && !/^(?:Pain Points?|Key Points?)\s*:?\s*$/i.test(l) && !/^\*+$/.test(l) && !/^[-─]{2,}$/.test(l));
-
-          painHtml = painLines.length ? `
-            <ul class="space-y-2 mb-4">
-              ${painLines.map(l => `<li class="flex gap-2 text-sm text-on-surface"><span class="shrink-0 mt-0.5" style="color:rgba(255,69,0,0.7)">▸</span><span>${l}</span></li>`).join('')}
-            </ul>` : '';
-
-          const exampleLines = examplesRaw.split('\n')
-            .slice(1) // skip the "Paraphrased Reddit Examples:" header line
+          // Everything after the examples header = example quotes
+          exampleLines = lines.slice(exHeaderIdx + 1)
             .map(l => l.replace(/^\s*[\*\-]\s*/g, '').trim())
-            .filter(l => l && !/^[-─]{2,}$/.test(l));
-
-          examplesHtml = exampleLines.length ? `
-            <div class="border-t border-outline-variant/10 pt-4 mt-2">
-              <p class="text-xs font-semibold text-on-surface-variant uppercase tracking-wide mb-3">Paraphrased Reddit Examples</p>
-              <div class="space-y-2">
-                ${exampleLines.map(l => `
-                  <div class="flex gap-2 text-sm text-on-surface bg-surface-container-low rounded-lg px-3 py-2">
-                    <span class="text-outline-variant shrink-0">"</span>
-                    <span>${linkPostRefs(l.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'))}</span>
-                  </div>`).join('')}
-              </div>
-            </div>` : '';
-
+            .filter(l => !isJunk(l));
         } else {
-          const allLines = rest.split('\n')
-            .map(l => l.replace(/^\s*[\*\-]\s*/g, '').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').trim())
-            .filter(l => l && !/^[-─]{2,}$/.test(l));
-
-          painHtml = allLines.length ? `
-            <ul class="space-y-2">
-              ${allLines.map(l => `<li class="flex gap-2 text-sm text-on-surface"><span class="shrink-0 mt-0.5" style="color:rgba(255,69,0,0.7)">▸</span><span>${l}</span></li>`).join('')}
-            </ul>` : '';
+          painLines = lines.slice(1)
+            .map(mdToHtml)
+            .filter(l => !isJunk(l) && !/^(?:Pain Points?|Key Points?)\s*:?\s*$/i.test(l));
         }
+
+        const painHtml = painLines.length ? `
+          <ul class="space-y-2 mb-4">
+            ${painLines.map(l => `<li class="flex gap-2 text-sm text-on-surface"><span class="shrink-0 mt-0.5" style="color:rgba(255,69,0,0.7)">▸</span><span>${l}</span></li>`).join('')}
+          </ul>` : '';
+
+        const examplesHtml = exampleLines.length ? `
+          <div class="border-t border-outline-variant/10 pt-4 mt-2">
+            <p class="text-xs font-semibold text-on-surface-variant uppercase tracking-wide mb-3">Paraphrased Reddit Examples</p>
+            <div class="space-y-2">
+              ${exampleLines.map(l => `
+                <div class="flex gap-2 text-sm text-on-surface bg-surface-container-low rounded-lg px-3 py-2">
+                  <span class="text-outline-variant shrink-0">"</span>
+                  <span>${linkPostRefs(l.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'))}</span>
+                </div>`).join('')}
+            </div>
+          </div>` : '';
 
         return `
           <div class="bg-white rounded-2xl border border-outline-variant/15 p-6 hover:shadow-md transition-shadow">
             <h3 class="font-bold text-base text-on-surface mb-4 flex items-start gap-2">
-              <span class="shrink-0 mt-0.5" style="color:#FF4500">●</span>
-              ${themeName}
+              <span class="shrink-0 mt-0.5" style="color:#FF4500">●</span>${themeName}
             </h3>
-            ${painHtml}
-            ${examplesHtml}
+            ${painHtml}${examplesHtml}
           </div>`;
       }).join('');
 
@@ -398,6 +418,7 @@
     }
 
     // ── Render Blog Ideas ─────────────────────────────────────────────────────
+    // Structure: **N. Title** → **Format:** → **Brief Summary:** → **Source Posts:**
 
     function renderBlog(text, posts) {
       const container = document.getElementById('blog-content');
@@ -406,17 +427,22 @@
         return;
       }
 
-      const bodyText = text.replace(/^(?:\*{1,2}|#{1,3})\s*SECTION\s+\d+[^\n]*\n*/im, '').trim();
-      // Split on numbered items (any prefix + digit + dot) or Headline: label
-      // Split on lines starting a numbered item (**N. or N.) or Headline:
-      const rawItems = bodyText
-        .split(/\n(?=(?:\*{0,2}|#{0,3})\s*\d+\.|(?:\*{0,2})Headline:)/i)
-        .filter(s => s.trim() && /(?:^(?:\*{0,2}|#{0,3})\s*\d+\.|Headline:)/im.test(s));
+      const body = text.replace(/^[^\n]*SECTION[^\n]*\n*/i, '').trim();
 
-      if (!rawItems.length) {
+      // Find positions of all numbered item headers (any markdown prefix + digit + dot)
+      const itemRe = /^[\*#\s]*\d+\./gim;
+      const itemStarts = [];
+      let im;
+      while ((im = itemRe.exec(body)) !== null) itemStarts.push(im.index);
+
+      if (!itemStarts.length) {
         container.innerHTML = '<p class="text-on-surface-variant text-center py-10">No blog ideas found.</p>';
         return;
       }
+
+      const rawItems = itemStarts.map((start, i) =>
+        body.slice(start, itemStarts[i + 1] ?? body.length).trim()
+      );
 
       const FORMAT_COLORS = {
         'how-to':     'bg-blue-50 text-blue-700',
@@ -428,69 +454,52 @@
         'default':    'bg-surface-container text-on-surface-variant',
       };
 
-      function formatBadgeColor(format) {
-        const f = (format || '').toLowerCase();
-        for (const [key, cls] of Object.entries(FORMAT_COLORS)) {
+      function formatBadgeColor(f) {
+        f = (f || '').toLowerCase();
+        for (const [key, cls] of Object.entries(FORMAT_COLORS))
           if (f.includes(key)) return cls;
-        }
         return FORMAT_COLORS.default;
       }
 
+      function formatToTags(format) {
+        return (format || '').split(/[\/,]/).map(t => t.trim()).filter(Boolean);
+      }
+
+      // Render "Source Posts: Post 9, Post 47" → buttons
       function renderSourcePosts(sourceStr) {
         if (!sourceStr) return '';
-        const clean = sourceStr.replace(/\*+/g, '').trim();
-
-        function postBtn(num) { return postButton(num, false); }
-
-        // Extract all digits from any "Post N" / "Posts N, M" pattern
-        const linked = clean.replace(/Posts?\s+([\d][,\d\s]*)/gi, (match, numStr) => {
-          const nums = numStr.split(',').map(s => s.trim()).filter(s => /^\d+$/.test(s));
-          return nums.map(n => postBtn(n)).join('');
-        });
-
-        return `
-          <div class="border-t border-outline-variant/10 pt-3 mt-3">
-            <span class="text-xs text-on-surface-variant font-medium mr-2">Source posts:</span>${linked}
-          </div>`;
-      }
-
-      function formatToTags(format) {
-        if (!format) return [];
-        return format.split(/[\/,]/).map(t => t.trim()).filter(Boolean);
-      }
-
-      // Generic field extractor: finds "Label: value" regardless of surrounding ** markers
-      function field(item, labelRe) {
-        const m = item.match(new RegExp(`(?:\\*{0,2})${labelRe}(?:\\*{0,2})\\s*(.+?)(?:\\n|$)`, 'i'));
-        return m ? m[1].replace(/\*+/g, '').trim() : '';
+        const linked = sourceStr.replace(/Posts?\s+([\d][,\d\s]*)/gi, (_, numStr) =>
+          numStr.split(',').map(s => s.trim()).filter(s => /^\d+$/.test(s))
+            .map(n => postButton(n, false)).join('')
+        );
+        return `<div class="border-t border-outline-variant/10 pt-3 mt-3">
+          <span class="text-xs text-on-surface-variant font-medium mr-2">Source posts:</span>${linked}
+        </div>`;
       }
 
       const cards = rawItems.map(item => {
-        // Headline: "**N. Title**" or "**Headline:** Title" or "Headline: Title"
-        const numHeadline = item.match(/^(?:\*{0,2}|#{0,3})\s*\d+\.\s+(.+?)(?:\*{0,2})\s*$/m);
-        const kwHeadline  = item.match(/(?:\*{0,2})Headline:?(?:\*{0,2})\s*(.+?)(?:\n|$)/i);
-        const headline = (kwHeadline || numHeadline)
-          ? (kwHeadline ? kwHeadline[1] : numHeadline[1]).replace(/\*+/g, '').trim()
-          : '';
+        const lines = item.split('\n');
 
-        const format = field(item, 'Format:');
-        const pain   = field(item, '(?:Mapped Pain|Pain Point|Addresses):');
-        const source = field(item, 'Source Posts?:');
+        // Line 0: "**N. Title**" — strip number, prefix, trailing **
+        const headline = stripMd(lines[0]).replace(/^\d+\.\s*/, '').trim();
+        if (!headline) return '';
 
-        // Summary: from "Brief Summary:" to "Source Posts?:" (or end)
-        const summaryIdx    = item.search(/(?:\*{0,2})Brief Summary:(?:\*{0,2})/i);
-        const sourceLineIdx = item.search(/\n\s*(?:\*{0,2})Source Posts?:/i);
+        // Extract labelled fields — handles ** wrapping or plain text
+        const format  = getField(item, 'Format:');
+        const source  = getField(item, 'Source Posts?:');
+
+        // Brief Summary: everything from "Brief Summary:" up to "Source Posts:" or end
+        const sumStart = item.search(/\*{0,2}Brief Summary:\*{0,2}/i);
+        const srcStart = item.search(/\n\s*\*{0,2}Source Posts?:/i);
         let summary = '';
-        if (summaryIdx !== -1) {
-          const end = sourceLineIdx !== -1 ? sourceLineIdx : item.length;
-          summary = item.slice(summaryIdx, end)
-            .replace(/^(?:\*{0,2})Brief Summary:(?:\*{0,2})\s*/i, '')
+        if (sumStart !== -1) {
+          const end = srcStart !== -1 ? srcStart : item.length;
+          summary = item.slice(sumStart, end)
+            .replace(/^\*{0,2}Brief Summary:\*{0,2}\s*/i, '')
             .replace(/^\s*[\*\-]\s*/gm, '')
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
             .trim();
         }
-
-        if (!headline) return '';
 
         const tags = formatToTags(format);
         const tagBadges = tags.map(t =>
@@ -503,7 +512,6 @@
             ${tagBadges ? `<div class="flex flex-wrap gap-1">${tagBadges}</div>` : ''}
             <h3 class="font-bold text-base text-on-surface leading-snug">${headline}</h3>
             ${summary ? `<p class="text-sm text-on-surface-variant leading-relaxed">${summary}</p>` : ''}
-            ${pain ? `<p class="text-xs text-on-surface-variant"><span class="font-medium">Pain point:</span> ${pain}</p>` : ''}
             ${renderSourcePosts(source)}
           </div>`;
       }).filter(c => c).join('');
@@ -511,10 +519,7 @@
       container.innerHTML = `<div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">${cards}</div>`;
 
       const allTags = [...new Set(
-        rawItems.flatMap(item => {
-          const m = item.match(/Format:\s*(.+?)(?:\n|$)/i);
-          return m ? formatToTags(m[1].replace(/\*+/g, '')) : [];
-        })
+        rawItems.flatMap(item => formatToTags(getField(item, 'Format:')))
       )].sort();
 
       buildFilterPills('blog-filter', allTags, (active) => {
