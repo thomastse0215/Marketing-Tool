@@ -345,10 +345,10 @@
           const painRaw = rest.slice(0, examplesIdx).trim();
           const examplesRaw = rest.slice(examplesIdx).trim();
 
-          // Pain point lines: skip label-only lines like "Pain Points:"
+          // Pain point lines: skip label-only lines and separator lines
           const painLines = painRaw.split('\n')
             .map(l => l.replace(/^\s*[\*\-]\s*/g, '').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').trim())
-            .filter(l => l && !/^(?:Pain Points?|Key Points?)\s*:?\s*$/i.test(l));
+            .filter(l => l && !/^(?:Pain Points?|Key Points?)\s*:?\s*$/i.test(l) && !/^\*+$/.test(l) && !/^[-─]{2,}$/.test(l));
 
           painHtml = painLines.length ? `
             <ul class="space-y-2 mb-4">
@@ -408,9 +408,10 @@
 
       const bodyText = text.replace(/^(?:\*{1,2}|#{1,3})\s*SECTION\s+\d+[^\n]*\n*/im, '').trim();
       // Split on numbered items (any prefix + digit + dot) or Headline: label
+      // Split on lines starting a numbered item (**N. or N.) or Headline:
       const rawItems = bodyText
-        .split(/\n(?=(?:\*{0,2}|#{0,3})\s*\d+\.\s|(?:\*{0,2})Headline:)/i)
-        .filter(s => s.trim() && /(?:^\s*\d+\.\s|Headline:)/im.test(s));
+        .split(/\n(?=(?:\*{0,2}|#{0,3})\s*\d+\.|(?:\*{0,2})Headline:)/i)
+        .filter(s => s.trim() && /(?:^(?:\*{0,2}|#{0,3})\s*\d+\.|Headline:)/im.test(s));
 
       if (!rawItems.length) {
         container.innerHTML = '<p class="text-on-surface-variant text-center py-10">No blog ideas found.</p>';
