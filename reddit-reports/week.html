@@ -381,7 +381,7 @@
           // Everything after the examples header = example quotes
           exampleLines = lines.slice(exHeaderIdx + 1)
             .map(l => l.replace(/^\s*[\*\-]\s*/g, '').trim())
-            .filter(l => !isJunk(l));
+            .filter(l => !isJunk(l) && !/^-+$/.test(l));
         } else {
           painLines = lines.slice(1)
             .map(mdToHtml)
@@ -470,9 +470,9 @@
         if (!sourceStr) return '';
         const linked = sourceStr.replace(/Posts?\s+([\d][,\d\s]*)/gi, (_, numStr) =>
           numStr.split(',').map(s => s.trim()).filter(s => /^\d+$/.test(s))
-            .map(n => postButton(n, false)).join('')
+            .map(n => postButton(n, false)).join(' ')
         );
-        return `<div class="border-t border-outline-variant/10 pt-3 mt-3">
+        return `<div class="border-t border-outline-variant/10 pt-3 mt-auto">
           <span class="text-xs text-on-surface-variant font-medium mr-2">Source posts:</span>${linked}
         </div>`;
       }
