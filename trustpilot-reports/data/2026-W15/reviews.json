@@ -1,18 +1,78 @@
 {
   "metadata": {
-    "last_updated": "2026-04-08T09:49:56.939023+00:00",
-    "total_reviews": 31,
+    "last_updated": "2026-04-09T04:34:53.673635+00:00",
+    "total_reviews": 35,
     "scraper_version": "2.0",
     "companies_scraped": [
-      "dragonflyshipping.nl",
-      "myus.com",
+      "www.easyship.com",
       "dragonflyshipping.ca",
       "shipbob.com",
-      "www.sendcloud.com",
-      "www.easyship.com"
+      "dragonflyshipping.nl",
+      "myus.com",
+      "www.sendcloud.com"
     ]
   },
   "reviews": [
+    {
+      "review_id": "69d6db484fc49bb0152467be",
+      "company": "www.easyship.com",
+      "author": "Ruby Lou",
+      "rating": 1,
+      "title": "This is a scam company",
+      "text": "This is a scam company. There is no one phone number to contact, they won't refund unused credit, they won't delete card information, and they require your ID to make purchases. Why would a shipping platform ever need the details on my driver's license? That's absolutely ridiculous. ",
+      "date": "2026-04-09T00:48:40.000Z",
+      "url": "https://www.trustpilot.com/reviews/69d6db484fc49bb0152467be",
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "suggested_angle": null
+    },
+    {
+      "review_id": "69d6b6ddd9d60f23e9fc63d4",
+      "company": "dragonflyshipping.ca",
+      "author": "Christopher Cronk",
+      "rating": 4,
+      "title": "The package was delivered…",
+      "text": "The package was delivered SILENTLY!!!!!!!!!!!",
+      "date": "2026-04-08T22:13:17.000Z",
+      "url": "https://www.trustpilot.com/reviews/69d6b6ddd9d60f23e9fc63d4",
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "suggested_angle": null
+    },
+    {
+      "review_id": "69d6b5dfe2956b6276d16530",
+      "company": "myus.com",
+      "author": "Long West",
+      "rating": 1,
+      "title": "Fraudulent charge",
+      "text": "Fraudulent charge. I closed my myUS account a long time ago. Last night in the middle of the night I received a notification that a package had been delivered for me, and I needed to re-open my account to see what it was. I chose the FREE option. They required a $1 credit card confirmation charge, which I paid. Then I saw the package WAS NOT FOR ME. And thought nothing more of it. When I woke up the next morning, they had charged me a further $20. I would like to confirm that I did not authorise any payments, request any services or even ship any packages. How and why they could charge me anything, is beyond me. In any case, I have disputed this as a fraudulent transaction with my bank.",
+      "date": "2026-04-08T22:09:03.000Z",
+      "url": "https://www.trustpilot.com/reviews/69d6b5dfe2956b6276d16530",
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "suggested_angle": null
+    },
+    {
+      "review_id": "69d64d1c5eb2d08b877f36ce",
+      "company": "dragonflyshipping.ca",
+      "author": "Klaartje Zegtwat",
+      "rating": 1,
+      "title": "No attention to instructions provided for delivery.",
+      "text": "Invariably, deliveries are made after business hours, despite ample indication in the instructions about the (standard!) business hours for accepting deliveries.  Every time I order, I already know I will have to sit through multiple emails that tell me \"we attempted to deliver but the business was closed!\".  Very frustrating.",
+      "date": "2026-04-08T14:42:04.000Z",
+      "url": "https://www.trustpilot.com/reviews/69d64d1c5eb2d08b877f36ce",
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "suggested_angle": null
+    },
     {
       "review_id": "69d56065eb0fa4ffff1c9c10",
       "company": "dragonflyshipping.ca",
