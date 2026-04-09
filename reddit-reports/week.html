@@ -422,24 +422,18 @@
       function renderSourcePosts(sourceStr, posts) {
         if (!sourceStr) return '';
         const clean = sourceStr.replace(/\*+/g, '').trim();
-        // Only link to posts if the posts array matches the report numbering
-        // (i.e. posts.json contains exactly the analyzed posts in order).
-        // If posts.json has more posts than the report references, skip navigation
-        // to avoid linking to the wrong post.
-        const maxRefNum = Math.max(0, ...[...clean.matchAll(/Post\s+(\d+)/gi)].map(m => parseInt(m[1])));
-        const canNav = posts.length <= maxRefNum + 2; // posts.json is small enough to trust numbering
         const linked = clean
           .replace(/Post\s+(\d+)/gi, (match, num) => {
-            const idx = parseInt(num) - 1;
-            if (canNav && posts[idx]) {
+            const post = posts[parseInt(num) - 1];
+            if (post) {
               return `<button onclick="goToPost(${num})"
                 style="color:#FF4500;background:rgba(255,69,0,0.09)" class="group inline-flex items-center gap-1 font-semibold text-xs px-2 py-0.5 rounded-full transition-colors mr-1 cursor-pointer hover:opacity-80">
                 Post ${num} <span class="material-symbols-outlined transition-transform group-hover:rotate-45" style="font-size:12px;line-height:1">north_east</span>
               </button>`;
             }
-            return `<span style="color:#FF4500;background:rgba(255,69,0,0.09)" class="inline-flex items-center font-semibold text-xs px-2 py-0.5 rounded-full mr-1">Post ${num}</span>`;
+            return match;
           })
-          .replace(/,\s*(?=<(?:button|span))/g, ' ');
+          .replace(/,\s*(?=<button)/g, ' ');
         return `
           <div class="border-t border-outline-variant/10 pt-3 mt-3">
             <span class="text-xs text-on-surface-variant font-medium mr-2">Source posts:</span>${linked}
