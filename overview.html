@@ -6,6 +6,7 @@
   <title>Intelligence Reports — MarketingAI</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -44,6 +45,11 @@
     .editorial-tight { letter-spacing: -0.04em; }
     .tag-p  { background: rgba(98, 0, 238, 0.08);  color: #6200EE; }
     .tag-s  { background: rgba(0, 200, 220, 0.12); color: #007a87; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; line-height: 1; vertical-align: middle; display: inline-block; }
+    .ms-sm { font-size: 16px; }
+    .ms-md { font-size: 24px; }
+    .ms-lg { font-size: 30px; }
+    .ms-xl { font-size: 48px; }
   </style>
 </head>
 <body class="min-h-screen">
@@ -131,7 +137,7 @@
         <a href="trustpilot-reports/index.html"
            class="group block bg-white rounded-2xl p-8 border border-outline-variant/15 hover:border-primary/30 hover:shadow-[0_8px_48px_rgba(98,0,238,0.10)] transition-all duration-300 cursor-pointer">
           <div class="flex items-start justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(98,0,238,0.08)">⭐</div>
+            <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background:rgba(98,0,238,0.08)"><span class="material-symbols-outlined ms-lg" style="color:#6200EE">star</span></div>
             <span class="text-xs font-bold uppercase tracking-[0.15em] px-3 py-1 rounded-full tag-p">Reviews</span>
           </div>
           <h3 class="text-2xl font-headline font-bold editorial-tight text-on-surface mb-3 group-hover:text-primary transition-colors duration-200">
@@ -141,9 +147,9 @@
             Weekly scrapes from competitor Trustpilot pages. Each report surfaces raw reviews, grouped pain points, and ready-to-use blog ideas — all analyzed by Gemini AI.
           </p>
           <div class="flex flex-wrap gap-2 mb-8">
-            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium">⭐ Raw Reviews</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium">🔍 Pain Points</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium">✍️ Blog Ideas</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium inline-flex items-center gap-1"><span class="material-symbols-outlined ms-sm">rate_review</span> Raw Reviews</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium inline-flex items-center gap-1"><span class="material-symbols-outlined ms-sm">troubleshoot</span> Pain Points</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium inline-flex items-center gap-1"><span class="material-symbols-outlined ms-sm">edit_note</span> Blog Ideas</span>
           </div>
           <div class="flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all duration-200">
             View Reports <span>→</span>
@@ -154,7 +160,7 @@
         <a href="weekly-reports/index.html"
            class="group block bg-white rounded-2xl p-8 border border-outline-variant/15 hover:border-secondary/40 hover:shadow-[0_8px_48px_rgba(0,200,220,0.10)] transition-all duration-300 cursor-pointer">
           <div class="flex items-start justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(0,200,220,0.12)">📊</div>
+            <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background:rgba(0,200,220,0.12)"><span class="material-symbols-outlined ms-lg" style="color:#007a87">forum</span></div>
             <span class="text-xs font-bold uppercase tracking-[0.15em] px-3 py-1 rounded-full tag-s">Community</span>
           </div>
           <h3 class="text-2xl font-headline font-bold editorial-tight text-on-surface mb-3 group-hover:text-[#007a87] transition-colors duration-200">
@@ -164,9 +170,9 @@
             Weekly scrapes from ecommerce & logistics subreddits. Each report maps community frustrations, extracts recurring themes, and generates content angles from real customer voices.
           </p>
           <div class="flex flex-wrap gap-2 mb-8">
-            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium">📋 Reddit Posts</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium">🔍 Pain Points</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium">✍️ Blog Ideas</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium inline-flex items-center gap-1"><span class="material-symbols-outlined ms-sm">article</span> Reddit Posts</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium inline-flex items-center gap-1"><span class="material-symbols-outlined ms-sm">troubleshoot</span> Pain Points</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium inline-flex items-center gap-1"><span class="material-symbols-outlined ms-sm">edit_note</span> Blog Ideas</span>
           </div>
           <div class="flex items-center gap-2 text-[#007a87] font-semibold text-sm group-hover:gap-3 transition-all duration-200">
             View Reports <span>→</span>
