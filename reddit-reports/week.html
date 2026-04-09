@@ -170,19 +170,23 @@
 
     // ── Inline Post N reference → button ─────────────────────────────────────
 
-    function postButton(num) {
+    // isComment: true adds a * suffix (Post 9*)
+    function postButton(num, isComment) {
+      const label = `Post ${num}${isComment ? '*' : ''}`;
       return `<button onclick="goToPost(${num})"
         style="color:#FF4500;background:rgba(255,69,0,0.09)" class="group inline-flex items-center gap-1 font-semibold text-xs px-2 py-0.5 rounded-full transition-colors cursor-pointer hover:opacity-80">
-        Post ${num} <span class="material-symbols-outlined transition-transform group-hover:rotate-45" style="font-size:12px;line-height:1">north_east</span>
+        ${label} <span class="material-symbols-outlined transition-transform group-hover:rotate-45" style="font-size:12px;line-height:1">north_east</span>
       </button>`;
     }
 
-    // Converts inline "(Post 47)" / "(Post 47, Post 57)" / "(Post 47, 57)" / "(Post 9, comment)" to buttons
+    // Converts "(Post 47)" / "(Post 47, Post 57)" / "(Post 47, 57)" / "(Post 9, comment)" to buttons.
+    // "(Post 9, comment)" → Post 9* button (asterisk indicates it came from a comment)
     function linkPostRefs(text) {
       return text.replace(/\(Post[^)]+\)/gi, (match) => {
         const nums = [...match.matchAll(/\b(\d+)\b/g)].map(m => m[1]);
         if (!nums.length) return match;
-        return nums.map(n => postButton(n)).join(' ');
+        const isComment = /\bcomment\b/i.test(match);
+        return nums.map(n => postButton(n, isComment)).join(' ');
       });
     }
 
@@ -435,12 +439,7 @@
         if (!sourceStr) return '';
         const clean = sourceStr.replace(/\*+/g, '').trim();
 
-        function postBtn(num) {
-          return `<button onclick="goToPost(${num})"
-            style="color:#FF4500;background:rgba(255,69,0,0.09)" class="group inline-flex items-center gap-1 font-semibold text-xs px-2 py-0.5 rounded-full transition-colors mr-1 cursor-pointer hover:opacity-80">
-            Post ${num} <span class="material-symbols-outlined transition-transform group-hover:rotate-45" style="font-size:12px;line-height:1">north_east</span>
-          </button>`;
-        }
+        function postBtn(num) { return postButton(num, false); }
 
         // Extract all digits from any "Post N" / "Posts N, M" pattern
         const linked = clean.replace(/Posts?\s+([\d][,\d\s]*)/gi, (match, numStr) => {
