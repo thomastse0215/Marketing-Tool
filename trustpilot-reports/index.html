@@ -54,11 +54,21 @@
 <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-outline-variant/10">
   <div class="flex items-center justify-between px-6 sm:px-8 py-4 max-w-7xl mx-auto">
     <a href="../index.html" class="text-xl font-black tracking-tighter text-[#6a1cf6] font-headline">Marketing<span class="text-[#00C8DC]">AI</span></a>
-    <!-- Breadcrumb -->
+    <!-- Breadcrumb + Dropdown -->
     <nav class="flex items-center gap-2 text-sm text-on-surface-variant" aria-label="Breadcrumb">
       <a href="../index.html" class="hover:text-primary transition-colors duration-200">Home</a>
       <span class="text-outline-variant">›</span>
-      <a href="../Social-Listening-Digest.html" class="hover:text-primary transition-colors duration-200">Reports</a>
+      <div class="relative group">
+        <a href="../Social-Listening-Digest.html" class="flex items-center gap-0.5 hover:text-primary transition-colors duration-200">Social Listening Digest <span class="material-symbols-outlined" style="font-size:14px;line-height:1;vertical-align:middle">expand_more</span></a>
+        <div class="absolute right-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div class="bg-white rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-outline-variant/15 overflow-hidden min-w-[210px]">
+            <a href="../Social-Listening-Digest.html" class="flex items-center gap-3 px-4 py-3 text-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined" style="font-size:16px;color:#6200EE">view_list</span>All Reports</a>
+            <div class="h-px bg-outline-variant/10 mx-4"></div>
+            <a href="../trustpilot-reports/index.html" class="flex items-center gap-3 px-4 py-3 text-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><img src="https://cdn.simpleicons.org/trustpilot/00b67a" class="w-4 h-4" alt="">Trustpilot Reports</a>
+            <a href="../reddit-reports/index.html" class="flex items-center gap-3 px-4 py-3 text-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><img src="https://cdn.simpleicons.org/reddit/FF4500" class="w-4 h-4" alt="">Reddit Reports</a>
+          </div>
+        </div>
+      </div>
       <span class="text-outline-variant">›</span>
       <span class="text-on-surface font-semibold">Trustpilot</span>
     </nav>
