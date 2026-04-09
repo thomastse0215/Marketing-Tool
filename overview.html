@@ -43,8 +43,8 @@
     body { font-family: 'Inter', sans-serif; color: #272e42; line-height: 1.6; }
     h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.15; }
     .editorial-tight { letter-spacing: -0.04em; }
-    .tag-p  { background: rgba(98, 0, 238, 0.08);  color: #6200EE; }
-    .tag-s  { background: rgba(0, 200, 220, 0.12); color: #007a87; }
+    .tag-tp { background: rgba(0, 182, 122, 0.12);  color: #00874e; }
+    .tag-rd { background: rgba(255, 69, 0, 0.10);  color: #cc3700; }
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; line-height: 1; vertical-align: middle; display: inline-block; }
     .ms-sm { font-size: 16px; }
     .ms-md { font-size: 24px; }
@@ -135,12 +135,14 @@
 
         <!-- Trustpilot Card -->
         <a href="trustpilot-reports/index.html"
-           class="group block bg-white rounded-2xl p-8 border border-outline-variant/15 hover:border-primary/30 hover:shadow-[0_8px_48px_rgba(98,0,238,0.10)] transition-all duration-300 cursor-pointer">
+           class="group block bg-white rounded-2xl p-8 border border-outline-variant/15 hover:border-[#00b67a]/40 hover:shadow-[0_8px_48px_rgba(0,182,122,0.12)] transition-all duration-300 cursor-pointer">
           <div class="flex items-start justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background:rgba(98,0,238,0.08)"><span class="material-symbols-outlined ms-lg" style="color:#6200EE">star</span></div>
-            <span class="text-xs font-bold uppercase tracking-[0.15em] px-3 py-1 rounded-full tag-p">Reviews</span>
+            <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background:rgba(0,182,122,0.10)">
+              <img src="https://cdn.simpleicons.org/trustpilot/00b67a" alt="Trustpilot" class="w-8 h-8">
+            </div>
+            <span class="text-xs font-bold uppercase tracking-[0.15em] px-3 py-1 rounded-full tag-tp">Reviews</span>
           </div>
-          <h3 class="text-2xl font-headline font-bold editorial-tight text-on-surface mb-3 group-hover:text-primary transition-colors duration-200">
+          <h3 class="text-2xl font-headline font-bold editorial-tight text-on-surface mb-3 group-hover:text-[#00b67a] transition-colors duration-200">
             Trustpilot Review Reports
           </h3>
           <p class="text-on-surface-variant leading-relaxed mb-6">
@@ -151,19 +153,21 @@
             <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium inline-flex items-center gap-1"><span class="material-symbols-outlined ms-sm">troubleshoot</span> Pain Points</span>
             <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium inline-flex items-center gap-1"><span class="material-symbols-outlined ms-sm">edit_note</span> Blog Ideas</span>
           </div>
-          <div class="flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all duration-200">
+          <div class="flex items-center gap-2 font-semibold text-sm group-hover:gap-3 transition-all duration-200" style="color:#00b67a">
             View Reports <span>→</span>
           </div>
         </a>
 
         <!-- Reddit Card -->
         <a href="weekly-reports/index.html"
-           class="group block bg-white rounded-2xl p-8 border border-outline-variant/15 hover:border-secondary/40 hover:shadow-[0_8px_48px_rgba(0,200,220,0.10)] transition-all duration-300 cursor-pointer">
+           class="group block bg-white rounded-2xl p-8 border border-outline-variant/15 hover:border-[#FF4500]/40 hover:shadow-[0_8px_48px_rgba(255,69,0,0.12)] transition-all duration-300 cursor-pointer">
           <div class="flex items-start justify-between mb-6">
-            <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background:rgba(0,200,220,0.12)"><span class="material-symbols-outlined ms-lg" style="color:#007a87">forum</span></div>
-            <span class="text-xs font-bold uppercase tracking-[0.15em] px-3 py-1 rounded-full tag-s">Community</span>
+            <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background:rgba(255,69,0,0.08)">
+              <img src="https://cdn.simpleicons.org/reddit/FF4500" alt="Reddit" class="w-8 h-8">
+            </div>
+            <span class="text-xs font-bold uppercase tracking-[0.15em] px-3 py-1 rounded-full tag-rd">Community</span>
           </div>
-          <h3 class="text-2xl font-headline font-bold editorial-tight text-on-surface mb-3 group-hover:text-[#007a87] transition-colors duration-200">
+          <h3 class="text-2xl font-headline font-bold editorial-tight text-on-surface mb-3 group-hover:text-[#FF4500] transition-colors duration-200">
             Reddit Pain Point Reports
           </h3>
           <p class="text-on-surface-variant leading-relaxed mb-6">
@@ -174,7 +178,7 @@
             <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium inline-flex items-center gap-1"><span class="material-symbols-outlined ms-sm">troubleshoot</span> Pain Points</span>
             <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium inline-flex items-center gap-1"><span class="material-symbols-outlined ms-sm">edit_note</span> Blog Ideas</span>
           </div>
-          <div class="flex items-center gap-2 text-[#007a87] font-semibold text-sm group-hover:gap-3 transition-all duration-200">
+          <div class="flex items-center gap-2 font-semibold text-sm group-hover:gap-3 transition-all duration-200" style="color:#FF4500">
             View Reports <span>→</span>
           </div>
         </a>

@@ -70,13 +70,13 @@
   <!-- Page Hero -->
   <section class="px-6 sm:px-8 pt-16 pb-10">
     <div class="max-w-7xl mx-auto">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/20 mb-6">
-        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline-variant/20 mb-6" style="background:rgba(255,69,0,0.07)">
+        <span class="w-2 h-2 rounded-full animate-pulse" style="background:#FF4500"></span>
         <span class="text-xs font-bold uppercase tracking-[0.3em] text-on-surface-variant">Community Intelligence</span>
       </div>
       <h1 class="text-5xl md:text-6xl font-headline font-extrabold editorial-tight text-on-surface mb-4 leading-none">
         Reddit Pain<br>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-[#007a87]">Point Reports</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4500] to-[#cc3700]">Point Reports</span>
       </h1>
       <p class="text-lg text-on-surface-variant max-w-xl leading-relaxed">
         Weekly scrapes from ecommerce & logistics subreddits — analyzed by Gemini AI into customer pain themes and ready-to-use blog ideas.
@@ -132,12 +132,12 @@
         card.className = [
           'group block bg-white rounded-2xl p-6',
           'border border-outline-variant/15',
-          'hover:border-secondary/40 hover:shadow-[0_8px_48px_rgba(0,200,220,0.10)]',
+          'hover:border-[#FF4500]/40 hover:shadow-[0_8px_48px_rgba(255,69,0,0.12)]',
           'transition-all duration-300 cursor-pointer'
         ].join(' ');
 
         const badge = i === 0
-          ? '<span class="text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full" style="background:rgba(0,200,220,0.12);color:#007a87">Latest</span>'
+          ? '<span class="text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full" style="background:rgba(255,69,0,0.10);color:#cc3700">Latest</span>'
           : '';
 
         card.innerHTML = `
@@ -145,9 +145,9 @@
             <span class="text-xs font-mono text-on-surface-variant">${w.week}</span>
             ${badge}
           </div>
-          <h3 class="font-bold text-lg leading-tight mb-1 text-on-surface group-hover:text-[#007a87] transition-colors duration-200">${w.label}</h3>
+          <h3 class="font-bold text-lg leading-tight mb-1 text-on-surface group-hover:text-[#FF4500] transition-colors duration-200">${w.label}</h3>
           <p class="text-sm text-on-surface-variant mb-5">${w.date}</p>
-          <div class="flex items-center gap-1 text-sm font-semibold group-hover:gap-2 transition-all duration-200" style="color:#007a87">
+          <div class="flex items-center gap-1 text-sm font-semibold group-hover:gap-2 transition-all duration-200" style="color:#FF4500">
             View report <span>→</span>
           </div>
         `;
