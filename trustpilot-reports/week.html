@@ -214,7 +214,10 @@
     // "(Review 15 — 1 star)" / "(Review 15, 28)" / "(Review 15, Review 28)"
     function linkReviewRefs(text) {
       return text.replace(/\(Review[^)]+\)/gi, (match) => {
-        const nums = [...match.matchAll(/\b(\d+)\b/g)].map(m => m[1]);
+        // Strip star-rating suffixes (e.g. "— 1 star", "1 stars") before extracting digits
+        // so "Review 28 — 1 star" doesn't yield a spurious "Review 1" button
+        const cleaned = match.replace(/[\-–—\s]*\d+\s*stars?\b/gi, '');
+        const nums = [...cleaned.matchAll(/\b(\d+)\b/g)].map(m => m[1]);
         if (!nums.length) return match;
         return nums.map(n => reviewButton(n)).join(' ');
       });
