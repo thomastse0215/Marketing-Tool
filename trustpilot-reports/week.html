@@ -335,7 +335,7 @@
             .filter(l => !isJunk(l) && !/^(?:Pain Points?|Key Points?)\s*:?\s*$/i.test(l));
           exampleLines = lines.slice(exHeaderIdx + 1)
             .map(l => l.replace(/^\s*[\*\-]\s*/g, '').trim())
-            .filter(l => !isJunk(l));
+            .filter(l => !isJunk(l) && !/^-+$/.test(l));
         } else {
           painLines = lines.slice(1)
             .map(mdToHtml)
