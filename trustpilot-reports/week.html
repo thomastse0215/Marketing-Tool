@@ -381,18 +381,22 @@
       function renderSourceReviews(sourceStr) {
         if (!sourceStr) return '';
         const clean = sourceStr.replace(/\*+/g, '').trim();
+
+        // Match "Review 30 (1 star)" or "Review 30 (Sendcloud — 1 star)" etc.
         const linked = clean
-          .replace(/Review\s+(\d+)/gi, (match, num) => {
+          .replace(/Review\s+(\d+)(?:\s*\([^)]*?(\d)\s*stars?\))?/gi, (match, num, starCount) => {
             const review = reviews[parseInt(num) - 1];
-            if (review) {
-              return `<button onclick="goToReview(${num})"
-                style="color:#00b67a;background:rgba(0,182,122,0.09)" class="group inline-flex items-center gap-1 font-semibold text-xs px-2 py-0.5 rounded-full transition-colors mr-1 cursor-pointer hover:opacity-80">
-                Review ${num} <span class="material-symbols-outlined transition-transform group-hover:rotate-45" style="font-size:12px;line-height:1">north_east</span>
-              </button>`;
-            }
-            return match;
+            const rating = starCount || (review && review.rating) || 0;
+            const btn = review
+              ? `<button onclick="goToReview(${num})"
+                  style="color:#00b67a;background:rgba(0,182,122,0.09)" class="group inline-flex items-center gap-1 font-semibold text-xs px-2 py-0.5 rounded-full transition-colors mr-1 cursor-pointer hover:opacity-80">
+                  Review ${num} <span class="material-symbols-outlined transition-transform group-hover:rotate-45" style="font-size:12px;line-height:1">north_east</span>
+                </button>`
+              : match;
+            return btn + starBadge(rating);
           })
           .replace(/,\s*(?=<button)/g, ' ');
+
         return `
           <div class="border-t border-outline-variant/10 pt-3 mt-3">
             <span class="text-xs text-on-surface-variant font-medium mr-2">Source reviews:</span>${linked}
