@@ -422,18 +422,22 @@
       function renderSourcePosts(sourceStr, posts) {
         if (!sourceStr) return '';
         const clean = sourceStr.replace(/\*+/g, '').trim();
-        const linked = clean
-          .replace(/Post\s+(\d+)/gi, (match, num) => {
-            const post = posts[parseInt(num) - 1];
-            if (post) {
-              return `<button onclick="goToPost(${num})"
-                style="color:#FF4500;background:rgba(255,69,0,0.09)" class="group inline-flex items-center gap-1 font-semibold text-xs px-2 py-0.5 rounded-full transition-colors mr-1 cursor-pointer hover:opacity-80">
-                Post ${num} <span class="material-symbols-outlined transition-transform group-hover:rotate-45" style="font-size:12px;line-height:1">north_east</span>
-              </button>`;
-            }
-            return match;
-          })
-          .replace(/,\s*(?=<button)/g, ' ');
+
+        function postBtn(num) {
+          const post = posts[parseInt(num) - 1];
+          if (!post) return `Post ${num}`;
+          return `<button onclick="goToPost(${num})"
+            style="color:#FF4500;background:rgba(255,69,0,0.09)" class="group inline-flex items-center gap-1 font-semibold text-xs px-2 py-0.5 rounded-full transition-colors mr-1 cursor-pointer hover:opacity-80">
+            Post ${num} <span class="material-symbols-outlined transition-transform group-hover:rotate-45" style="font-size:12px;line-height:1">north_east</span>
+          </button>`;
+        }
+
+        // Handle both "Post 38" and "Posts 38, 40" formats
+        const linked = clean.replace(/Posts?\s+([\d][\d,\s]*)/gi, (match, numStr) => {
+          const nums = numStr.split(',').map(s => s.trim()).filter(s => /^\d+$/.test(s));
+          return nums.map(n => postBtn(n)).join('');
+        });
+
         return `
           <div class="border-t border-outline-variant/10 pt-3 mt-3">
             <span class="text-xs text-on-surface-variant font-medium mr-2">Source posts:</span>${linked}
