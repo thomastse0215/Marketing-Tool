@@ -3,99 +3,161 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trustpilot Review Reports — Borderless360</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Trustpilot Review Reports — MarketingAI</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "background": "#f6f6ff",
+            "outline": "#6f768e",
+            "outline-variant": "#a5adc6",
+            "surface": "#f6f6ff",
+            "surface-container": "#e2e7ff",
+            "surface-container-low": "#eef0ff",
+            "surface-container-high": "#d9e2ff",
+            "surface-container-highest": "#d1dcff",
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#272e42",
+            "on-surface-variant": "#535b71",
+            "on-primary": "#f7f0ff",
+            "primary": "#6200EE",
+            "primary-container": "#ac8eff",
+            "secondary": "#00C8DC",
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans"],
+            "body": ["Inter"],
+          },
+          borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
   <style>
-    body { font-family: 'Inter', sans-serif; background: #f6f6ff; color: #272e42; }
-    h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { font-family: 'Inter', sans-serif; color: #272e42; line-height: 1.6; }
+    h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.15; }
+    .editorial-tight { letter-spacing: -0.04em; }
   </style>
 </head>
 <body class="min-h-screen">
 
-  <!-- Header -->
-  <header class="bg-white border-b border-gray-200 px-6 py-4">
-    <div class="max-w-5xl mx-auto flex items-center justify-between">
-      <div>
-        <a href="../index.html" class="text-sm text-purple-600 hover:underline">← Back to Marketing Tools</a>
-        <h1 class="text-2xl font-bold mt-1">Trustpilot Review Reports</h1>
-        <p class="text-gray-500 text-sm mt-0.5">Weekly scrapes from competitor Trustpilot pages — analyzed by Gemini AI</p>
+<!-- Animated background -->
+<div style="position:fixed;inset:0;z-index:-1;background-color:#f0eeff;"></div>
+
+<!-- Nav — aligned with homepage -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-outline-variant/10">
+  <div class="flex items-center justify-between px-6 sm:px-8 py-4 max-w-7xl mx-auto">
+    <a href="../index.html" class="text-xl font-black tracking-tighter text-[#6a1cf6] font-headline">Marketing<span class="text-[#00C8DC]">AI</span></a>
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-sm text-on-surface-variant" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-primary transition-colors duration-200">Home</a>
+      <span class="text-outline-variant">›</span>
+      <a href="../overview.html" class="hover:text-primary transition-colors duration-200">Reports</a>
+      <span class="text-outline-variant">›</span>
+      <span class="text-on-surface font-semibold">Trustpilot</span>
+    </nav>
+  </div>
+</nav>
+
+<main class="pt-20">
+
+  <!-- Page Hero -->
+  <section class="px-6 sm:px-8 pt-16 pb-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/20 mb-6">
+        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+        <span class="text-xs font-bold uppercase tracking-[0.3em] text-on-surface-variant">Competitor Intelligence</span>
       </div>
+      <h1 class="text-5xl md:text-6xl font-headline font-extrabold editorial-tight text-on-surface mb-4 leading-none">
+        Trustpilot<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Review Reports</span>
+      </h1>
+      <p class="text-lg text-on-surface-variant max-w-xl leading-relaxed">
+        Weekly scrapes from competitor Trustpilot pages — analyzed by Gemini AI into pain points and ready-to-use blog ideas.
+      </p>
     </div>
-  </header>
+  </section>
 
   <!-- Content -->
-  <main class="max-w-5xl mx-auto px-6 py-10">
+  <section class="px-6 sm:px-8 pb-24">
+    <div class="max-w-7xl mx-auto">
 
-    <!-- Loading state -->
-    <div id="loading" class="text-center py-20 text-gray-400">
-      <div class="text-4xl mb-4">⏳</div>
-      <p>Loading reports...</p>
+      <!-- Loading state -->
+      <div id="loading" class="text-center py-20 text-on-surface-variant">
+        <div class="text-4xl mb-4">⏳</div>
+        <p class="font-medium">Loading reports...</p>
+      </div>
+
+      <!-- Empty state -->
+      <div id="empty" class="hidden text-center py-20 text-on-surface-variant">
+        <div class="text-4xl mb-4">📭</div>
+        <p class="font-semibold">No reports yet</p>
+        <p class="text-sm mt-2 text-on-surface-variant">Run <code class="bg-surface-container px-2 py-0.5 rounded font-mono text-primary">./publish.sh</code> to generate the first report.</p>
+      </div>
+
+      <!-- Weeks grid -->
+      <div id="weeks-grid" class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
     </div>
+  </section>
 
-    <!-- Empty state -->
-    <div id="empty" class="hidden text-center py-20 text-gray-400">
-      <div class="text-4xl mb-4">📭</div>
-      <p class="font-medium">No reports yet</p>
-      <p class="text-sm mt-1">Run <code class="bg-gray-100 px-1 rounded">./publish.sh</code> to generate the first report.</p>
-    </div>
+</main>
 
-    <!-- Weeks grid -->
-    <div id="weeks-grid" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+<script>
+  async function loadWeeks() {
+    try {
+      const res = await fetch('data/weeks.json?t=' + Date.now());
+      if (!res.ok) throw new Error('No weeks index found');
+      const weeks = await res.json();
 
-  </main>
+      document.getElementById('loading').classList.add('hidden');
 
-  <script>
-    async function loadWeeks() {
-      try {
-        const res = await fetch('data/weeks.json?t=' + Date.now());
-        if (!res.ok) throw new Error('No weeks index found');
-        const weeks = await res.json();
-
-        document.getElementById('loading').classList.add('hidden');
-
-        if (!weeks.length) {
-          document.getElementById('empty').classList.remove('hidden');
-          return;
-        }
-
-        const grid = document.getElementById('weeks-grid');
-        grid.classList.remove('hidden');
-
-        weeks.forEach((w, i) => {
-          const card = document.createElement('a');
-          card.href = `week.html?week=${w.week}`;
-          card.className = [
-            'block bg-white rounded-2xl border border-gray-200 p-6',
-            'hover:shadow-lg hover:border-purple-300 transition-all duration-200',
-            'cursor-pointer'
-          ].join(' ');
-
-          const badge = i === 0
-            ? '<span class="text-xs font-semibold bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">Latest</span>'
-            : '';
-
-          card.innerHTML = `
-            <div class="flex items-start justify-between mb-3">
-              <span class="text-xs font-mono text-gray-400">${w.week}</span>
-              ${badge}
-            </div>
-            <h3 class="font-bold text-lg leading-tight mb-1">${w.label}</h3>
-            <p class="text-sm text-gray-500">${w.date}</p>
-            <div class="mt-4 flex items-center text-purple-600 text-sm font-medium">
-              View report <span class="ml-1">→</span>
-            </div>
-          `;
-          grid.appendChild(card);
-        });
-
-      } catch (e) {
-        document.getElementById('loading').classList.add('hidden');
+      if (!weeks.length) {
         document.getElementById('empty').classList.remove('hidden');
+        return;
       }
-    }
 
-    loadWeeks();
-  </script>
+      const grid = document.getElementById('weeks-grid');
+      grid.style.display = 'grid';
+
+      weeks.forEach((w, i) => {
+        const card = document.createElement('a');
+        card.href = `week.html?week=${w.week}`;
+        card.className = [
+          'group block bg-white rounded-2xl p-6',
+          'border border-outline-variant/15',
+          'hover:border-primary/30 hover:shadow-[0_8px_48px_rgba(98,0,238,0.10)]',
+          'transition-all duration-300 cursor-pointer'
+        ].join(' ');
+
+        const badge = i === 0
+          ? '<span class="text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full" style="background:rgba(98,0,238,0.08);color:#6200EE">Latest</span>'
+          : '';
+
+        card.innerHTML = `
+          <div class="flex items-start justify-between mb-4">
+            <span class="text-xs font-mono text-on-surface-variant">${w.week}</span>
+            ${badge}
+          </div>
+          <h3 class="font-bold text-lg leading-tight mb-1 text-on-surface group-hover:text-primary transition-colors duration-200">${w.label}</h3>
+          <p class="text-sm text-on-surface-variant mb-5">${w.date}</p>
+          <div class="flex items-center gap-1 text-primary text-sm font-semibold group-hover:gap-2 transition-all duration-200">
+            View report <span>→</span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+    } catch (e) {
+      document.getElementById('loading').classList.add('hidden');
+      document.getElementById('empty').classList.remove('hidden');
+    }
+  }
+
+  loadWeeks();
+</script>
 </body>
 </html>

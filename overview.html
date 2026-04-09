@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intelligence Reports — MarketingAI</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "background": "#f6f6ff",
+            "outline": "#6f768e",
+            "outline-variant": "#a5adc6",
+            "surface": "#f6f6ff",
+            "surface-container": "#e2e7ff",
+            "surface-container-low": "#eef0ff",
+            "surface-container-high": "#d9e2ff",
+            "surface-container-highest": "#d1dcff",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#c7d4fa",
+            "on-surface": "#272e42",
+            "on-surface-variant": "#535b71",
+            "on-primary": "#f7f0ff",
+            "primary": "#6200EE",
+            "primary-container": "#ac8eff",
+            "secondary": "#00C8DC",
+            "inverse-surface": "#060e20",
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans"],
+            "body": ["Inter"],
+          },
+          borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; color: #272e42; line-height: 1.6; }
+    h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.15; }
+    .editorial-tight { letter-spacing: -0.04em; }
+    .tag-p  { background: rgba(98, 0, 238, 0.08);  color: #6200EE; }
+    .tag-s  { background: rgba(0, 200, 220, 0.12); color: #007a87; }
+  </style>
+</head>
+<body class="min-h-screen">
+
+<!-- Animated background -->
+<div id="bg-layer" style="position:fixed;inset:0;z-index:-1;background-color:#f0eeff;"></div>
+
+<!-- Nav — matches homepage exactly -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-outline-variant/10">
+  <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+    <a href="index.html" class="text-2xl font-black tracking-tighter text-[#6a1cf6] font-headline">Marketing<span class="text-[#00C8DC]">AI</span></a>
+    <div class="flex items-center gap-6">
+      <a href="overview.html" class="text-sm font-semibold text-primary transition-colors duration-200">Reports</a>
+      <button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-bold hover:opacity-80 transition-all duration-300 scale-95 active:scale-90">Thomas</button>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-20">
+
+  <!-- Hero Section -->
+  <section class="px-8 pt-20 pb-12">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Breadcrumb -->
+      <div class="flex items-center gap-2 text-sm text-on-surface-variant mb-10">
+        <a href="index.html" class="hover:text-primary transition-colors duration-200">Home</a>
+        <span class="text-outline-variant">›</span>
+        <span class="text-on-surface font-semibold">Reports</span>
+      </div>
+
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/20 mb-8">
+        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+        <span class="text-xs font-bold uppercase tracking-[0.3em] text-on-surface-variant">Live Intelligence</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-6xl md:text-8xl font-headline font-extrabold editorial-tight text-on-surface leading-none mb-6">
+        Intelligence<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Reports</span>
+      </h1>
+      <p class="text-xl text-on-surface-variant max-w-xl leading-relaxed">
+        Weekly AI-analyzed insights scraped from competitor Trustpilot reviews and relevant Reddit communities — turned into actionable blog ideas and pain point maps.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="border-t border-b border-outline-variant/10 mb-16" style="background-color:#f4f4fb">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4">
+        <div class="px-6 py-8 border-r border-outline-variant/10">
+          <div class="text-4xl font-headline font-black editorial-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">2</div>
+          <div class="text-sm text-on-surface-variant mt-1">Report streams</div>
+        </div>
+        <div class="px-6 py-8 border-r border-outline-variant/10">
+          <div class="text-4xl font-headline font-black editorial-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Weekly</div>
+          <div class="text-sm text-on-surface-variant mt-1">Automated scraping cycle</div>
+        </div>
+        <div class="px-6 py-8 border-r border-outline-variant/10">
+          <div class="text-4xl font-headline font-black editorial-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">AI</div>
+          <div class="text-sm text-on-surface-variant mt-1">Analyzed by Gemini</div>
+        </div>
+        <div class="px-6 py-8">
+          <div class="text-4xl font-headline font-black editorial-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">3 tabs</div>
+          <div class="text-sm text-on-surface-variant mt-1">Reviews · Pain Points · Blog Ideas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Report Cards -->
+  <section class="px-8 pb-32">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="mb-10">
+        <span class="text-xs font-bold uppercase tracking-[0.4em] text-primary block mb-4">Choose a Report</span>
+        <h2 class="text-4xl font-headline font-extrabold editorial-tight text-on-surface">Pick your data source</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Trustpilot Card -->
+        <a href="trustpilot-reports/index.html"
+           class="group block bg-white rounded-2xl p-8 border border-outline-variant/15 hover:border-primary/30 hover:shadow-[0_8px_48px_rgba(98,0,238,0.10)] transition-all duration-300 cursor-pointer">
+          <div class="flex items-start justify-between mb-6">
+            <div class="w-14 h-14 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(98,0,238,0.08)">⭐</div>
+            <span class="text-xs font-bold uppercase tracking-[0.15em] px-3 py-1 rounded-full tag-p">Reviews</span>
+          </div>
+          <h3 class="text-2xl font-headline font-bold editorial-tight text-on-surface mb-3 group-hover:text-primary transition-colors duration-200">
+            Trustpilot Review Reports
+          </h3>
+          <p class="text-on-surface-variant leading-relaxed mb-6">
+            Weekly scrapes from competitor Trustpilot pages. Each report surfaces raw reviews, grouped pain points, and ready-to-use blog ideas — all analyzed by Gemini AI.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium">⭐ Raw Reviews</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium">🔍 Pain Points</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium">✍️ Blog Ideas</span>
+          </div>
+          <div class="flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all duration-200">
+            View Reports <span>→</span>
+          </div>
+        </a>
+
+        <!-- Reddit Card -->
+        <a href="weekly-reports/index.html"
+           class="group block bg-white rounded-2xl p-8 border border-outline-variant/15 hover:border-secondary/40 hover:shadow-[0_8px_48px_rgba(0,200,220,0.10)] transition-all duration-300 cursor-pointer">
+          <div class="flex items-start justify-between mb-6">
+            <div class="w-14 h-14 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(0,200,220,0.12)">📊</div>
+            <span class="text-xs font-bold uppercase tracking-[0.15em] px-3 py-1 rounded-full tag-s">Community</span>
+          </div>
+          <h3 class="text-2xl font-headline font-bold editorial-tight text-on-surface mb-3 group-hover:text-[#007a87] transition-colors duration-200">
+            Reddit Pain Point Reports
+          </h3>
+          <p class="text-on-surface-variant leading-relaxed mb-6">
+            Weekly scrapes from ecommerce & logistics subreddits. Each report maps community frustrations, extracts recurring themes, and generates content angles from real customer voices.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium">📋 Reddit Posts</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium">🔍 Pain Points</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium">✍️ Blog Ideas</span>
+          </div>
+          <div class="flex items-center gap-2 text-[#007a87] font-semibold text-sm group-hover:gap-3 transition-all duration-200">
+            View Reports <span>→</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-white border-t border-outline-variant/10 px-8 py-10">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <span class="text-xl font-black tracking-tighter text-[#6a1cf6] font-headline">Marketing<span class="text-[#00C8DC]">AI</span></span>
+    <a href="index.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">← Back to all tools</a>
+  </div>
+</footer>
+
+</body>
+</html>
