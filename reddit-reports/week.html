@@ -172,12 +172,11 @@
     }
 
     function linkPostRefs(text, posts) {
-      return text.replace(/\(Post\s+([\d,\s]+?)(,?\s*comment[^)]+)?\)/gi, (match, numStr, commentPart) => {
-        const nums = numStr.split(',').map(s => s.trim()).filter(s => /^\d+$/.test(s));
+      // Match "(Post 47, Post 57)" or "(Post 47, 57)" — Claude repeats "Post" before each number
+      return text.replace(/\((?:Post\s+\d+(?:,\s*(?:Post\s+)?\d+)*)\)/gi, (match) => {
+        const nums = [...match.matchAll(/\d+/g)].map(m => m[0]);
         if (!nums.length) return match;
-        const buttons = nums.map(n => postButton(n)).join(' ');
-        const commentLabel = commentPart ? commentPart.replace(/^,?\s*/, ', ') : '';
-        return buttons + (commentLabel ? `<span class="text-xs text-on-surface-variant">${commentLabel}</span>` : '');
+        return nums.map(n => postButton(n)).join(' ');
       });
     }
 
