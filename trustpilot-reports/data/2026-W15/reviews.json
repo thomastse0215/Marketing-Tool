@@ -1,17 +1,32 @@
 {
   "metadata": {
-    "last_updated": "2026-04-13T04:51:17.924928+00:00",
+    "last_updated": "2026-04-13T10:22:05.587661+00:00",
     "total_reviews": 27,
     "scraper_version": "2.0",
     "companies_scraped": [
-      "dragonflyshipping.nl",
-      "www.easyship.com",
       "dragonflyshipping.ca",
+      "www.easyship.com",
       "myus.com",
-      "www.sendcloud.com"
+      "www.sendcloud.com",
+      "dragonflyshipping.nl"
     ]
   },
   "reviews": [
+    {
+      "review_id": "69dca38d746abe684a7f8d54",
+      "company": "www.easyship.com",
+      "author": "Luca ",
+      "rating": 1,
+      "title": "This company is a COMPLETE joke",
+      "text": "This company is a COMPLETE joke. \nYou pay for the shipment labels and then the pickups fail. And you have to go through a long procedure to get your money back. TOTALLY unreliable!!!!",
+      "date": "2026-04-13T10:04:29.000Z",
+      "url": "https://www.trustpilot.com/reviews/69dca38d746abe684a7f8d54",
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "suggested_angle": null
+    },
     {
       "review_id": "69dbda6ffbb7cced6bfa654d",
       "company": "myus.com",
@@ -396,21 +411,6 @@
       "text": "I paid their fees, I paid for shipping, and I never received my goods. They kept everything and stopped responding to emails entirely.\n\nI escalated all the way to CEO Ramesh Bulusu. Same result: total silence.\n\nWorth noting: Bulusu has publicly stated that MyUS’s mission is to treat every customer’s package “as if it’s our own.” Apparently that includes keeping it.\n\nAvoid completely.",
       "date": "2026-04-06T15:23:14.000Z",
       "url": "https://www.trustpilot.com/reviews/69d3b3c2575b320828411009",
-      "category": null,
-      "summary": null,
-      "pain_point": null,
-      "severity": null,
-      "suggested_angle": null
-    },
-    {
-      "review_id": "69d34a376095b7778cd9d4fe",
-      "company": "myus.com",
-      "author": "Sepo Mumbi",
-      "rating": 1,
-      "title": "Consolidation Gone Wrong: Delays, Discarded Items, Double lble charges, Poor communication and No Accountability",
-      "text": "I have been a MyUS customer and my most recent experience has been deeply frustrating — marked by poor communication, unexpected charges, and an item removed from my parcel without my knowledge or consent.\n\nMy parcel 03‑831‑5982 at the facility on 20th March. I was waiting to consolidate it with another package, and the site indicated inspection would take 1–3 days with email notification of any issues. Days passed with no update, and storage fees began accumulating on my first parcel while I waited.\n\nI eventually discovered — on my own — that two items in the newer parcel containing lithium batteries had been flagged. I requested their removal (as guided), which I assumed was the cause of the delay. Please note: the website itself stated only the UK facility could not ship items with lithium batteries, yet this became a major issue.\n\nWhen I raised the storage fees building up on my first parcel during the prolonged review period, MyUS waived the outstanding bill — which I appreciated. However, delays continued and fees started accumulating again on my older parcel. I eventually decided to ship both parcels separately on March 30th and 1st April respectively.\n\nWhen my parcels shipped, I noticed an additional item sitting in my account — a small sample perfume, listed with the same arrival date and weight as my recent parcel. It became clear that this item had been removed from my parcel without any communication or consent. When I contacted support, I was told I had requested shipping before the inspection was complete. But the parcel was marked as 'Ready to Send' — how was I supposed to know the inspection was not finished?\nMany items in my parcel were given generic names like 'beauty product' or 'skincare,' making it difficult to keep track of contents. i expected MyUs would keep contents safe. This raises serious concerns about whether other items were also removed from my parcel without notice.\nNow I am being asked to pay $8 for inspection of this leftover item, plus separate shipping costs — essentially being charged twice for one parcel. To make matters worse, the listed weight for this small sample perfume is 21.40 lbs, which makes no sense at all.\n\nRegarding the lithium battery items: I requested their removal so I could decide what to do with them. Instead, I was informed they were discarded. I was never given options.\n\nCommunication throughout has been very poor. The most responsive channel has been WhatsApp, which routes through an AI assistant that takes long to reply and loses context quickly. Direct emails and social media have yielded no results. I was eventually given a case number — but nothing beyond that.\n\nThis has been a costly and stressful experience. I have lost money and items, and I am still dealing with the fallout. Once this matter is resolved, I will be closing my account.\n\nTo MyUS: please do not respond to this review with a generic reply — it changes nothing. Focus instead on actually resolving the issue.",
-      "date": "2026-04-06T07:52:55.000Z",
-      "url": "https://www.trustpilot.com/reviews/69d34a376095b7778cd9d4fe",
       "category": null,
       "summary": null,
       "pain_point": null,
