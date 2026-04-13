@@ -48,7 +48,10 @@
 <body class="min-h-screen flex flex-col">
 
 <!-- Animated background -->
-<div style="position:fixed;inset:0;z-index:-1;background-color:#f0f8ff;"></div>
+<div id="bg-layer" style="position:fixed;inset:0;z-index:-1;background-color:#fff3ee;">
+  <div id="hero-blob-1" class="absolute w-[800px] h-[800px] blur-[120px] rounded-full" style="left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(255,69,0,0.20);"></div>
+  <div id="hero-blob-2" class="absolute w-[400px] h-[400px] blur-[100px] rounded-full" style="left:75%;top:25%;transform:translate(-50%,-50%);background:rgba(255,120,50,0.10);"></div>
+</div>
 
 <!-- Nav -->
 <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-outline-variant/10">
@@ -186,5 +189,24 @@
     </div>
   </div>
 </footer>
+<script>
+(function () {
+    const blob1 = document.getElementById('hero-blob-1');
+    const blob2 = document.getElementById('hero-blob-2');
+    if (!blob1 || !blob2) return;
+    let tx = 50, ty = 50, cx = 50, cy = 50;
+    document.addEventListener('mousemove', (e) => {
+        tx = (e.clientX / window.innerWidth)  * 100;
+        ty = (e.clientY / window.innerHeight) * 100;
+    }, { passive: true });
+    (function loop() {
+        cx += (tx - cx) * 0.06;
+        cy += (ty - cy) * 0.06;
+        blob1.style.left = cx + '%'; blob1.style.top = cy + '%'; blob1.style.transform = 'translate(-50%,-50%)';
+        blob2.style.left = (100 - cx * 0.6) + '%'; blob2.style.top = (cy * 0.5) + '%'; blob2.style.transform = 'translate(-50%,-50%)';
+        requestAnimationFrame(loop);
+    })();
+})();
+</script>
 </body>
 </html>

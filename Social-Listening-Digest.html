@@ -55,7 +55,10 @@
 <body class="min-h-screen">
 
 <!-- Animated background -->
-<div id="bg-layer" style="position:fixed;inset:0;z-index:-1;background-color:#f0eeff;"></div>
+<div id="bg-layer" style="position:fixed;inset:0;z-index:-1;background-color:#ede8ff;transition:background-color 1s cubic-bezier(0.4,0,0.2,1);">
+  <div id="hero-blob-1" class="absolute w-[800px] h-[800px] blur-[120px] rounded-full" style="left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(98,0,238,0.20);transition:background 0.7s ease;"></div>
+  <div id="hero-blob-2" class="absolute w-[400px] h-[400px] blur-[100px] rounded-full" style="left:75%;top:25%;transform:translate(-50%,-50%);background:rgba(0,200,220,0.15);"></div>
+</div>
 
 <!-- Nav — matches homepage exactly -->
 <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-outline-variant/10">
@@ -109,24 +112,25 @@
   </section>
 
   <!-- Stats Bar -->
-  <section class="border-t border-b border-outline-variant/10 mb-16" style="background-color:#f4f4fb">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4">
-        <div class="px-6 py-8 border-r border-outline-variant/10">
+  <section class="py-8 px-8 mb-16">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 rounded-2xl overflow-hidden"
+           style="background:rgba(255,255,255,0.25);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:1px solid rgba(255,255,255,0.5);box-shadow:0 8px 32px rgba(98,0,238,0.08),inset 0 1px 0 rgba(255,255,255,0.6);">
+        <div class="px-6 py-8 border-r border-white/30">
           <div class="text-4xl font-headline font-black editorial-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">2</div>
-          <div class="text-sm text-on-surface-variant mt-1">Report streams</div>
+          <div class="text-sm text-on-surface-variant mt-2">Report streams</div>
         </div>
-        <div class="px-6 py-8 border-r border-outline-variant/10">
+        <div class="px-6 py-8 border-r border-white/30">
           <div class="text-4xl font-headline font-black editorial-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Weekly</div>
-          <div class="text-sm text-on-surface-variant mt-1">Automated scraping cycle</div>
+          <div class="text-sm text-on-surface-variant mt-2">Automated scraping cycle</div>
         </div>
-        <div class="px-6 py-8 border-r border-outline-variant/10">
+        <div class="px-6 py-8 border-r border-white/30">
           <div class="text-4xl font-headline font-black editorial-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">AI</div>
-          <div class="text-sm text-on-surface-variant mt-1">Analyzed by Claude</div>
+          <div class="text-sm text-on-surface-variant mt-2">Analyzed by Claude</div>
         </div>
         <div class="px-6 py-8">
           <div class="text-4xl font-headline font-black editorial-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">3 tabs</div>
-          <div class="text-sm text-on-surface-variant mt-1">Reviews · Pain Points · Blog Ideas</div>
+          <div class="text-sm text-on-surface-variant mt-2">Reviews · Pain Points · Blog Ideas</div>
         </div>
       </div>
     </div>
@@ -144,7 +148,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
         <!-- Trustpilot Card -->
-        <a href="trustpilot-reports/index.html"
+        <a id="card-trustpilot" href="trustpilot-reports/index.html"
            class="group block bg-white rounded-2xl p-8 border border-outline-variant/15 hover:border-[#00b67a]/40 hover:shadow-[0_8px_48px_rgba(0,182,122,0.12)] transition-all duration-300 cursor-pointer">
           <div class="flex items-start justify-between mb-6">
             <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background:rgba(0,182,122,0.10)">
@@ -169,7 +173,7 @@
         </a>
 
         <!-- Reddit Card -->
-        <a href="reddit-reports/index.html"
+        <a id="card-reddit" href="reddit-reports/index.html"
            class="group block bg-white rounded-2xl p-8 border border-outline-variant/15 hover:border-[#FF4500]/40 hover:shadow-[0_8px_48px_rgba(255,69,0,0.12)] transition-all duration-300 cursor-pointer">
           <div class="flex items-start justify-between mb-6">
             <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background:rgba(255,69,0,0.08)">
@@ -210,5 +214,57 @@
   </div>
 </footer>
 
+<script>
+// Hero blobs follow the mouse with smooth lerp
+(function () {
+    const blob1 = document.getElementById('hero-blob-1');
+    const blob2 = document.getElementById('hero-blob-2');
+    if (!blob1 || !blob2) return;
+
+    let tx = 50, ty = 50;
+    let cx = 50, cy = 50;
+
+    document.addEventListener('mousemove', (e) => {
+        tx = (e.clientX / window.innerWidth)  * 100;
+        ty = (e.clientY / window.innerHeight) * 100;
+    }, { passive: true });
+
+    (function loop() {
+        cx += (tx - cx) * 0.06;
+        cy += (ty - cy) * 0.06;
+
+        blob1.style.left      = cx + '%';
+        blob1.style.top       = cy + '%';
+        blob1.style.transform = 'translate(-50%, -50%)';
+
+        blob2.style.left      = (100 - cx * 0.6) + '%';
+        blob2.style.top       = (cy * 0.5) + '%';
+        blob2.style.transform = 'translate(-50%, -50%)';
+
+        requestAnimationFrame(loop);
+    })();
+})();
+
+// Card hover — tint blob1 to match the destination brand colour
+(function () {
+    const blob1 = document.getElementById('hero-blob-1');
+    if (!blob1) return;
+    const purple = 'rgba(98,0,238,0.20)';
+    const green  = 'rgba(0,182,122,0.25)';
+    const orange = 'rgba(255,69,0,0.22)';
+
+    const tp = document.getElementById('card-trustpilot');
+    const rd = document.getElementById('card-reddit');
+
+    if (tp) {
+        tp.addEventListener('mouseenter', () => { blob1.style.background = green;  });
+        tp.addEventListener('mouseleave', () => { blob1.style.background = purple; });
+    }
+    if (rd) {
+        rd.addEventListener('mouseenter', () => { blob1.style.background = orange; });
+        rd.addEventListener('mouseleave', () => { blob1.style.background = purple; });
+    }
+})();
+</script>
 </body>
 </html>
