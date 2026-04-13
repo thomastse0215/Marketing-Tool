@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "last_updated": "2026-04-13T02:28:21.921270+00:00",
+    "last_updated": "2026-04-13T04:51:17.924928+00:00",
     "total_reviews": 27,
     "scraper_version": "2.0",
     "companies_scraped": [
-      "www.sendcloud.com",
-      "www.easyship.com",
-      "myus.com",
       "dragonflyshipping.nl",
-      "dragonflyshipping.ca"
+      "www.easyship.com",
+      "dragonflyshipping.ca",
+      "myus.com",
+      "www.sendcloud.com"
     ]
   },
   "reviews": [
