@@ -1,18 +1,18 @@
 {
   "metadata": {
-    "last_updated": "2026-04-13T05:01:27.195913+00:00",
-    "total_posts": 43,
+    "last_updated": "2026-04-13T10:24:46.421975+00:00",
+    "total_posts": 53,
     "scraper_version": "2.0-ai-filtered-arctic",
     "subreddits_scraped": [
-      "smallbusiness",
-      "woocommerce",
-      "AmazonFBA",
-      "ecommerce",
       "logistics",
-      "TikTokShop",
-      "supplychain",
+      "ecommerce",
+      "Businessowners",
+      "AmazonFBA",
       "shopify",
-      "AmazonSeller"
+      "TikTokShop",
+      "woocommerce",
+      "smallbusiness",
+      "supplychain"
     ]
   },
   "posts": [
@@ -28,7 +28,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 16,
       "created_utc": "2026-04-07T18:03:37+00:00",
-      "collected_at": "2026-04-13T05:01:12.931860+00:00",
+      "collected_at": "2026-04-13T10:24:31.907271+00:00",
       "flair": "Discussion",
       "is_self_post": true,
       "comments": [
@@ -185,6 +185,198 @@
       "suggested_angle": null
     },
     {
+      "post_id": "1sivuvg",
+      "url": "https://www.reddit.com/r/smallbusiness/comments/1sivuvg/",
+      "subreddit": "smallbusiness",
+      "matched_keyword": "ai-filtered",
+      "title": "at what point do you cut off a customer who returns everything? feeling like were getting taken advantage of",
+      "body": "small team, we sell physical products on shopify. our return rate went from like 5% to almost 9% this year and its eating into our margins pretty bad\n\n\n\ni finally sat down and looked at the data per customer instead of per order and... we have people who return more than half their orders. like one person ordered 11 times and returned 7. always different products, always \"didnt like it\" or \"not what i expected\", always filed within a couple days. at what point is this just abuse?\n\n\n\nalso found something that really pissed me off. a customer who filed a return and then ALSO did a chargeback on the same order. so we refunded them and then the bank refunded them again. only caught it because i was going through both lists side by side. who knows how many times this has happened before\n\n\n\nthe thing is we dont want to start denying returns and get hit with bad reviews. but were basically hemorrhaging money on people who treat us like a free rental service. some of the stuff comes back and its clearly been worn\n\n\n\nfor other small biz owners selling physical products do you have a policy for serial returners? like do you actually ban people? how do you even bring that up without it being a PR nightmare\n\n\n\nhonestly just want to know if other people deal with this or if its just us",
+      "author": "Ok-Thing8238",
+      "score": 51,
+      "upvote_ratio": 0.0,
+      "num_comments": 31,
+      "created_utc": "2026-04-11T21:43:42+00:00",
+      "collected_at": "2026-04-13T10:24:27.194710+00:00",
+      "flair": null,
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "ofn6qmq",
+          "body": "You have to have a better return policy that doesn’t allow for this sort of thing\n\nThe problem is companies like Amazon made it easy to just return stuff and people now have become accustomed to that and Amazon starting to clamp down on it so I’m guessing you can as well",
+          "score": 1,
+          "created_utc": "2026-04-11T21:45:46+00:00"
+        },
+        {
+          "comment_id": "ofn8iea",
+          "body": "Make them pay for shipping for returns. ",
+          "score": 1,
+          "created_utc": "2026-04-11T21:55:23+00:00"
+        },
+        {
+          "comment_id": "ofn960l",
+          "body": "Amazon normalized this but you don’t have to accept returns if you don’t want, it’s your business dude",
+          "score": 1,
+          "created_utc": "2026-04-11T21:58:56+00:00"
+        },
+        {
+          "comment_id": "ofn9vx7",
+          "body": "This is it. Or have 1-2 free returns per customer per month or quarter, anything more they pay for it. ",
+          "score": 1,
+          "created_utc": "2026-04-11T22:02:53+00:00"
+        },
+        {
+          "comment_id": "ofnb41t",
+          "body": "Shipper pays returns, 20% restocking, within 45 days.",
+          "score": 1,
+          "created_utc": "2026-04-11T22:09:38+00:00"
+        },
+        {
+          "comment_id": "ofnb77s",
+          "body": "15% restocking fee.",
+          "score": 1,
+          "created_utc": "2026-04-11T22:10:07+00:00"
+        },
+        {
+          "comment_id": "ofndgi5",
+          "body": "Seconding this. And it could turn into a positive thing if you routinely “waive the restocking fee” the first and second return. ",
+          "score": 1,
+          "created_utc": "2026-04-11T22:22:38+00:00"
+        },
+        {
+          "comment_id": "ofndi3v",
+          "body": "Does Shopify not allow you to ban specific customers? Just block them from ordering. If it’s only one or a couple people.",
+          "score": 1,
+          "created_utc": "2026-04-11T22:22:53+00:00"
+        },
+        {
+          "comment_id": "ofnerls",
+          "body": "Restocking fee then",
+          "score": 1,
+          "created_utc": "2026-04-11T22:29:54+00:00"
+        },
+        {
+          "comment_id": "ofnfcih",
+          "body": "Yeah that's tough?.. feels like some people are just using it not really returning \nMaybe set a simple rule, after a few returns you stop accepting more from that customer and keep things fair.....and yeah you have to protect your business.\nHave you tried putting small limit per customer?",
+          "score": 1,
+          "created_utc": "2026-04-11T22:33:11+00:00"
+        },
+        {
+          "comment_id": "ofnfe7p",
+          "body": "Im getting out of ecommerce selling custom products and I've seen buyers become much more scammy over the past 3-4 years.  Update your return policy and stop selling to the high return buyers. Many companies are being forced to do this, you are not alone. ",
+          "score": 1,
+          "created_utc": "2026-04-11T22:33:26+00:00"
+        },
+        {
+          "comment_id": "ofng4e4",
+          "body": "We had a serial returner at our shop.  At some point we just had a conversation with her - after 30 days she could exchange but not get cash back.  She eventually moved so it became less of an issue, but during her last months around the returns slowed down dramatically.  ",
+          "score": 1,
+          "created_utc": "2026-04-11T22:37:34+00:00"
+        },
+        {
+          "comment_id": "ofngc9t",
+          "body": "First thought... it's an influencer who orders, creates their content and returns. If you dug a little, you could probably find it. \n\nSecond thought... limits on returns. Even box box stores have limits on returns. I think it would make sense to send a reply... We see you have abused the return policy, this is not eligible to return. ",
+          "score": 1,
+          "created_utc": "2026-04-11T22:38:50+00:00"
+        },
+        {
+          "comment_id": "ofnh8d6",
+          "body": "If these are clothes and you have no physical store, of course people will buy 11 and return 7. They don’t know how the items fit, feel, or look on them. Don’t just charge a restocking, have a comprehensive policy that includes multiple items in different sizes, store credit etc ",
+          "score": 1,
+          "created_utc": "2026-04-11T22:43:54+00:00"
+        },
+        {
+          "comment_id": "ofnku6i",
+          "body": "You know that \"you have the right to refuse service to anyone thing?  Take it seriously.  I own a service based business and as a business owner I don't take no shit.  Don't get me wrong, I will try to accommodate clients up to a point. But if at any point I see them trying to take advantage of me or my business, bye bye.\n\nAsk your good clients for reviews, and sometimes you will have to weather the bad ones from the jerks.  I just do my best to respond to them where we get them if.  As a consumer I notice that sort of stuff.  \n\nI used to have 5 star average everywhere but now it's 4.9 on all the stuff and the reviews range from \"we did our best but couldn't do what you needed to you're insane and here's why.\"",
+          "score": 1,
+          "created_utc": "2026-04-11T23:04:17+00:00"
+        },
+        {
+          "comment_id": "ofnm8dq",
+          "body": "you can cut off a customer who returns everything after like 3-4 returns in a short timeframe, fwiw. what's the average order value of these customers who return a lot, and are they actually profitable for you even with the returns factored in?",
+          "score": 1,
+          "created_utc": "2026-04-11T23:12:03+00:00"
+        },
+        {
+          "comment_id": "ofnobua",
+          "body": "Well I can tell you big box corp ends it after 3.",
+          "score": 1,
+          "created_utc": "2026-04-11T23:23:54+00:00"
+        },
+        {
+          "comment_id": "ofnocp4",
+          "body": "Even CostCo. Once you hit a certain % of purchase as a returns they will cancel your membership. ",
+          "score": 1,
+          "created_utc": "2026-04-11T23:24:02+00:00"
+        },
+        {
+          "comment_id": "ofns3rd",
+          "body": "Restocking fees solves this",
+          "score": 1,
+          "created_utc": "2026-04-11T23:45:27+00:00"
+        },
+        {
+          "comment_id": "ofnse9f",
+          "body": "You don’t even need to wait that long. I dig the Costco method - just refund them, say sorry we can’t meet your expectations and invite them to shop elsewhere. Update the back end to block all combinations of their name, address ship to, bill to and card. ",
+          "score": 1,
+          "created_utc": "2026-04-11T23:47:07+00:00"
+        },
+        {
+          "comment_id": "ofnw47x",
+          "body": "+ restocking fee",
+          "score": 1,
+          "created_utc": "2026-04-12T00:08:46+00:00"
+        },
+        {
+          "comment_id": "ofnwbyv",
+          "body": "Charge back should be instaban.  As for the others, might wanna tell them you have a 3 strikes policy. They just might not be a good fit. ",
+          "score": 1,
+          "created_utc": "2026-04-12T00:10:02+00:00"
+        },
+        {
+          "comment_id": "ofny9f9",
+          "body": "Make returning more than X amount of things attract fees/costs. Or have a policy that product returned with signs of wear/use will not be refunded, and make sure to check for it (especially with customers who return a lot). Keep an eye out for the chargeback stuff.\n\n>the thing is we dont want to start denying returns and get hit with bad reviews\n\nAs a business, you are going to have to do things that attract bad (even if false) reviews, or else you're not going to stay in business. Have processes for addressing bad reviews, because you WILL get them, even if you're literal angels. (\"Rep was too glowy and halos are so last season, one star\".)",
+          "score": 1,
+          "created_utc": "2026-04-12T00:21:27+00:00"
+        },
+        {
+          "comment_id": "ofo1owz",
+          "body": "Charge freight. Restock fee. And read this book: Herb Kelleher: “Dear Mrs. Crabapple, We will miss you.”",
+          "score": 1,
+          "created_utc": "2026-04-12T00:42:17+00:00"
+        },
+        {
+          "comment_id": "ofo367c",
+          "body": "Costco apparently will disown you if you return more than 30% of your purchases. What's good for Costco should be plenty good enough. :)\n\n",
+          "score": 1,
+          "created_utc": "2026-04-12T00:51:12+00:00"
+        },
+        {
+          "comment_id": "ofo3vae",
+          "body": " You understand that shopping online, you don't physically have the product in hand. Expectations may not meet reality thus returns are more likely to happen. Heck if even store front get returns. \n\nIf there's a 15% restocking fee or I have to pay for return then simple, I'm not ordering from them online.",
+          "score": 1,
+          "created_utc": "2026-04-12T00:55:23+00:00"
+        },
+        {
+          "comment_id": "ofo6q25",
+          "body": "i like that approach, saves time and hassle tbh",
+          "score": 1,
+          "created_utc": "2026-04-12T01:12:24+00:00"
+        },
+        {
+          "comment_id": "ofocxuj",
+          "body": "That's rough. A 9% return rate jump is a serious hit to any small business, especially with serial returners and double refunds.\n\n  \nFirst, on the chargeback issue: implement a system to cross-reference returns and chargebacks \\*before\\* issuing any refund. Even a simple spreadsheet where you log both can catch these double-dips. It's tedious, but catching even a few saves you real money. If you're using Shopify Payments, contact their support. There might be a way to flag refunded orders to prevent chargebacks on them.\n\n  \nSecond, for the serial returners, it's a tough call. \"Didn't like it\" is vague and hard to argue. I would look closely at the \\*types\\* of products they're returning. Is there a pattern? Are certain product descriptions misleading or inaccurate? Are the photos not representative? Fixing those issues can reduce returns across the board.\n\n  \nAs for cutting them off, here's a tiered approach:\n\n  \n1.  \\*\\*Gentle Warning:\\*\\* For customers with a high return rate (like 50% or more), send a polite but firm email. Something like, \"We noticed a high number of returns on your account. We want you to be happy with your purchases, but excessive returns impact our small business. Please double-check product details before ordering in the future.\"\n\n2.  \\*\\*Restocking Fee:\\*\\* Implement a restocking fee for excessive returns. Make this clear in your return policy. This discourages frivolous ordering.\n\n3.  \\*\\*Final Option: Ban:\\*\\* If the returns continue, and the customer is costing you money, you might have to ban them from ordering. Send a final email explaining that due to their high return rate, you can no longer fulfill their orders. This is a last resort, but sometimes necessary.\n\n  \nMonitor your reviews closely during this process. Respond promptly and professionally to any negative reviews. Be transparent about your return policy and why you made the decision. Most customers will understand.\n\n  \nFinally, analyze \\*why\\* your overall return rate jumped. Was it a specific product change? A shift in marketing? More competition? Understanding the root cause will help you prevent this in the future.\n\n  \n",
+          "score": 1,
+          "created_utc": "2026-04-12T01:50:17+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
       "post_id": "1sgbg9n",
       "url": "https://www.reddit.com/r/supplychain/comments/1sgbg9n/",
       "subreddit": "supplychain",
@@ -196,7 +388,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 15,
       "created_utc": "2026-04-09T01:13:41+00:00",
-      "collected_at": "2026-04-13T05:01:13.438168+00:00",
+      "collected_at": "2026-04-13T10:24:32.856995+00:00",
       "flair": "Question / Request",
       "is_self_post": true,
       "comments": [
@@ -316,7 +508,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 15,
       "created_utc": "2026-04-09T15:41:18+00:00",
-      "collected_at": "2026-04-13T05:01:18.182413+00:00",
+      "collected_at": "2026-04-13T10:24:36.788678+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -424,7 +616,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 12,
       "created_utc": "2026-04-08T19:57:55+00:00",
-      "collected_at": "2026-04-13T05:01:00.325130+00:00",
+      "collected_at": "2026-04-13T10:24:21.919063+00:00",
       "flair": "Shipping",
       "is_self_post": true,
       "comments": [
@@ -497,6 +689,102 @@
       "suggested_angle": null
     },
     {
+      "post_id": "1sdtslo",
+      "url": "https://www.reddit.com/r/supplychain/comments/1sdtslo/",
+      "subreddit": "supplychain",
+      "matched_keyword": "ai-filtered",
+      "title": "What KPIs do you give planners?",
+      "body": "Soon I will be leading the planning department and I am considering what the most suitable KPIs will be for the team. \n\nSenior planner will own inventory, OTIF, late backlog. Does it make sense to give the other 3 planners the same KPIs, or do too many people end up owning the same KPIs?\n\nHow do you manage planner KPIs?",
+      "author": "ToeWater",
+      "score": 14,
+      "upvote_ratio": 0.0,
+      "num_comments": 13,
+      "created_utc": "2026-04-06T09:14:57+00:00",
+      "collected_at": "2026-04-13T10:24:31.013418+00:00",
+      "flair": "Discussion",
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "oel0cnw",
+          "body": "Can you separate by the different value streams? If you can separate that data, I think that's fine. You may also want to add one for aged work orders if appropriate ",
+          "score": 9,
+          "created_utc": "2026-04-06T09:18:07+00:00"
+        },
+        {
+          "comment_id": "oel4uat",
+          "body": "Some KPIs to think about..\nSchedule Adherence\nPlan vs Actual Production\nChangeover/Set Ups Plan vs Actual\n\nAnother one I'm working on implementing myself is how quickly a customer order is confirmed back to the sales team by the planner and from there you can also do how accurate your original confirmation dates are. ",
+          "score": 7,
+          "created_utc": "2026-04-06T09:58:59+00:00"
+        },
+        {
+          "comment_id": "oeln6o0",
+          "body": "Planning is broad, which area?\n\nProduction - plan adherence, shift standards\n\nDemand - forecast accuracy, bias\n\nSupply - days of coverage, fill rate/otif",
+          "score": 16,
+          "created_utc": "2026-04-06T12:16:38+00:00"
+        },
+        {
+          "comment_id": "oelvgdj",
+          "body": "Splitting it so each planner owns a specific category or region of inventory makes the ownership cleaner, even if the team level KPI is shared the individual input metric should be theirs alone.",
+          "score": 3,
+          "created_utc": "2026-04-06T13:05:37+00:00"
+        },
+        {
+          "comment_id": "oem80b8",
+          "body": "Planning is too broad to answer, but generally OTIF, Turns, weighted FCST ACCY, Bias, forecast value add (FVA), excess and obsolescence (E&O).  \n  \nNote, just my 2 cents from my work experience.... the simpler and easier to track, the better.  Don't have KPI's just  to have KPI's.  \n  \nI've seen so many times where the KPI becomes too esoteric or hard to track and hard to explain, which doesn't help anybody. ",
+          "score": 6,
+          "created_utc": "2026-04-06T14:12:09+00:00"
+        },
+        {
+          "comment_id": "oem9lhq",
+          "body": "Impossible to answer, have a KPI that reflects a problem area or key strategy so you can link the KPI to it. \n\nIf your USP is next day delivery OTIF would be a good KPI to track, if you struggle with getting parts in time or huge overstock then that’s what the KPIs should track. \n\nHaving KPIs just because it sounds cool but not having them directly linked to either a strategy or a well defined problem area that you are working on is just unnecessary fluff and as a plant manager I just fucking hate fluff. \nNot anchored in the business strategy or what we are currently working on to improve, then I don’t need it. ",
+          "score": 3,
+          "created_utc": "2026-04-06T14:19:58+00:00"
+        },
+        {
+          "comment_id": "oemaqr2",
+          "body": "Honestly CMV, unless you are supplying a maintenance or construction function (where one part is dependent on another), OTIF is the wrong measure and fill rate is more important for the many industries. For the vast majority of consumer goods where there are ample substitutes it's the wrong measure.",
+          "score": 0,
+          "created_utc": "2026-04-06T14:25:32+00:00"
+        },
+        {
+          "comment_id": "oemb47o",
+          "body": "Too many shared KPIs can blur accountability. Usually works better when each planner owns a piece of the flow, not the whole metric",
+          "score": 1,
+          "created_utc": "2026-04-06T14:27:22+00:00"
+        },
+        {
+          "comment_id": "oembazi",
+          "body": "I don't disagree, and to an extent a supply planner can't impact the delivery part. Where I might disagree is that right or wrong, its the preferred metric for most customers.",
+          "score": 2,
+          "created_utc": "2026-04-06T14:28:17+00:00"
+        },
+        {
+          "comment_id": "oemev18",
+          "body": "In the consumer goods space it's the preferred metric for *Walmart*, and everyone else plays follow the leader. Largely because consultants generally just parrot whatever Walmart does.\n\n\nBut during covid Walmart ran into the problem that while normally it could bully suppliers to extort more money, during shortages, their contracts actually worked against them, and resulted in Walmart falling to the bottom of everyone's fulfillment plan (in for a penny in for a pound, if you don't have enough for everyone, why ship to the person who is going to ding you for a lack of fulfillment. \n\n\nIn my experience when there are issues many distributors are actually much more willing to consider the actual impacts that stockouts are going to have. I get that's not as easy to turn into a tracking measure. \n\n\nInterestingly, in maintenance and construction, I find supply chain departments will often use fill rate, when of all of the places, these are the most essential spots to use OTIF.",
+          "score": 1,
+          "created_utc": "2026-04-06T14:45:32+00:00"
+        },
+        {
+          "comment_id": "oesozal",
+          "body": "Cubic utilization % could be a key KPI - most companies don't track how efficiently they're using trailer space.",
+          "score": 1,
+          "created_utc": "2026-04-07T13:10:57+00:00"
+        },
+        {
+          "comment_id": "oevix3i",
+          "body": "I see several mentions of MPS Conformance (aka OTIF). Don’t forget MPS Stability. \nA plan that changes all of the time inside the time fence in order to meet dates was not a realistic plan at all. ",
+          "score": 1,
+          "created_utc": "2026-04-07T20:59:29+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
       "post_id": "1sewb1f",
       "url": "https://www.reddit.com/r/supplychain/comments/1sewb1f/",
       "subreddit": "supplychain",
@@ -508,7 +796,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 19,
       "created_utc": "2026-04-07T13:40:08+00:00",
-      "collected_at": "2026-04-13T05:01:12.418030+00:00",
+      "collected_at": "2026-04-13T10:24:31.476041+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -628,7 +916,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 12,
       "created_utc": "2026-04-09T05:47:32+00:00",
-      "collected_at": "2026-04-13T05:01:03.562775+00:00",
+      "collected_at": "2026-04-13T10:24:24.080572+00:00",
       "flair": "📊 Business",
       "is_self_post": true,
       "comments": [
@@ -701,7 +989,7 @@
         {
           "comment_id": "ofl85et",
           "body": "really cool to hear gained a shit ton of insight , i was just stuck in my brain in terms of mindset idk how u overcome it but its i think the major roadmap everything else just happens as we move ,   \nhope u reach 5M soon this year :) ",
-          "score": 1,
+          "score": 2,
           "created_utc": "2026-04-11T15:55:49+00:00"
         }
       ],
@@ -724,14 +1012,14 @@
       "upvote_ratio": 0.0,
       "num_comments": 17,
       "created_utc": "2026-04-11T15:22:04+00:00",
-      "collected_at": "2026-04-13T05:01:11.915577+00:00",
+      "collected_at": "2026-04-13T10:24:30.161591+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
         {
           "comment_id": "ofl4ywb",
           "body": "just see it through my boy. i usually put on some tv and stay up as late as needed packing. it’ll suck but its money so..",
-          "score": 1,
+          "score": 12,
           "created_utc": "2026-04-11T15:40:42+00:00"
         },
         {
@@ -743,7 +1031,7 @@
         {
           "comment_id": "oflbmff",
           "body": "3PL owner here! You don’t want to rush the 3PL selection process. It is a huge financial and brand-impacting decision.\n\nAsk a kid in the neighborhood to help you pack or bite the bullet this weekend and knock it out. But then from there, I would start a 3PL search to find one that is reasonably priced, fits your product type and needs, and most importantly provides good service/communication since you’ve never used a 3PL before.\n\nHappy to help you find a good fit or just provide some advice in your search - we know a lot of good 3PLs in a lot of different niches.",
-          "score": 1,
+          "score": 3,
           "created_utc": "2026-04-11T16:12:34+00:00"
         },
         {
@@ -839,98 +1127,62 @@
       "suggested_angle": null
     },
     {
-      "post_id": "1sdy9wt",
-      "url": "https://www.reddit.com/r/logistics/comments/1sdy9wt/",
-      "subreddit": "logistics",
+      "post_id": "1sfg89g",
+      "url": "https://www.reddit.com/r/supplychain/comments/1sfg89g/",
+      "subreddit": "supplychain",
       "matched_keyword": "ai-filtered",
-      "title": "How to make sure your stuff is actually being transported by the company you contract with and not simply being subconned out to others?",
-      "body": "As an individual who needs to transport some robotic assemblies I built myself from scrapped industrial robots, but my insurance has a condition. Didn't know about this, but often the company you sign a contract with has loads of stuff they contract for but don't transport on their own, but subconn it out and some random trucker or hotshot could be delivering it.\n\nIf I'm signing a contract with XYZ logistics, how to make sure a driver employed & insured by XYZ logistics is actually delivering the load?\n\nThe load is between major cities, 4 standard pallets, each 4ft high, about 1200-1500lbs each.\n",
-      "author": "Ok-Pea3414",
+      "title": "Advice for shipping containers of Coca Cola from Mexico to China?",
+      "body": "**I know this is probably unrealistic, but wanted to ask anyways just in case:**\n\nI have someone in China asking me if I can ship them 3 containers of soft drinks, 1 container each of Coca Cola (both glass and cans), Sprite, and Fanta. 3 containers (total) a month.\n\nI've shipped from China to the US before, and now I live in Mexico (near port of Manzanillo) and figured I might be able to make this happen.\n\nI also have a friend who knows two people that work in the Coca Cola plant nearby in Colima.\n\nI'm fully aware Coca Cola will most likely not want to work with me. However if they do, I just wanted to see if anyone has any advice for dealing with them, and how to approach this.\n\nThank you in advance for any advice or suggestions 🙏",
+      "author": "ChiefRunningCar",
       "score": 10,
       "upvote_ratio": 0.0,
-      "num_comments": 12,
-      "created_utc": "2026-04-06T13:03:24+00:00",
-      "collected_at": "2026-04-13T05:01:19.499412+00:00",
+      "num_comments": 6,
+      "created_utc": "2026-04-08T02:20:46+00:00",
+      "collected_at": "2026-04-13T10:24:32.337784+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
         {
-          "comment_id": "oelyoj9",
-          "body": "Request that at the time of booking the carrier? You can also have the shipping documents photo upon loading to make sure it's them. Think these would be the easiest to start with?\n",
-          "score": 2,
-          "created_utc": "2026-04-06T13:23:27+00:00"
+          "comment_id": "oexbj34",
+          "body": "I've heard of \"being kinda into import/export\"  but this is a new perspective",
+          "score": 37,
+          "created_utc": "2026-04-08T02:44:21+00:00"
         },
         {
-          "comment_id": "oelzuaz",
-          "body": "Just tell them you want it on their asset and not brokered out.  Although you’ll be limiting your options.   4 pallets is LTL so you’ll have limited options depending on which carrier you use.    Insurance should cover either way. There is a vetting process with most brokers as well it’s not random truckers.  ",
-          "score": 11,
-          "created_utc": "2026-04-06T13:29:46+00:00"
-        },
-        {
-          "comment_id": "oem0ce9",
-          "body": "Are you giving the freight to a broker? if so, they are all going to subcontract it out. They should be able to give you the information of the driver that is picking up. We send our shipper the name of the trucking company, driver phone number, vin, and driver phone number. ",
-          "score": 2,
-          "created_utc": "2026-04-06T13:32:28+00:00"
-        },
-        {
-          "comment_id": "oem2ktn",
-          "body": "Work with an asset based carrier and explicit state in your agreement that the load is not to be brokered, interlined, or in any way subcontracted out.",
+          "comment_id": "oexicp2",
+          "body": "I can get it to China. Assuming you can get the product. \n\nI’d suspect some cash and the right coke employee would secure 60 pallets of canned soft drinks. If they need it to be a professional buy, setup an LLC or MX equivalent. Seems viable. In past dealings with Mexican manufacturers, there’s typically quite a bit of gray as it pertains to “professionalism” and what’s acceptable. \n",
           "score": 8,
-          "created_utc": "2026-04-06T13:44:24+00:00"
+          "created_utc": "2026-04-08T03:26:36+00:00"
         },
         {
-          "comment_id": "oem536b",
-          "body": "Are you talking about being double brokered, or using a broker that uses other assets?",
+          "comment_id": "oexj9cg",
+          "body": "Im pretty sure coke wont let you do this because of distribution exclusivity agreements. If Im not mistaken they authorize a local bottler per geography and don’t allow competition. \n\nCommon w food&bev brands. Even a tiny (~$20M ARR) candy company I worked for had this type of setup. \n\nI could be wrong though! Def research and see if you can prove me wrong! There are far crazier business models out there.",
+          "score": 20,
+          "created_utc": "2026-04-08T03:32:25+00:00"
+        },
+        {
+          "comment_id": "of110la",
+          "body": "What are the incoterms?",
+          "score": 1,
+          "created_utc": "2026-04-08T17:03:20+00:00"
+        },
+        {
+          "comment_id": "of1nbeh",
+          "body": "DDP Donkey through the foothills ",
           "score": 6,
-          "created_utc": "2026-04-06T13:57:26+00:00"
+          "created_utc": "2026-04-08T18:42:40+00:00"
         },
         {
-          "comment_id": "oemhyhg",
-          "body": "We solved this on the steel side by only working with systems where carrier assignment is transparent using EOXS. Less guessing, more visibility on who’s actually hauling.",
+          "comment_id": "of31ei5",
+          "body": "They for sure won’t let you do this. But also it would be around $0.25 to ship each 2L in this format, worse if you ship smaller, worse again if you ship glass. Can you mark up the price 200%+ to make it worth while? ",
           "score": 1,
-          "created_utc": "2026-04-06T15:00:04+00:00"
+          "created_utc": "2026-04-08T22:38:18+00:00"
         },
         {
-          "comment_id": "oemvtqc",
-          "body": "Where is the guessing? Look at the BOL",
+          "comment_id": "ofr1uqq",
+          "body": "The exporter in Mexico has to be registered as an exporter and registered at the port of export specifically. If Coca Cola won’t act as exporter, then you will have to pay a company or start a company to act as an exporter. This is why a lot of people truck it to the US and export from there, where it is much easier to export things. ",
           "score": 1,
-          "created_utc": "2026-04-06T16:04:08+00:00"
-        },
-        {
-          "comment_id": "oen92xl",
-          "body": "If there’s any issues with insurance, your brokers insurance should be able to cover it too, whether it’s on owned assets or brokered assets. Talk to your broker a good one should be able to tell you one way or the other.",
-          "score": 1,
-          "created_utc": "2026-04-06T17:04:57+00:00"
-        },
-        {
-          "comment_id": "oenlu8b",
-          "body": "Put it in your contract that the carrier has to run it themselves. No subcontracting without written approval. Then ask for the driver name, MC, and insurance cert before they show up. If they hesitate, they are farming it out.\n\nFor 4 pallets at 1500lbs each, you are in LTL territory. If your insurance is strict about direct handling, PM me the origin and destination. I can quote this direct with our own carrier network, no mystery subs.",
-          "score": 2,
-          "created_utc": "2026-04-06T18:01:18+00:00"
-        },
-        {
-          "comment_id": "oep07fu",
-          "body": "Ask for the driver's name, truck number, and the carrier's MC number before pickup. Then verify that MC number against the FMCSA website. The company you contracted should match the insurance certificate from the actual hauler.\n\nIf they won't give you that info upfront, that's your red flag. Legitimate carriers have no problem sharing it. Shady brokers get evasive.\n\nFor your robotic assemblies, I'd also request a certificate of insurance showing cargo coverage specifically. Most auto haulers carry 00k-50k, but four pallets at 1500 lbs each could exceed that if the robotics are valuable.\n\nWhat are the pickup and delivery cities?",
-          "score": 1,
-          "created_utc": "2026-04-06T22:12:27+00:00"
-        },
-        {
-          "comment_id": "oepr5kj",
-          "body": "It’ll take a bit of work, but just start googling trucking companies in your area and start calling. Explain the situation and you’ll get the answer. Either that, or work with a solid broker that has your best interest at heart. Which, there are some of those out there. ",
-          "score": 1,
-          "created_utc": "2026-04-07T00:39:25+00:00"
-        },
-        {
-          "comment_id": "oeu7w3v",
-          "body": "From someone who got conned twice, build local relationships if possible. Vet the broker you work with and communicate the issue with transparency, requesting this as a priority concern. Or, cut out brokers and work with a few carriers since you’re only targeting 4 cities. Although 4 pallets is an LTL shipment, you may even be able to pull off box trucks/straight trucks if you can find a couple reputable drivers and they meet any load requirements you may have. Lots of factors, but basically finding reputable and trustable folks in the industry that understand your concern and are willing to meet you in the middle with a game plan.",
-          "score": 1,
-          "created_utc": "2026-04-07T17:20:21+00:00"
-        },
-        {
-          "comment_id": "oexahmp",
-          "body": "If you yourself will physically be present at pickup, look at the name and DOT/MC number on the side of the truck, near the door.\n\nIs this very sensitive freight?\n\nJust as an FYI, you may want to ensure whether this is shipping LTL (goes on a truck, unloads into a warehouse, loaded onto another truck, another warehouse, another truck for delivery). More touches and more chance for damage.\n\nSounds to me that you want to make sure this is shipping on a dedicated truck from pickup straight to delivery. \n\nYou probably already know all of this but just wanted to make sure.\n\n",
-          "score": 1,
-          "created_utc": "2026-04-08T02:38:00+00:00"
+          "created_utc": "2026-04-12T13:44:26+00:00"
         }
       ],
       "category": null,
@@ -952,7 +1204,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 15,
       "created_utc": "2026-04-08T09:44:26+00:00",
-      "collected_at": "2026-04-13T05:01:02.508313+00:00",
+      "collected_at": "2026-04-13T10:24:23.245189+00:00",
       "flair": "📊 Business",
       "is_self_post": true,
       "comments": [
@@ -989,44 +1241,86 @@
       "suggested_angle": null
     },
     {
-      "post_id": "1sfw9q2",
-      "url": "https://www.reddit.com/r/smallbusiness/comments/1sfw9q2/",
-      "subreddit": "smallbusiness",
+      "post_id": "1sgc153",
+      "url": "https://www.reddit.com/r/TikTokShop/comments/1sgc153/",
+      "subreddit": "TikTokShop",
       "matched_keyword": "ai-filtered",
-      "title": "I left my engineering career in Canada and moved to India to build an organic kidswear brand. Now preparing to bring it back home.",
-      "body": "Hey everyone, been lurking here forever and finally feel like im at a point where i can share my story\n\nabout 2 years ago my daughter started getting skin reactions from regular clothes. nothing scary but enough that i started researching what actually goes into kids clothing. formaldehyde finishes, azo dyes, heavy metals.. all totally legal and in most of what our kids wear daily\n\ni had a stable engineering management career in canada. good salary. comfortable life. but once i saw what was touching my daughters skin every day i couldnt just move on and buy a different brand. most “organic” options were either crazy expensive or just marketing fluff with no real certification behind them\n\nso i did the thing everyone told me not to do. moved to india, set up in tirupur which is the garment manufacturing hub, and started building an organic kidswear brand from scratch. GOTS certified facility, clean cotton, no nasties. ages 2-6\n\nit took 11 months and 100+ manufacturer rejections before i found the right partner. zero garment industry experience. just an engineer who became a parent and couldnt look the other way\n\nthat was the hard part. manufacturing is now sorted. supply chain is solid. i already launched in india earlier this year and its been the best learning experience i could ask for. now im preparing to launch in canada and if everything goes per plan it should be mid june\n\nfeels like the most full circle thing ever. left canada to build this. now bringing it back home\n\nim not here to pitch anything. just a first time founder figuring it out in real time. now feels like the right time to start sharing this journey and more importantly learn from this community\n\nif youve built a consumer brand or especially a kids brand id love to hear what you wish you knew earlier. happy to answer anything about manufacturing in india or the organic certification world because that was a whole education in itself",
-      "author": "building-momandzoey",
+      "title": "Just want to raise awareness. TikTok shop will refund customer even if seller rejects refund and tracking says delivered.",
+      "body": "This is the second time a customer said they never received it yet usps tracking says delivered. I don’t have many sales to be refunding everyone. I approved the first refund to not get a negative review. The second time around I rejected it and sent the reason with screenshots. \n\nWell once you reject and the customer disputes, customer gets automatically refunded no questions asked. If this continues to happen I will just close shop because I don’t want to continue giving away free items when the tracking clearly says delivered. I have never not received a package in my life and disputed it as a customer myself. I’m sure things get lost but for it to happen to my shop twice in a month is kinda crazy. \n\nIn conclusion, customers can say they never received their order and no matter what the seller does, they will get refunded. I’m pretty sure this is a way to get free items and not have to return the item. Because if the customer says it’s broken or whatever, they will need to return the item before getting a refund. Well if customers just say they never received it, they don’t have to do anything else and will know TikTok will refund them 100% of the time. ",
+      "author": "jo_ezzy",
       "score": 8,
       "upvote_ratio": 0.0,
-      "num_comments": 7,
-      "created_utc": "2026-04-08T15:33:14+00:00",
-      "collected_at": "2026-04-13T05:01:09.243449+00:00",
+      "num_comments": 12,
+      "created_utc": "2026-04-09T01:40:24+00:00",
+      "collected_at": "2026-04-13T10:24:29.199763+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
         {
-          "comment_id": "of1n6uq",
-          "body": " way — 13 agents that live entirely in email. You delegate tasks like you'd email a teammate. Small teams adopt it in hours, not weeks.",
-          "score": 1,
-          "created_utc": "2026-04-08T18:42:05+00:00"
+          "comment_id": "of3yu5w",
+          "body": "Yeap , the only remedy is for you to open a ticket with a customer service rep to get a reimbursement for the refund , but keep in mind if customers keep requesting refunds TikTok will disable your shop and hold all funds , so if a trend is happening you where customers are requesting refunds ill pull my ship from TikTok before they put a severe violation and put a hold on funds due to high compliant rate ",
+          "score": 6,
+          "created_utc": "2026-04-09T01:46:56+00:00"
         },
         {
-          "comment_id": "of1pbr0",
-          "body": "Whats the brand and where in India can you buy from (channel/retailers) ?",
-          "score": 1,
-          "created_utc": "2026-04-08T18:51:48+00:00"
+          "comment_id": "of4074w",
+          "body": "TikTok shop is a scam and stealing seller’s money. Glad I got out of this scam machine ",
+          "score": 6,
+          "created_utc": "2026-04-09T01:54:45+00:00"
         },
         {
-          "comment_id": "of1x1sx",
-          "body": "Kudos to you! It takes courage to quit a well paying job and start something new! Let me know if you need help in North American market",
+          "comment_id": "of42tgc",
+          "body": "I had a return today where the customer claimed damage and Tik Tok Shop gave the refund without return or proof of damage. I got reimbursed because I brought it up to support but like the other comment says, this is not a long term solution.",
           "score": 1,
-          "created_utc": "2026-04-08T19:27:09+00:00"
+          "created_utc": "2026-04-09T02:09:49+00:00"
         },
         {
-          "comment_id": "of3gos8",
-          "body": "Cool story AI 😁",
-          "score": 0,
-          "created_utc": "2026-04-09T00:02:35+00:00"
+          "comment_id": "of598bj",
+          "body": "Very common. I ship about 100-200 orders daily and I’m getting 5-7 refund a week that are basically scams. ",
+          "score": 3,
+          "created_utc": "2026-04-09T07:19:57+00:00"
+        },
+        {
+          "comment_id": "of5pqhz",
+          "body": "Tt shop is not for businesses. It heavily favors the customers to keep them on their platform buying",
+          "score": 1,
+          "created_utc": "2026-04-09T09:49:29+00:00"
+        },
+        {
+          "comment_id": "of69994",
+          "body": "Yes. My co worker has been refunded for over 20 orders claiming “order not received “and Tiktok just automatically approves them. What a total scam. He even ordered an expensive handmade bag and was refunded for it claiming “empty box” and he brags about this at work. ",
+          "score": 1,
+          "created_utc": "2026-04-09T12:07:48+00:00"
+        },
+        {
+          "comment_id": "of6vok0",
+          "body": "Yes it is a joke of a company. I am selling up to move out of TTshop. \nI mean what evidence do they want. In the UK it shows as delivered. There is GPS proof, a signature, and a photo and I still have about 3% of my deliveries claimed as non delivered by customers. I pay premium for delivery too",
+          "score": 1,
+          "created_utc": "2026-04-09T14:04:41+00:00"
+        },
+        {
+          "comment_id": "of7hv03",
+          "body": "I feel this. We run a 3PL so we see this constantly with TikTok sellers and it's one of their biggest pain points. What's happening is TikTok's system literally doesn't differentiate between \"delivered\" and \"received by customer.\" So when a customer opens a dispute they just side with the customer because from their data perspective the seller has no proof the customer actually got it. Here's the frustrating part. You could have a photo of the package on the customer's doorstep and TikTok still wouldn't care if the customer says they never saw it. The platform just doesn't have enough friction to make customers verify they actually got something before they can dispute. Compare that to Amazon where if tracking says delivered they protect you unless it's a pattern. If this keeps happening you basically have two moves. One is to just accept it as a cost of doing business on TikTok right now, especially if your margin is healthy enough to absorb occasional losses. Two is to invest in shipping methods that actually prove delivery. Signature required through UPS or FedEx, or moving to a fulfillment partner that can use photo proof on delivery. It costs more upfront but it saves you from eating these refunds over and over.",
+          "score": 1,
+          "created_utc": "2026-04-09T15:44:11+00:00"
+        },
+        {
+          "comment_id": "of9v3vg",
+          "body": "Guys I think that if I send more merchandise to fulfilled by TikTok, and customer claims never received even though it says delivered, TikTok should eat the costs. Right? ",
+          "score": 1,
+          "created_utc": "2026-04-09T22:13:20+00:00"
+        },
+        {
+          "comment_id": "ofbh4hs",
+          "body": "Omg😭 a customer just tried to get a refund. I denied it but the notification says they can still request it in two days. Right now the order is pending as refund/return. I do blind dates with a book & the customer ordered two. It was delivered & they requested a refund with a photo of just book tabs & highlighters. I told them to send me a photo in order for me to consider a refund. They literally sent me a video of the two Kraft wrap where you can literally see book creasings from where I wrapped books. Like if Horus going to lie why would you even send evidence not in your favor. Not only this, I contacted USPS for the final weight check and it was over 1lb. Like if you only got a highlighter and tabs there’s no way it’s saying anything other than a few oz. It’s been two days & that’s why TikTok says they can request again. I uploaded the evidence from the video as well as USPS statement on how much it weight, so I’m just waiting. I’m fairly new, so it really sucks that people try to scam like this ",
+          "score": 1,
+          "created_utc": "2026-04-10T03:49:18+00:00"
+        },
+        {
+          "comment_id": "ofubhhi",
+          "body": "I've added my usps receipt and 40 percent of the time it's a win.. I'd try that! ",
+          "score": 1,
+          "created_utc": "2026-04-12T23:16:50+00:00"
         }
       ],
       "category": null,
@@ -1048,7 +1342,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 17,
       "created_utc": "2026-04-06T23:43:20+00:00",
-      "collected_at": "2026-04-13T05:01:20.163331+00:00",
+      "collected_at": "2026-04-13T10:24:40.049305+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -1168,7 +1462,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 15,
       "created_utc": "2026-04-07T11:47:36+00:00",
-      "collected_at": "2026-04-13T05:01:21.048633+00:00",
+      "collected_at": "2026-04-13T10:24:41.327319+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -1282,10 +1576,64 @@
       "upvote_ratio": 0.0,
       "num_comments": 2,
       "created_utc": "2026-04-06T12:50:01+00:00",
-      "collected_at": "2026-04-13T05:01:01.606085+00:00",
+      "collected_at": "2026-04-13T10:24:22.809987+00:00",
       "flair": "📊 Business",
       "is_self_post": true,
       "comments": [],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
+      "post_id": "1sit8ny",
+      "url": "https://www.reddit.com/r/supplychain/comments/1sit8ny/",
+      "subreddit": "supplychain",
+      "matched_keyword": "ai-filtered",
+      "title": "Anyone using software for traceability?",
+      "body": "Not looking for a pitch, just trying to figure out what people are actually using when they need to trace ingredients or components fast and see what shipped where. Our current process is way too manual, so I’m curious what’s worked for other teams. Has anyone used recall management software, manufacturing compliance software, or a supply chain traceability ERP that’s actually useful in real life?",
+      "author": "FNExtreme",
+      "score": 7,
+      "upvote_ratio": 0.0,
+      "num_comments": 6,
+      "created_utc": "2026-04-11T19:58:53+00:00",
+      "collected_at": "2026-04-13T10:24:33.314682+00:00",
+      "flair": null,
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "ofmnyha",
+          "body": "used a manufacturing compliance tool (more for audits) and kinda forced it into traceability. worked… but only because we had a small sku count. would not scale at all in a bigger operation  \n",
+          "score": 1,
+          "created_utc": "2026-04-11T20:08:02+00:00"
+        },
+        {
+          "comment_id": "ofmp6lo",
+          "body": "most teams use ERP based traceability\n\ntools like batch tracking inside ERP work best because everything is connected\n\ndedicated tools help if your supply chain is complex\n\nreal issue isn’t tool  \nit’s messy data and disconnected systems\n\ni use runable to map the flow first so the tool actually works after setup",
+          "score": 1,
+          "created_utc": "2026-04-11T20:14:15+00:00"
+        },
+        {
+          "comment_id": "ofn2qsp",
+          "body": "Wherefour is a traceability focused ERP, does exactly what you’re describing ",
+          "score": 1,
+          "created_utc": "2026-04-11T21:24:31+00:00"
+        },
+        {
+          "comment_id": "ofq3zjl",
+          "body": "FoodLogiQ is solid for traceability and recall workflows but the setup takes a while. SafetyChain is simpler if you're mostly focused on compliance docs. if your bottleneck is actually pulling data together from mulitple systems, Scaylor might fit better there.",
+          "score": 1,
+          "created_utc": "2026-04-12T09:53:22+00:00"
+        },
+        {
+          "comment_id": "ofsxib4",
+          "body": "Wherefour is one of the tools on our shortlist right now. What caught my attention was that it seemed a little more focused on the traceability side than a lot of generic ERP systems. Being able to connect lot tracking, inventory history, and order records in one place feels way more useful when something actually goes wrong. It seems worth checking out if you’re comparing recall management software options or trying to cover FDA compliance ERP needs without building the whole thing out in spreadsheets.",
+          "score": 1,
+          "created_utc": "2026-04-12T19:02:19+00:00"
+        }
+      ],
       "category": null,
       "summary": null,
       "pain_point": null,
@@ -1305,7 +1653,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 27,
       "created_utc": "2026-04-07T17:07:38+00:00",
-      "collected_at": "2026-04-13T05:01:21.582449+00:00",
+      "collected_at": "2026-04-13T10:24:42.163356+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -1528,26 +1876,248 @@
       "suggested_angle": null
     },
     {
-      "post_id": "1shpz2i",
-      "url": "https://www.reddit.com/r/ecommerce/comments/1shpz2i/",
-      "subreddit": "ecommerce",
+      "post_id": "1sfg7pe",
+      "url": "https://www.reddit.com/r/logistics/comments/1sfg7pe/",
+      "subreddit": "logistics",
       "matched_keyword": "ai-filtered",
-      "title": "DTC operators/founders — what was happening the last time cash got tight?",
-      "body": "Looking for real examples from people running DTC brands (especially those doing meaningful volume).\n\nThink about the *last time* cash felt tight:\n\n• What was going on in the weeks leading up to it?  \n• Where was most of the cash going?  \n• When did you realize it was becoming a problem?  \n• What did you do right after?\n\nSpecifics (even rough numbers or timelines) would be super helpful.",
-      "author": "Empty-Fail2016",
-      "score": 5,
+      "title": "Advice for shipping containers of Coca Cola from Mexico to China?",
+      "body": "**I know this is probably unrealistic, but wanted to ask anyways just in case:**\n\nI have someone in China asking me if I can ship them 3 containers of soft drinks, 1 container each of Coca Cola (both glass and cans), Sprite, and Fanta. 3 containers (total) a month.\n\nI've shipped from China to the US before, and now I live in Mexico (near port of Manzanillo) and figured I might be able to make this happen.\n\nI also have a friend who knows two people that work in the Coca Cola plant nearby in Colima.\n\nI'm fully aware Coca Cola will most likely not want to work with me. However if they do, I just wanted to see if anyone has any advice for dealing with them, and how to approach this.\n\nThank you in advance for any advice or suggestions 🙏",
+      "author": "ChiefRunningCar",
+      "score": 6,
       "upvote_ratio": 0.0,
-      "num_comments": 3,
-      "created_utc": "2026-04-10T15:34:23+00:00",
-      "collected_at": "2026-04-13T05:01:05.238502+00:00",
-      "flair": "📊 Business",
+      "num_comments": 7,
+      "created_utc": "2026-04-08T02:20:02+00:00",
+      "collected_at": "2026-04-13T10:24:42.568498+00:00",
+      "flair": null,
       "is_self_post": true,
       "comments": [
         {
-          "comment_id": "ofj6m3t",
-          "body": "Last time cash got tight for us was Q4 2024 and the instinct was to cut ad spend first. That was the wrong move. We cut our content budget instead and protected the channels that had the shortest payback period. Sounds obvious in retrospect but in the moment everyone wants to slash the biggest line item on the P&L.  \n  \nWhat actually saved us was getting ruthless about contribution margin per channel. We had two channels that looked great on ROAS but were actually negative margin after shipping and returns. Killed those, redirected budget to the one channel that had lower ROAS but higher actual profit per order. Revenue dropped 15% but profit went up because we stopped subsidizing unprofitable orders.  \n  \nThe other thing I'd add is that tight cash is when you find out if your email list is actually worth anything. We'd been collecting emails for a year and barely using the list. Started sending real offers twice a week and it became our highest margin channel basically overnight. Zero acquisition cost, 25% open rate, decent conversion. If you haven't been nurturing your list, now's the time to start. What channels are driving your revenue right now?",
+          "comment_id": "oexcdsi",
+          "body": "Coca-Cola has distributors in China I believe. You mean bypassing existing stuff which can be tricky for import. ",
+          "score": 4,
+          "created_utc": "2026-04-08T02:49:30+00:00"
+        },
+        {
+          "comment_id": "oexeab3",
+          "body": "Nowadays, many people in China prefer cane-sugar cola—which is precisely why he reached out to you—rather than that corn syrup \"shit.\"\n\n\n\nThe catch, however, is that importing and exporting food products requires specific licensing and qualifications—especially when dealing with a brand like Coca-Cola.\n\n\n\nI work in the logistics industry. I absolutely love the Mexican version of Coke, but I’ve only ever been able to purchase it through authorized import traders",
+          "score": 1,
+          "created_utc": "2026-04-08T03:01:05+00:00"
+        },
+        {
+          "comment_id": "oexga9u",
+          "body": "Sounds like someone got their hands on three stolen containers and are looking to offload the goods in China. \n\nSoft-drinks are among the top commodities targeted by criminal actors, so do your due diligence if anything feels off ",
+          "score": 8,
+          "created_utc": "2026-04-08T03:13:32+00:00"
+        },
+        {
+          "comment_id": "oexnr4k",
+          "body": "If you're talking about legit Coca Cola product, the hard part probably isn't booking 3 containers a month. It's getting authorized supply and clearing the import side in China.\n\nI'd check these before you spend time on ocean rates:\n1. whether the buyer can legally import branded beverages into China\n2. whether the bottler in Mexico can sell for export outside its territory\n3. labeling, language, ingredient, and food registration requirements\n4. shelf life left on arrival\n5. Incoterms and who is handling duties, inspections, and customs holds\n\nThree containers a month out of Manzanillo is doable from a freight standpoint. The commercial and compliance side is what can kill it.\n\nIf those boxes are clean, talk to a forwarder with food and beverage export experience from Mexico, not just a general ocean quote shop.",
+          "score": 3,
+          "created_utc": "2026-04-08T04:02:09+00:00"
+        },
+        {
+          "comment_id": "oeyobwc",
+          "body": "Honestly, the hardest part won’t be shipping, it’ll be getting authorization from Coca-Cola. They usually control distribution tightly by region, so you’d probably need to go through an official distributor or export partner first.",
+          "score": 1,
+          "created_utc": "2026-04-08T09:11:51+00:00"
+        },
+        {
+          "comment_id": "of0860w",
+          "body": "You have to learn which fish to throw back in this game.",
+          "score": 1,
+          "created_utc": "2026-04-08T14:54:06+00:00"
+        },
+        {
+          "comment_id": "of4bli4",
+          "body": "TBH, sounds shady AF. ",
+          "score": 1,
+          "created_utc": "2026-04-09T03:02:59+00:00"
+        },
+        {
+          "comment_id": "ofg0ja1",
+          "body": "Thanks, great advice. A lot of things to consider. Going to be looking into this. \n\nSeems like a huge PITA and not worth it, but still looking into it. Maybe once I have it setup, the other 3 containers a month might not be that bad.",
+          "score": 1,
+          "created_utc": "2026-04-10T19:58:48+00:00"
+        },
+        {
+          "comment_id": "ofg0q4d",
+          "body": "True... going to call Coca Cola FEMSA in Mexico City soon most likely. Will be curious to see how that conversation goes. Just doing all my homework first so I know what the terms will be, etc.",
+          "score": 1,
+          "created_utc": "2026-04-10T19:59:41+00:00"
+        },
+        {
+          "comment_id": "ofj6mg3",
+          "body": "Thanks, this helps ",
+          "score": 1,
+          "created_utc": "2026-04-11T07:53:13+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
+      "post_id": "1sfzc0r",
+      "url": "https://www.reddit.com/r/AmazonFBA/comments/1sfzc0r/",
+      "subreddit": "AmazonFBA",
+      "matched_keyword": "ai-filtered",
+      "title": "Most Amazon sellers don't know their real unit cost. Here's how to calculate it properly.",
+      "body": "I work in sourcing and supply chain in Southeast Asia. One thing I see constantly: sellers quoting their \"unit cost\" as whatever the factory invoice says. That number is almost always wrong. And the gap is killing margins.\n\nHere's what landed cost actually includes:\n\n1. **Factory price**: what you pay the supplier per unit. Most sellers stop here.\n2. **Freight**: sea freight from Asia to a US port runs roughly $1,500-2,500 per 20ft container right now. Divide by your unit count. On 2,000 units that's $0.75-1.25/unit just for the ocean leg.\n3. **Origin charges**: trucking to port, export customs, origin handling. Add another $0.20-0.40/unit typically.\n4. **Import duties**: depends on your HS code and country of origin. For China it can be 7.5-25%+ of FOB value right now, more with the new tariffs. This is the number most sellers are miscalculating in 2025.\n5. **Pre-shipment inspection**: $250-500 per inspection. On 2,000 units that's $0.13-0.15/unit. Non-negotiable cost if you're serious about quality.\n6. **Destination charges + trucking**: from port to FBA warehouse. $300-600 typically. Another $0.15-0.30/unit.\n7. **Amazon FBA fees**: storage, fulfillment, the new 3.5% fuel surcharge. These are well documented but still the #2 thing sellers underestimate (after duties).\n\nA $5.00 factory price can easily land at $8.50-9.50 all-in before Amazon takes its cut. If you're pricing based on $5.00, you're losing money.\n\n\n\n**The fix**: build a landed cost model in a spreadsheet before you commit to any product. Every line item above should have a number in it. If you don't know a number, get a freight quote. It takes 20 minutes.\n\n\n\nHappy to answer questions if anyone wants help thinking through the model for their product.",
+      "author": "Plastic-Path4905",
+      "score": 5,
+      "upvote_ratio": 0.0,
+      "num_comments": 13,
+      "created_utc": "2026-04-08T17:21:19+00:00",
+      "collected_at": "2026-04-13T10:24:35.944488+00:00",
+      "flair": null,
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "of1vg71",
+          "body": "Very nice. I would add local storage before FBA, returns costs plus returns of those items that cannot be sold. ",
           "score": 2,
-          "created_utc": "2026-04-11T07:53:08+00:00"
+          "created_utc": "2026-04-08T19:19:46+00:00"
+        },
+        {
+          "comment_id": "of28wvo",
+          "body": "Don't forget ALL of the Amazon fees;\n\n1) Professional selling plan fees  \n2) Referral fees  \n3) FBA pick+pack fees  \n4) Monthly storage fees  \n5) Aged inventory surcharges  \n6) Low inventory fees  \n7) Inbound placement fees  \n8) Inbound defect fees  \n9) Removal fees  \n10) Disposal fees  \n11) Liquidation fees  \n13) Refund administration fees  \n14) Returns processing fees  \n15) Deal fees  \n16) Coupon fees  \n17) Vine fees  \n18) Transparency fees  \n19) AWD fees  \n20) Currency exchange fees  \n21) Fuel and logistics surcharge \n\nThis is why I went with a 1P distributor for my golf brand.  I don't worry about Amazon's rising fees AND I know EXACTLY what I'm making.",
+          "score": 2,
+          "created_utc": "2026-04-08T20:20:23+00:00"
+        },
+        {
+          "comment_id": "of2gnsw",
+          "body": "Good breakdown. One thing worth adding to the FBA fees line: those numbers change at least once a year, sometimes mid-year, so a model that was accurate in December can be meaningfully off by February. The fuel surcharge you mentioned is a good example. It came in with minimal notice and a lot of sellers didn't catch it until it showed up in their payouts. Worth building in a reminder to recheck after any Amazon fee announcement, not just when you're evaluating a new product.",
+          "score": 2,
+          "created_utc": "2026-04-08T20:54:58+00:00"
+        },
+        {
+          "comment_id": "of6ea3n",
+          "body": "Yeah and even after calculating all this, keeping track of it over time is another headache.\n\nI switched to using Profit Cyclops for this because my spreadsheet kept getting messy once ads + refunds came in. Way easier to see actual profit per product now.",
+          "score": 1,
+          "created_utc": "2026-04-09T12:36:23+00:00"
+        },
+        {
+          "comment_id": "of742pt",
+          "body": "Good point! I should have flagged that. Best practice is to pull current rates directly from Seller Central when building the model, not from any third-party guide. Date-stamp your model too so you know when it was last verified.",
+          "score": 1,
+          "created_utc": "2026-04-09T14:43:00+00:00"
+        },
+        {
+          "comment_id": "of74e3a",
+          "body": "All valid additions! I kept it high level but you're right that the full Amazon fee stack hits harder than most sellers expect when you add it all up. Referral fees alone can be 8-15% depending on category. The point is just to have every line item in the model before committing to a product.",
+          "score": 2,
+          "created_utc": "2026-04-09T14:44:25+00:00"
+        },
+        {
+          "comment_id": "of74kgm",
+          "body": "Both good catches! Local storage before FBA is real cost, especially if you're doing any kind of prep or repackaging before sending in. Returns are the one most sellers don't model at all — even a 3-4% return rate at $8-10 per returned unit adds up fast on volume.",
+          "score": 1,
+          "created_utc": "2026-04-09T14:45:12+00:00"
+        },
+        {
+          "comment_id": "of74u5n",
+          "body": "Spreadsheets do break down once you have multiple SKUs and ad spend to track. Good to have a tool that handles the ongoing tracking. The model I described is more for the pre-launch evaluation before you commit. Once you're live, automated tracking makes sense.",
+          "score": 1,
+          "created_utc": "2026-04-09T14:46:25+00:00"
+        },
+        {
+          "comment_id": "of78v1t",
+          "body": "is this 20 fees cover all possibilities? Amazon has so many different fees, often got confused.",
+          "score": 1,
+          "created_utc": "2026-04-09T15:04:14+00:00"
+        },
+        {
+          "comment_id": "of79fd0",
+          "body": "And, here's some other stuff, which aren't fees, per se, but they do add to the cost of doing business on Amazon…  \n  \n22) PPC spend (this is a BIG cost)  \n23) Lost/damaged inventory (COGS recovery only)  \n24) Bidding for more FBA capacity  \n25) DD+7 (impacts cash flow)  \n26) No credit cards for PPC (impacts cash flow)",
+          "score": 1,
+          "created_utc": "2026-04-09T15:06:44+00:00"
+        },
+        {
+          "comment_id": "of7bw65",
+          "body": "Is profit cyclops a tool?",
+          "score": 1,
+          "created_utc": "2026-04-09T15:17:39+00:00"
+        },
+        {
+          "comment_id": "ofbzbin",
+          "body": "You are right!!!",
+          "score": 1,
+          "created_utc": "2026-04-10T06:07:26+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
+      "post_id": "1sehqhe",
+      "url": "https://www.reddit.com/r/logistics/comments/1sehqhe/",
+      "subreddit": "logistics",
+      "matched_keyword": "ai-filtered",
+      "title": "How do small teams (under 50 people) actually manage supplier RFQ tracking without enterprise software?",
+      "body": "I've been in a sourcing role at a small operation and I'm curious how others here handle the RFQ process at scale, specifically the tracking and follow-up side of things.\n\nOur current workflow looks roughly like this:\n\n1. Identify that we need a component (say a specific type of fitting or fastener)\n2. Google around to find potential suppliers, usually checking their websites, catalogs, maybe Thomasnet\n3. Hunt for the supplier's contact info, sometimes it's a clean contact page, sometimes the email is buried in a PDF catalog or you have to fill out a web form and pray\n4. Write an RFQ email, usually copying from a previous one and swapping out the part details\n5. Send it to 5-10 suppliers for the same part\n6. Wait, follow up, wait again\n7. When quotes come back, put them in a spreadsheet to compare price, lead time, MOQ, shipping terms\n8. Repeat for every line item on the BOM\n\nFor a single part this is manageable. But when we're sourcing across 30-40 line items and each one goes to 5+ suppliers, it becomes an organizational nightmare. Emails get buried, follow-ups get missed, and by the time all the quotes are in, someone's already changed the spec on one of the parts.\n\nWe've looked at some of the enterprise procurement platforms but they're way out of our budget range and honestly overkill for what we need. We don't need full P2P procurement, we just need a better way to track who we've contacted, who's responded, and compare what came back.\n\nA few specific things I'm curious about:\n\n**For the tracking side,** are people using dedicated tools for this, or is it mostly spreadsheets and inbox folders? I've seen some people mention using CRMs (like HubSpot or even Notion) repurposed for supplier tracking, but that feels like it would require a lot of customization to fit a procurement workflow.\n\n**For the initial supplier search,** beyond Thomasnet and Google, where are people actually finding suppliers these days? Especially for more specialized components. Industry directories? Trade shows? Referrals from other buyers?\n\n**For follow-ups,** does anyone have a systematic approach to following up on RFQs that haven't been responded to? Right now it's basically \"check the spreadsheet every few days and see who's overdue,\" which is... not great.\n\nI know every company handles this differently depending on size, industry, and how many parts they're sourcing at any given time. Just trying to understand if our messy process is normal or if there are better approaches I'm not seeing.\n\nAppreciate any insight from people who've been through this.",
+      "author": "thehound123",
+      "score": 5,
+      "upvote_ratio": 0.0,
+      "num_comments": 5,
+      "created_utc": "2026-04-07T01:15:40+00:00",
+      "collected_at": "2026-04-13T10:24:40.468246+00:00",
+      "flair": null,
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "oes2vo8",
+          "body": "Honestly, most small teams are still running this on spreadsheets + inbox just slightly more structured than what you described.\n\nWhat tends to help isn’t replacing the tools, but tightening the process around them:\n\n• One master RFQ tracker (not per part) with status columns like *sent / replied / quoted / follow-up needed*  \n• Standardized RFQ template + subject line so suppliers recognize and prioritize it  \n• Set follow-up cadence (e.g. 48h + 5 days) instead of ad hoc checking  \n• Log every supplier interaction in one place (even if it’s just notes in the sheet)\n\nThe biggest unlock I’ve seen is treating it like a pipeline rather than a set of emails once you track it that way, things stop slipping through the cracks as much.\n\nFor supplier discovery, referrals and existing network still outperform directories in most cases, especially for anything specialized.\n\nCurious if others have found lightweight tools that actually beat a well-run spreadsheet here.",
+          "score": 1,
+          "created_utc": "2026-04-07T10:57:20+00:00"
+        },
+        {
+          "comment_id": "oets9cx",
+          "body": "Tracking RFQs for dozens of parts and multiple suppliers without proper tools quickly gets messy. I’ve seen teams like yours move from pure spreadsheets to lightweight CRMs or even database tools like Airtable that let you build custom views, automate follow-ups, and link contacts to parts. It’s still a bit of setup work but once you have it dialed in, you get better visibility and fewer dropped emails.\n\n\n\nFor example, I helped a small manufacturer set up an Airtable base that tracked RFQs by part number, supplier, status, and quote details. We automated email reminders for follow-ups and flagged when specs changed mid-process. It didn’t replace their email but helped centralize everything so nothing slipped through the cracks. For supplier search beyond Thomasnet, LinkedIn can be surprisingly good for finding reps or small distributors, and industry forums or trade associations sometimes have directories that aren’t indexed by Google.\n\n\n\nThe key is picking tools that integrate with what you already use (email, spreadsheets) but add structure and automation without blowing your budget on big software. If you’re comfortable with light customization, something like Airtable or even a simple CRM tailored for procurement can save hours each week.",
+          "score": 1,
+          "created_utc": "2026-04-07T16:12:11+00:00"
+        },
+        {
+          "comment_id": "oeucy43",
+          "body": "What you’re describing is actually pretty normal at that size.\n\nThe problem usually isn’t sending RFQs — it’s that there’s no single place that represents the *state* of each line item. So everything lives half in email, half in spreadsheets, and follow-ups become guesswork.\n\nWhat I’ve seen work (even without expensive tools) is structuring it more like a pipeline:\n\nEach line item = one “record”\n\n* suppliers contacted\n* last response date\n* next follow-up date\n* current status (waiting / quoted / rejected / changed spec)\n\nOnce that exists, the process becomes less about chasing emails and more about moving items through stages.\n\nA lot of teams do this in spreadsheets or lightweight tools, but the key is making the workflow visible, not just the data.\n\nYour current setup isn’t wrong — it’s just missing that “live state” layer, which is why it feels chaotic as volume increases.\n\nHappy to share more specifics if you get deeper into it — this phase is where most of the real questions come up.",
+          "score": 1,
+          "created_utc": "2026-04-07T17:42:11+00:00"
+        },
+        {
+          "comment_id": "oeymg9n",
+          "body": "Okay, here's a Reddit comment responding to the \"RFQ tracking for small teams\" post title, focused on Incoterms implications and tailored for a small team context: \"For small teams managing supplier RFQs, consider leveraging readily available tools like spreadsheets and shared cloud storage (Google Drive, OneDrive). Clearly define Incoterms in your RFQ template! This clarifies responsibilities for transport, insurance, and import duties upfront, which is crucial for accurate cost comparisons between different suppliers. Using Incoterms in the RFQ phase will minimize confusion and potential hidden costs later in the process and can be easily tracked in your spreadsheet by adding columns for Incoterm, origin port, and destination.\"",
+          "score": 1,
+          "created_utc": "2026-04-08T08:54:19+00:00"
+        },
+        {
+          "comment_id": "of0i9nm",
+          "body": "Your process is normal. The spreadsheet breaks around 15 to 20 line items for most teams.\n\nTwo things that actually help at your scale without enterprise software:\n\nFor tracking, Airtable with a simple status field beats Excel because you can filter by supplier, part, and response status in one view. Not perfect but survives 40 line items.\n\nFor follow-ups, the real problem is not the tool. It is that follow-up depends on someone remembering to check. Any system where a human has to initiate the follow-up will have gaps. The teams that handle this best set a rule: if no response in 72 hours the follow-up goes out automatically, either through an email sequence tool or a calendar trigger. Takes the memory requirement out of the loop.\n\nThe spec change problem you mentioned is the hardest one. No tool solves that cleanly at small scale. The only thing that works is a single person owning the BOM version and freezing it before RFQs go out.",
+          "score": 1,
+          "created_utc": "2026-04-08T15:39:08+00:00"
+        },
+        {
+          "comment_id": "ofb30b1",
+          "body": "I am a mechanical engineer. This is painfully accurate. I’ve seen the same workflow across smaller engineering teams, spreadsheets + inbox chaos. Interesting that you went the automation route (search → email → tracking). Curious, where do you see the biggest bottleneck right now? Supplier discovery, response rates, or quote comparison?",
+          "score": 1,
+          "created_utc": "2026-04-10T02:19:37+00:00"
+        },
+        {
+          "comment_id": "ofb7utq",
+          "body": "I have worked with some small teams and helped them shift towards AI-agent flows since they are great at working in parallel. Basically the team identifies the component they need, then a fleet of agents conduct search to find potential suppliers, hunt for the contact information, and organize it into a simple database, the next round of agents sends out the RFQ emails, and the cron jobs resend if they havent heard back yet. when the replies come in, that gets organized into a central data table and a dashboard displays all the information gathered and then the team can make decisions. basically eliminates the entire hunting process.   \n  \nFor supplier search - i always recommend AI Agent fleet first, then you dont have to worry about knowing all the places to look, the agents find places you havent  \n  \nfor follow-ups, we implement simple cron jobs, if email hasnt been responded to on check, then follow up again.   \n  \nhope this information helps ",
+          "score": 1,
+          "created_utc": "2026-04-10T02:48:44+00:00"
+        },
+        {
+          "comment_id": "ofjg6ql",
+          "body": "Yeah, this is exactly the operational bottleneck we see across supply chain teams. The math is brutal — 30-40 line items × 5-10 suppliers × manual tracking = someone's full-time job just managing spreadsheets and follow-ups.\n\nAt Agentiks, we've been building agentic workflows that flip this: one AI agent handles supplier research and RFQ drafting, another manages the outreach sequence, and a third automatically tracks responses and flags delays. They run autonomously in the background without someone babysitting emails — your team only jumps in when a quote actually arrives or a supplier needs negotiation.\n\nThe key difference from just using better spreadsheet templates is that these agents *learn your supplier patterns* (who typically responds in 2 days vs. 7, who prefers email vs. phone) and automatically adjust follow-up timing. You go from burying emails to having a clean audit trail with automated escalations.\n\nIf you want to see how this actually works in practice, happy to walk you through a workflow that matches your sourcing process. DM me and I can show you what this looks like running live.",
+          "score": 1,
+          "created_utc": "2026-04-11T09:20:26+00:00"
         }
       ],
       "category": null,
@@ -1569,7 +2139,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 28,
       "created_utc": "2026-04-09T16:25:51+00:00",
-      "collected_at": "2026-04-13T05:01:04.094334+00:00",
+      "collected_at": "2026-04-13T10:24:24.517021+00:00",
       "flair": "📊 Business",
       "is_self_post": true,
       "comments": [
@@ -1666,60 +2236,6 @@
       "suggested_angle": null
     },
     {
-      "post_id": "1sdm9bx",
-      "url": "https://www.reddit.com/r/smallbusiness/comments/1sdm9bx/",
-      "subreddit": "smallbusiness",
-      "matched_keyword": "ai-filtered",
-      "title": "I need help -- enterprise tech...small business problems. Worth it or stupid??",
-      "body": "Ok so I'm the youngest of a small family manufacturing biz for personal gifts and I've been kind of going down a rabbit hole I can't get out of because i think we need to be more precise and optimize our day to day better and have more insight to plan for big issues when they come up.\n\nI seen an article about how larger companies are using digital twin technology to run virtual replicas of their entire operation in real time. Which i feel like could help us with costly decisions and maybe speed up our productivity. Catching equipment failures, maybe changing the floor layouts but virtually first.\n\nI've seen companies like Walmart using it, but we're not Walmart sized. \n\nNone of my friends or family are really into this stuff so I can't have this conversation anywhere else. Nobody around me is tracking where this is going or what it means for businesses like mine. Let alone emerging technologies in general. \n\nHas anyone here looked into enterprise level tech for a smaller operations? Did it actually move the needle or was it too much too soon?\n\nWe have wiggle room for the investment, but not sure if it would be what I expect. \n\nWhat am I missing? How do people normally make these kinds of decisions?",
-      "author": "Scared_Importance_54",
-      "score": 4,
-      "upvote_ratio": 0.0,
-      "num_comments": 10,
-      "created_utc": "2026-04-06T02:18:32+00:00",
-      "collected_at": "2026-04-13T05:01:05.757939+00:00",
-      "flair": null,
-      "is_self_post": true,
-      "comments": [
-        {
-          "comment_id": "oejm7ml",
-          "body": "Before jumping to digital twins - which is genuinely powerful but deeply enterprise-level - I'd ask: do you have your operations documented anywhere right now? Most small manufacturers at your stage are still running on \"someone knows where things are.\"\n\nDigital twin tech works at Walmart because they've already invested years in data pipelines, sensor integrations, and structured operational documentation. Without that foundation, you're paying enterprise licensing to visualize chaos.\n\nWhat actually moves the needle at your scale: get each operational function (floor ops, inventory, client orders, maintenance schedules) into structured, shared workspaces your whole team can access and update. That's the visibility layer you're actually missing - not a virtual replica.\n\nWe built Resillator (resillator.xyz) partly from this exact problem - AI-generated functional workspaces that give you real-time operational visibility before you need to spend + on enterprise solutions. It's the step between \"everything's in someone's head\" and \"we have a digital twin.\"\n\nThink document first, then automate, then digitize. Not the other way around. You'll know when you're ready for the heavier tech when the simpler stuff is working.",
-          "score": 1,
-          "created_utc": "2026-04-06T02:26:03+00:00"
-        },
-        {
-          "comment_id": "oejss6o",
-          "body": "So, good for you to reach out into the vast expanse of the internet to get help.  Unfortunately, all you have gotten so far is an intelligent sales pitch. \n\nIf I may be so bold, it is hard to help you without real data.  Where is the family business?  What kind of personal gifts? How many employees? What accounting system are you using?  What other software do you have? What is the geographical distribution of your customers?\n\nAs the sales pitch comment correctly states, digitization is the right thing to do.  To be successful, you need to know what and how you are going to digitize. \n\nAnd finally, you should discuss this with the family members that run the business.  You are setting yourself up for ultimate failure if the person with the gold isn’t supporting you. \n\n",
-          "score": 1,
-          "created_utc": "2026-04-06T03:08:51+00:00"
-        },
-        {
-          "comment_id": "oekagfm",
-          "body": "Digital twin is way too early if the shop isn't already tracking inventory, machine downtime, and job status in one place. I'd build a boring visibility layer first, shared job tracking, maintenance history, and a simple floor view, then see what decisions still need something heavier.",
-          "score": 1,
-          "created_utc": "2026-04-06T05:21:01+00:00"
-        },
-        {
-          "comment_id": "oel21p8",
-          "body": "sounds like you are thinking in the right direction. large scale tech like digital twins can be overkill for small biz but if it makes sense financially it could be worth a shot. im building babylovgrowth which is seo related so i get this.",
-          "score": 1,
-          "created_utc": "2026-04-06T09:33:50+00:00"
-        },
-        {
-          "comment_id": "oemmdcv",
-          "body": "Start with mature data architecture and infrastructure/process documentation. SMBs have most success in my experience with getting the boring stuff set for scaling, applying pilot programs with governed AI solutions for relieving basic system constraints, then gravitating to exploring digital twins. \n\nI help with the first part (the boring stuff) and hand off to an expert firm in simulation technology when the timing makes sense.",
-          "score": 1,
-          "created_utc": "2026-04-06T15:20:36+00:00"
-        }
-      ],
-      "category": null,
-      "summary": null,
-      "pain_point": null,
-      "severity": null,
-      "blog_potential": null,
-      "suggested_angle": null
-    },
-    {
       "post_id": "1sfx419",
       "url": "https://www.reddit.com/r/logistics/comments/1sfx419/",
       "subreddit": "logistics",
@@ -1731,7 +2247,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 15,
       "created_utc": "2026-04-08T16:03:19+00:00",
-      "collected_at": "2026-04-13T05:01:22.109050+00:00",
+      "collected_at": "2026-04-13T10:24:43.052447+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -1863,7 +2379,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 33,
       "created_utc": "2026-04-10T03:13:20+00:00",
-      "collected_at": "2026-04-13T05:01:27.195007+00:00",
+      "collected_at": "2026-04-13T10:24:45.921801+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -2103,7 +2619,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 4,
       "created_utc": "2026-04-06T05:32:30+00:00",
-      "collected_at": "2026-04-13T05:01:00.977354+00:00",
+      "collected_at": "2026-04-13T10:24:22.348613+00:00",
       "flair": "📊 Business",
       "is_self_post": true,
       "comments": [
@@ -2139,7 +2655,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 8,
       "created_utc": "2026-04-08T11:00:11+00:00",
-      "collected_at": "2026-04-13T05:01:03.034864+00:00",
+      "collected_at": "2026-04-13T10:24:23.666004+00:00",
       "flair": "📊 Business",
       "is_self_post": true,
       "comments": [
@@ -2188,42 +2704,6 @@
       "suggested_angle": null
     },
     {
-      "post_id": "1shom87",
-      "url": "https://www.reddit.com/r/smallbusiness/comments/1shom87/",
-      "subreddit": "smallbusiness",
-      "matched_keyword": "ai-filtered",
-      "title": "Opinions on sticking with a delivery option",
-      "body": "My sister's doing a crochet business and locally its good and well. But it seems to grow gradually so I am thinking of choosing of a better delivery partner. Going for amazon or flipkart right now might feel overwhelming so we are thinking of using post office to deliver the products to the customer. I'm not knowledgeable in choosing the right option and this is our first time so we are looking for options that work well for both our pace and customer's satisfaction. ",
-      "author": "Dark_Phantom121729",
-      "score": 3,
-      "upvote_ratio": 0.0,
-      "num_comments": 4,
-      "created_utc": "2026-04-10T14:46:09+00:00",
-      "collected_at": "2026-04-13T05:01:09.795071+00:00",
-      "flair": null,
-      "is_self_post": true,
-      "comments": [
-        {
-          "comment_id": "ofe5n4h",
-          "body": "You can check out a couple of discount sites. A shopify store gets you a significant discount on shipping and you can choose the carrier based on the lowest price- i usually use USPS even though it's sometimes a few pennies more. Same for Pirate Ship- they also sell discounted shipping on USPS, FEd Ex etc. ",
-          "score": 1,
-          "created_utc": "2026-04-10T14:57:54+00:00"
-        },
-        {
-          "comment_id": "ofh5yws",
-          "body": "Yeah that’s a solid route starting out, especially using USPS or something simple while you figure things out. Biggest thing I’ve seen is just keeping it consistent and not overcomplicating shipping early, speed and reliability matter more than trying to optimize every penny at first. Once orders pick up then it makes more sense to test different carriers and pricing.",
-          "score": 1,
-          "created_utc": "2026-04-10T23:29:48+00:00"
-        }
-      ],
-      "category": null,
-      "summary": null,
-      "pain_point": null,
-      "severity": null,
-      "blog_potential": null,
-      "suggested_angle": null
-    },
-    {
       "post_id": "1sgzju8",
       "url": "https://www.reddit.com/r/woocommerce/comments/1sgzju8/",
       "subreddit": "woocommerce",
@@ -2235,7 +2715,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 19,
       "created_utc": "2026-04-09T19:24:19+00:00",
-      "collected_at": "2026-04-13T05:01:10.348117+00:00",
+      "collected_at": "2026-04-13T10:24:27.667330+00:00",
       "flair": "Plugin recommendation",
       "is_self_post": true,
       "comments": [
@@ -2380,6 +2860,84 @@
       "suggested_angle": null
     },
     {
+      "post_id": "1sgoood",
+      "url": "https://www.reddit.com/r/TikTokShop/comments/1sgoood/",
+      "subreddit": "TikTokShop",
+      "matched_keyword": "ai-filtered",
+      "title": "Order Cancellation",
+      "body": "I ordered a few items March 25, but I haven’t gotten an update from USPS since March 30th stating the package is in transit. This morning I woke up to an email stating my item has been cancelled, even though it’s already been shipped out. Will I still receive the item? And what are some reasons for TikTok abruptly canceling an item when I didn’t request a refund? They state the reason as “We found an issue with the order you placed that doesn't meet our standards. To ensure you have a great shopping experience, we've proactively issued a full refund.” The item is no longer on TikTok Shop.",
+      "author": "cucumbermonster",
+      "score": 3,
+      "upvote_ratio": 0.0,
+      "num_comments": 2,
+      "created_utc": "2026-04-09T12:49:10+00:00",
+      "collected_at": "2026-04-13T10:24:29.622516+00:00",
+      "flair": null,
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "off73tp",
+          "body": "It seems like even though you got your FULL refund, you’re still on the lookout for the items you were refunded for",
+          "score": 1,
+          "created_utc": "2026-04-10T17:44:02+00:00"
+        },
+        {
+          "comment_id": "ofqsn50",
+          "body": "Maybe it was an issue with the seller. That is why the item is not longer available on TikTok shop?",
+          "score": 1,
+          "created_utc": "2026-04-12T12:53:41+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
+      "post_id": "1sfbjoe",
+      "url": "https://www.reddit.com/r/Businessowners/comments/1sfbjoe/",
+      "subreddit": "Businessowners",
+      "matched_keyword": "ai-filtered",
+      "title": "Small bakery in Colorado, haven't filed 2025 taxes yet",
+      "body": "  \nI run a small bakery here in Colorado, just me and two part-time employees. Business has been growing, but my books are a mess and I haven't filed my 2025 taxes yet. Nothing shady, just busy and bad at paperwork.  \n  \nI've seen Josh Katz mentioned a few times on Reddit as a good online option for small business taxes. Has anyone here actually used them? Especially for a food business?  \n  \nWould love to hear real experiences before I reach out. Also open to general advice on catching up without going broke. Thanks.",
+      "author": "StardustSpectrum",
+      "score": 3,
+      "upvote_ratio": 0.0,
+      "num_comments": 3,
+      "created_utc": "2026-04-07T22:56:56+00:00",
+      "collected_at": "2026-04-13T10:24:30.596713+00:00",
+      "flair": null,
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "oewlydw",
+          "body": "Getting organized first is key. Even simple bookkeeping software can help you get a clear view of income, expenses, and payroll before filing. People here have had good experiences with online tax services like Josh Katz for small operations, but make sure they’re comfortable with food businesses and payroll for employees. If your books are messy, consider hiring a short term bookkeeper to reconcile things before filing, it can save a lot in penalties and stress.",
+          "score": 1,
+          "created_utc": "2026-04-08T00:22:12+00:00"
+        },
+        {
+          "comment_id": "oexclia",
+          "body": "Why not find a local CPA who focuses on small businesses?  Even better for bakeries or food businesses.  Maybe visit others around town and ask the owner who they recommend.  \n\nHaving a relationship with a local CPA who can do your taxes and perhaps help you tax strategy, bookkeeping Q&A,  etc. for a fee or retainer may be wise.  ",
+          "score": 1,
+          "created_utc": "2026-04-08T02:50:48+00:00"
+        },
+        {
+          "comment_id": "oexz1qd",
+          "body": "I second the local CPA, and they better get an extension filed by next Wednesday. That will buy you some time to figure out your exact financial situation.",
+          "score": 1,
+          "created_utc": "2026-04-08T05:25:56+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
       "post_id": "1se90we",
       "url": "https://www.reddit.com/r/AmazonFBA/comments/1se90we/",
       "subreddit": "AmazonFBA",
@@ -2391,7 +2949,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 10,
       "created_utc": "2026-04-06T19:33:53+00:00",
-      "collected_at": "2026-04-13T05:01:13.971652+00:00",
+      "collected_at": "2026-04-13T10:24:33.781891+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -2487,7 +3045,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 6,
       "created_utc": "2026-04-10T16:17:02+00:00",
-      "collected_at": "2026-04-13T05:01:18.913919+00:00",
+      "collected_at": "2026-04-13T10:24:38.038614+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -2512,7 +3070,7 @@
         {
           "comment_id": "ofke7cv",
           "body": "\nThe high price trick doesn't fool the algorithm. It reads zero velocity the same way it reads OOS. You've essentially had a dead listing for weeks/months.\n\nThe restart is painful but straightforward: treat it like a relaunch. Lower price, PPC back on, push velocity for 2-3 weeks. The listing isn't dead, it just needs to re-earn its rank. The mistake going forward is inventory buffer: if your supplier is in Asia, you need 60-90 days of stock minimum to absorb a logistics disaster like this.",
-          "score": 1,
+          "score": 2,
           "created_utc": "2026-04-11T13:24:12+00:00"
         }
       ],
@@ -2535,7 +3093,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 11,
       "created_utc": "2026-04-07T09:41:29+00:00",
-      "collected_at": "2026-04-13T05:01:20.480254+00:00",
+      "collected_at": "2026-04-13T10:24:40.913112+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -2625,7 +3183,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 9,
       "created_utc": "2026-04-09T11:56:02+00:00",
-      "collected_at": "2026-04-13T05:01:24.846164+00:00",
+      "collected_at": "2026-04-13T10:24:43.918466+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -2703,7 +3261,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 5,
       "created_utc": "2026-04-10T15:26:02+00:00",
-      "collected_at": "2026-04-13T05:01:04.724886+00:00",
+      "collected_at": "2026-04-13T10:24:24.993979+00:00",
       "flair": "🛒 Technology",
       "is_self_post": true,
       "comments": [
@@ -2733,7 +3291,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 3,
       "created_utc": "2026-04-06T02:28:36+00:00",
-      "collected_at": "2026-04-13T05:01:06.274877+00:00",
+      "collected_at": "2026-04-13T10:24:25.443721+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -2763,7 +3321,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 7,
       "created_utc": "2026-04-06T13:06:22+00:00",
-      "collected_at": "2026-04-13T05:01:06.796346+00:00",
+      "collected_at": "2026-04-13T10:24:25.861918+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -2799,7 +3357,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 2,
       "created_utc": "2026-04-06T15:19:44+00:00",
-      "collected_at": "2026-04-13T05:01:07.608341+00:00",
+      "collected_at": "2026-04-13T10:24:26.289429+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [],
@@ -2822,7 +3380,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 7,
       "created_utc": "2026-04-07T23:30:57+00:00",
-      "collected_at": "2026-04-13T05:01:08.119725+00:00",
+      "collected_at": "2026-04-13T10:24:26.714541+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -2871,55 +3429,44 @@
       "suggested_angle": null
     },
     {
-      "post_id": "1sfw9og",
-      "url": "https://www.reddit.com/r/smallbusiness/comments/1sfw9og/",
-      "subreddit": "smallbusiness",
+      "post_id": "1se5dbl",
+      "url": "https://www.reddit.com/r/TikTokShop/comments/1se5dbl/",
+      "subreddit": "TikTokShop",
       "matched_keyword": "ai-filtered",
-      "title": "I left my engineering career in Canada and moved to India to build an organic kidswear brand. Now preparing to bring it back home.",
-      "body": "Hey everyone, been lurking here forever and finally feel like im at a point where i can share my story\n\nabout 2 years ago my daughter started getting skin reactions from regular clothes. nothing scary but enough that i started researching what actually goes into kids clothing. formaldehyde finishes, azo dyes, heavy metals.. all totally legal and in most of what our kids wear daily\n\ni had a stable engineering management career in canada. good salary. comfortable life. but once i saw what was touching my daughters skin every day i couldnt just move on and buy a different brand. most “organic” options were either crazy expensive or just marketing fluff with no real certification behind them\n\nso i did the thing everyone told me not to do. moved to india, set up in tirupur which is the garment manufacturing hub, and started building an organic kidswear brand from scratch. GOTS certified facility, clean cotton, no nasties. ages 2-6\n\nit took 11 months and 100+ manufacturer rejections before i found the right partner. zero garment industry experience. just an engineer who became a parent and couldnt look the other way\n\nthat was the hard part. manufacturing is now sorted. supply chain is solid. i already launched in india earlier this year and its been the best learning experience i could ask for. now im preparing to launch in canada and if everything goes per plan it should be mid june\n\nfeels like the most full circle thing ever. left canada to build this. now bringing it back home\n\nim not here to pitch anything. just a first time founder figuring it out in real time. now feels like the right time to start sharing this journey and more importantly learn from this community\n\nif youve built a consumer brand or especially a kids brand id love to hear what you wish you knew earlier. happy to answer anything about manufacturing in india or the organic certification world because that was a whole education in itself",
-      "author": "building-momandzoey",
+      "title": "Order Limit Reduced with no help from support",
+      "body": "Hey Folks,\n\nNeed some help from anyone that was in a similar situation- We recently started selling on TikTok and were given an order limit of 10 and was recently reduced to one with no explanation. Support has been giving me the run around for a week saying that to just give it time to capture my delivered orders and once I get an SPS my limit will be reinstated. Both happened and still nothing.\n\nBackground:\n\nStarted on 03/21/2026\n\nNo violations\n\nAll orders given to carrier on BD +1\n\n10 Orders in transit (7 to be delivered today)\n\n40 Orders delivered\n\n5 Star reviews\n\nPost purchase response rate within an hour\n\nAfter reading through this subreddit it dawned on me that one package did miss the USPS scan (due to faulty manifest which I confirmed with my local USPS) and it took three days until it reached the next sorting facility. But support doesn’t see any late dispatch to appeal due to getting scanned in time prior to that.\n\nAny insight is appreciated! Even if you’re in the same boat as me (Are you still trying or did you give up?) \n\nWe come from another similar platform but TikTok crowd is our primary target (we’re in beauty)",
+      "author": "Striking_Honey",
       "score": 2,
       "upvote_ratio": 0.0,
-      "num_comments": 1,
-      "created_utc": "2026-04-08T15:33:11+00:00",
-      "collected_at": "2026-04-13T05:01:08.651133+00:00",
+      "num_comments": 3,
+      "created_utc": "2026-04-06T17:26:05+00:00",
+      "collected_at": "2026-04-13T10:24:28.123951+00:00",
       "flair": null,
-      "is_self_post": true,
-      "comments": [],
-      "category": null,
-      "summary": null,
-      "pain_point": null,
-      "severity": null,
-      "blog_potential": null,
-      "suggested_angle": null
-    },
-    {
-      "post_id": "1sew9mj",
-      "url": "https://www.reddit.com/r/AmazonSeller/comments/1sew9mj/",
-      "subreddit": "AmazonSeller",
-      "matched_keyword": "ai-filtered",
-      "title": "Package was undeliverable - how do I invoice customer for shipping so I can send it out again?",
-      "body": "I just received a package that I shipped out in February which was marked Return to Sender - No Mail Receptacle by USPS. How do I bill the customer the cost of shipping to send it out to them again?\n\nThis is a custom item so I can't just refund and resell. \n\nThere's no buyer email listed and when I go to message the buyer, there's no option for billing them.",
-      "author": "mynameisnotbailey",
-      "score": 2,
-      "upvote_ratio": 0.0,
-      "num_comments": 4,
-      "created_utc": "2026-04-07T13:38:33+00:00",
-      "collected_at": "2026-04-13T05:01:10.910022+00:00",
-      "flair": "Invoice / Receipts",
       "is_self_post": true,
       "comments": [
         {
-          "comment_id": "oeujfq5",
-          "body": "You don't.  You refund the customer and they reorder.  ",
-          "score": 3,
-          "created_utc": "2026-04-07T18:10:15+00:00"
+          "comment_id": "oeog7jm",
+          "body": "Usually your order limit will rise when you have 50 completed orders. Not delivered... Completed. So delivered date + 30 days. \n\nLots of people have order limits of 5 or 10 to start. There is nothing you can do but wait it out. If you want to argue with chat it's just you that'll end up stressed. ",
+          "score": 2,
+          "created_utc": "2026-04-06T20:33:58+00:00"
         },
         {
-          "comment_id": "oeux0e3",
-          "body": "Hi u/mynameisnotbailey \\- Unfortunately, u/Puzzleheaded_Math329 is correct -  we don't offer a way for sellers to invoice customers for additional shipping costs after an order has already been shipped. Instead, we suggest utilizing the \"Contact Buyer\" feature to message them about the delivery issue, explaining the package was undeliverable and asking them to verify/ correct their shipping address. If they'd rather cancel, you can help them with that instead. We'd recommend documenting all communication with the buyer through Amazon's system. If the buyer provided an incorrect/ incomplete address, you may have grounds to dispute any future claims if you have proof - but you still can't force them to pay additional shipping fyi.\n\n",
+          "comment_id": "oeoo3yf",
+          "body": "Thank you, I’ll take any hope! Guess i’ll be back in a month then",
           "score": 2,
-          "created_utc": "2026-04-07T19:10:34+00:00"
+          "created_utc": "2026-04-06T21:11:06+00:00"
+        },
+        {
+          "comment_id": "oey24m8",
+          "body": "Was on the same boat for three weeks. First day no order limit next day 10 (transactions) per day so customers could order multiple in one transaction and it would only count as one towards it, might be the same for you… just wait it out and keep your shop in good standing and avoid late shipment. Now I have a 200 order limit per day so getting there! TikTok constantly checks how sellers are performing and will eventually make your limit higher. Good luck!",
+          "score": 2,
+          "created_utc": "2026-04-08T05:50:54+00:00"
+        },
+        {
+          "comment_id": "oeyoosw",
+          "body": "Congrats and thank you for sharing! 🙏🏽",
+          "score": 1,
+          "created_utc": "2026-04-08T09:15:10+00:00"
         }
       ],
       "category": null,
@@ -2941,7 +3488,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 21,
       "created_utc": "2026-04-07T20:50:14+00:00",
-      "collected_at": "2026-04-13T05:01:11.426110+00:00",
+      "collected_at": "2026-04-13T10:24:28.588832+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -3074,6 +3621,48 @@
       "suggested_angle": null
     },
     {
+      "post_id": "1sftz36",
+      "url": "https://www.reddit.com/r/TikTokShop/comments/1sftz36/",
+      "subreddit": "TikTokShop",
+      "matched_keyword": "ai-filtered",
+      "title": "TikTok Shop withheld $4,000+ after LIVE auction support keeps closing case with wrong explanation",
+      "body": "I’m a TikTok Shop seller dealing with a serious issue that’s been unresolved for nearly a month, and I’m hoping to get visibility or advice.\n\nOn March 12, immediately after using the TikTok Shop auction feature during a LIVE, my account generated over $4,000 in negative “shipping adjustments” within seconds. These were applied to orders that had already been completed and settled months earlier.\n\nThis does not match how shipping adjustments work. Carrier adjustments don’t happen months later, in bulk, within seconds, or match your entire on-hold balance which is exactly what happened here.\n\nSince then, my finance system has also been malfunctioning. Delivered orders are not properly transferring into payout statements, and only small partial amounts are being released while larger amounts remain stuck in “awaiting settlement.”\n\nI have:\n\n\t•\tA full spreadsheet of affected order IDs\n\n\t•\tExact totals showing over $4,000 in false charges\n\n\t•\tAdditional funds not properly released\n\n\t•\tA clear timeline showing everything started immediately after the auction\n\nSupport has repeatedly told me the case is escalated to a “specialized team,” but after weeks of waiting, it was suddenly marked resolved with a generic explanation about shipping weight/dimension adjustments which does not apply to this situation.\n\nAt this point:\n\n\t•\tThousands of dollars are still unresolved\n\n\t•\tThe system is still not functioning correctly\n\n\t•\tNo real investigation appears to have been done\n\nThis is directly impacting my ability to operate my business.\n\nHas anyone experienced anything like this or found a way to get this properly reviewed by TikTok Shop?",
+      "author": "jbtot17",
+      "score": 2,
+      "upvote_ratio": 0.0,
+      "num_comments": 3,
+      "created_utc": "2026-04-08T14:10:41+00:00",
+      "collected_at": "2026-04-13T10:24:28.751580+00:00",
+      "flair": null,
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "of17mh2",
+          "body": "They directly stole money from me by “adjusting” 10 orders and taking almost triple the amount the order made. Blatant theft. I’ve tried through support and had the same experience. “We are escalating to this team”. No resolution. \n\nAbsolute crooks and I can’t wait for the class action against them. ",
+          "score": 2,
+          "created_utc": "2026-04-08T17:32:33+00:00"
+        },
+        {
+          "comment_id": "of2rmtg",
+          "body": "Hello, you may refer to the final resolution shared with you upon conclusion of the escalation in our DM conversation. Thank you.",
+          "score": 1,
+          "created_utc": "2026-04-08T21:47:17+00:00"
+        },
+        {
+          "comment_id": "ofepgil",
+          "body": "it’s all utter fraud and abuse. i’ve not don’t countdown bidding yet. all i had done was set up an auction listing which they violated me for on starting price (starting bid) saying the product was being sold for less than average market value. literally their own policy suggests starting auctions off at $1. so tell me tiktok shop that an ipad starting out at a 1$ starting bid makes perfect sense and is totally okay but my t-shirts starting bid of 1$ violates any policy. ticket has been open for weeks now they refuse to even understand why what they r doing is wrong and regurate the same responses. ",
+          "score": 1,
+          "created_utc": "2026-04-10T16:26:15+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
       "post_id": "1sefus7",
       "url": "https://www.reddit.com/r/AmazonFBA/comments/1sefus7/",
       "subreddit": "AmazonFBA",
@@ -3085,7 +3674,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 8,
       "created_utc": "2026-04-06T23:55:01+00:00",
-      "collected_at": "2026-04-13T05:01:15.535151+00:00",
+      "collected_at": "2026-04-13T10:24:34.228901+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -3175,7 +3764,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 1,
       "created_utc": "2026-04-07T21:08:06+00:00",
-      "collected_at": "2026-04-13T05:01:16.015526+00:00",
+      "collected_at": "2026-04-13T10:24:34.639843+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -3205,7 +3794,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 6,
       "created_utc": "2026-04-08T00:45:58+00:00",
-      "collected_at": "2026-04-13T05:01:16.578524+00:00",
+      "collected_at": "2026-04-13T10:24:35.058381+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -3259,7 +3848,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 2,
       "created_utc": "2026-04-08T14:41:40+00:00",
-      "collected_at": "2026-04-13T05:01:17.065736+00:00",
+      "collected_at": "2026-04-13T10:24:35.528182+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -3289,7 +3878,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 13,
       "created_utc": "2026-04-08T20:23:23+00:00",
-      "collected_at": "2026-04-13T05:01:17.660577+00:00",
+      "collected_at": "2026-04-13T10:24:36.359117+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -3379,7 +3968,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 3,
       "created_utc": "2026-04-09T17:22:24+00:00",
-      "collected_at": "2026-04-13T05:01:18.377960+00:00",
+      "collected_at": "2026-04-13T10:24:37.207248+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -3404,6 +3993,234 @@
       "suggested_angle": null
     },
     {
+      "post_id": "1sh4hcz",
+      "url": "https://www.reddit.com/r/AmazonFBA/comments/1sh4hcz/",
+      "subreddit": "AmazonFBA",
+      "matched_keyword": "ai-filtered",
+      "title": "Anywhere to send removal orders other than Residential Address / Business Address?",
+      "body": "I've reached the conclusion that some of the products I've tested (About 200 Units) Is not worth keeping in warehouse due to monthly storage fees, I would like to remove them all and have them sent back, but I'm aware Amazon is known to ship removal orders back one unit at a time, is there any way I can have them shipped somewhere and wait for them all to arrive there and pick them up in one go rather than have them come to my door 50+ Times?",
+      "author": "StayTrueEveryday",
+      "score": 2,
+      "upvote_ratio": 0.0,
+      "num_comments": 13,
+      "created_utc": "2026-04-09T22:29:54+00:00",
+      "collected_at": "2026-04-13T10:24:37.614565+00:00",
+      "flair": null,
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "of9zuda",
+          "body": "Are you not getting any sales on those items at all?",
+          "score": 1,
+          "created_utc": "2026-04-09T22:38:55+00:00"
+        },
+        {
+          "comment_id": "ofa1stb",
+          "body": "Basically dead sales on those specific units for months, After my calculations I'd probably lose all profits or end up net negative by the time they all eventually sold due to the monthly storage fees on them. ",
+          "score": 1,
+          "created_utc": "2026-04-09T22:49:45+00:00"
+        },
+        {
+          "comment_id": "ofa529q",
+          "body": "Yes, if those items have no sales, Amazon will keep charging high storage fees, which can eat up all your profit.Amazon usually won’t deliver all removal inventory in one shipment since it’s stored across multiple fulfillment centers.Best option is to use a 3PL service. When creating the removal order, put the 3PL’s address so all units get delivered there. Once everything arrives, you can either pick it up or have it shipped to your address in one go.",
+          "score": 1,
+          "created_utc": "2026-04-09T23:07:27+00:00"
+        },
+        {
+          "comment_id": "ofa5r7m",
+          "body": "Btw are you doing wholesale?",
+          "score": 1,
+          "created_utc": "2026-04-09T23:11:10+00:00"
+        },
+        {
+          "comment_id": "ofawfu5",
+          "body": "How big are the items?  Receive, palletize and ship out?  \nEasy enough… what’s a reasonable offer? ",
+          "score": 1,
+          "created_utc": "2026-04-10T01:41:59+00:00"
+        },
+        {
+          "comment_id": "ofc8yor",
+          "body": "Are you aware of any of good 3PLs? And No I'm doing private label (own brand) I tested many SKUs, some did good, some not so much, so I need them out lol.",
+          "score": 1,
+          "created_utc": "2026-04-10T07:30:37+00:00"
+        },
+        {
+          "comment_id": "ofc9iwb",
+          "body": "The issue is when receiving they will be shipping out the units individually, one by one in individual envelopes, I'm trying to avoid them coming to my door and ringing my bell 50 times. Is there a palletize option that I'm not aware of? I've never seen or heard of that when doing removal orders on Amazon.",
+          "score": 1,
+          "created_utc": "2026-04-10T07:35:53+00:00"
+        },
+        {
+          "comment_id": "ofck6v2",
+          "body": "Yes I have please come in inbox",
+          "score": 1,
+          "created_utc": "2026-04-10T09:13:37+00:00"
+        },
+        {
+          "comment_id": "ofd31my",
+          "body": "\nI thought you were looking for a reverse 3PL type service and was more-so saying I would consider doing it if it made sense but to answer the question — no, I do not think there is a way to do this with Amazon directly.",
+          "score": 1,
+          "created_utc": "2026-04-10T11:39:44+00:00"
+        },
+        {
+          "comment_id": "offo1p4",
+          "body": "Yes i use 3pl to remove and replenish back to amazon whenever there is any issue with labels or any listings level issues. ",
+          "score": 1,
+          "created_utc": "2026-04-10T19:00:33+00:00"
+        },
+        {
+          "comment_id": "offss31",
+          "body": "nah",
+          "score": 1,
+          "created_utc": "2026-04-10T19:22:37+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
+      "post_id": "1se2ktl",
+      "url": "https://www.reddit.com/r/logistics/comments/1se2ktl/",
+      "subreddit": "logistics",
+      "matched_keyword": "ai-filtered",
+      "title": "What is the most effective way to communicate shipment/delivery times to clients?",
+      "body": "hello Reddit\n\nI'm not too sure if this is the correct subreddit to ask this. \n\nFor some context, at my current company I currently work managing projects/cases that come into our department. Our company policy is asking for a 7-10 business day turnaround time for each case we receive, however there are often major holes (clients either do not care, or do not understand business days) and input in cases with 1-3 business day turn around times. The only solution I've had so far is to call up each individual client to have the scheduled delivery dates changed, however as the number of projects we receive increases, this is no longer scalable (takes too long making constant phonecalls).\n\nWe currently ship out each case based on the due date they assign for us, or that we change into, and have daily shipments via 3PL.\n\nMy suggestion was we ship all packages not by daily, but once at the end of the week to combine orders going out to the same clients to reduce shipment fees, but also to create a system where our clients understand we delivery and ship out on specific days.\n\nThe biggest trouble however is scaling this, as I would like to avoid having to call up all of our clients every morning.\n\nWhat is the best approach to this? How would you communicate to your clients, especially those who do not understand English as well, regarding turnaround times?",
+      "author": "InquisitorKaine",
+      "score": 2,
+      "upvote_ratio": 0.0,
+      "num_comments": 2,
+      "created_utc": "2026-04-06T15:46:04+00:00",
+      "collected_at": "2026-04-13T10:24:38.593900+00:00",
+      "flair": null,
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "oen1z7r",
+          "body": "Can you take away the inputter's ability to dictate shipping times? Do that and then push out a blanket, generic statement that all orders ship within 3 to 7 business days.\n\nIf these are small parcel, you or your 3PL can look into a platform that allows them to process a shipment, enter the receiver's email and then tracking automatically gets emailed to them. You can do this with LTL as well.",
+          "score": 2,
+          "created_utc": "2026-04-06T16:32:36+00:00"
+        },
+        {
+          "comment_id": "oeoaohg",
+          "body": "We stopped calling clients for routine updates years ago. Now we use a mix:\n\n- Automated email triggers at pickup, mid-transit (for long hauls), and delivery with photos\n- Slack or Teams for our bigger clients who want real-time pings  \n- Text for anything urgent or same-day changes\n\nSetting expectations upfront matters more than the channel. We tell clients exactly when they'll hear from us and through what channel. Most people don't actually want constant updates. They just want to know when something changes.\n\nWhat kind of volume are you handling? That usually determines whether a TMS with customer portals is worth it versus just a well-set-up email automation.",
+          "score": 2,
+          "created_utc": "2026-04-06T20:08:33+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
+      "post_id": "1seznjj",
+      "url": "https://www.reddit.com/r/logistics/comments/1seznjj/",
+      "subreddit": "logistics",
+      "matched_keyword": "ai-filtered",
+      "title": "How to find a reliable AIR freight forwarder? US->TH",
+      "body": "I am looking for a reliable freight forwarder. I am very new at this. \n\nI ship about 1-2 pallet a month from the US to Bangkok,TH. \n\nhow do I search for freight forwarders with a good reputation?\n\nThank you",
+      "author": "busy-men",
+      "score": 2,
+      "upvote_ratio": 0.0,
+      "num_comments": 11,
+      "created_utc": "2026-04-07T15:43:20+00:00",
+      "collected_at": "2026-04-13T10:24:41.744671+00:00",
+      "flair": null,
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "oetmmwc",
+          "body": "InXpress. International company and do this all day long. Drop me a message I'll connect you with someone. ",
+          "score": 3,
+          "created_utc": "2026-04-07T15:47:35+00:00"
+        },
+        {
+          "comment_id": "oetnab9",
+          "body": "I just messaged you",
+          "score": 1,
+          "created_utc": "2026-04-07T15:50:24+00:00"
+        },
+        {
+          "comment_id": "oetnshz",
+          "body": "I work at TQL, I can def accommodate. You have to have a US entity  ",
+          "score": -2,
+          "created_utc": "2026-04-07T15:52:36+00:00"
+        },
+        {
+          "comment_id": "oeuei1l",
+          "body": "US to Bangkok by air can be handled a few different ways depending on the shipment details and how it’s set up on both ends.\n\nYou can share a bit more information and I’ll take a look.\n\n",
+          "score": 1,
+          "created_utc": "2026-04-07T17:48:50+00:00"
+        },
+        {
+          "comment_id": "oeuejay",
+          "body": "I actually have 3 customers who are shipping this lane. Would love to help out if I can. Sent you a message!",
+          "score": 1,
+          "created_utc": "2026-04-07T17:48:59+00:00"
+        },
+        {
+          "comment_id": "oevddjs",
+          "body": "Dm me I can help you",
+          "score": 1,
+          "created_utc": "2026-04-07T20:30:54+00:00"
+        },
+        {
+          "comment_id": "oexv1ue",
+          "body": "For small monthly shipments, I’d look for a forwarder that handles regular air freight and is comfortable with low-volume clients. Check if they have experience with US–Thailand routes, clear communication, and transparent pricing (no surprise fees).\n\nReading reviews, asking about transit times, and seeing how quickly they respond to your first inquiry can tell you a lot. A reliable forwarder should also help with documentation and customs, not just booking space. Consistency and support usually matter more than just the cheapest quote.",
+          "score": 2,
+          "created_utc": "2026-04-08T04:54:40+00:00"
+        },
+        {
+          "comment_id": "oexw0xr",
+          "body": "Thank you for your kind advice",
+          "score": 1,
+          "created_utc": "2026-04-08T05:02:08+00:00"
+        },
+        {
+          "comment_id": "oeymdxy",
+          "body": "Finding a reliable air freight forwarder for US to Thailand requires some due diligence. Start by researching forwarders with a strong presence in both countries and a proven track record in your specific commodity. Ask for references, check online reviews, and compare quotes, but don't just focus on the lowest price; reliability and service are key. Ensure they are IATA accredited and knowledgeable about customs regulations in both the US and Thailand to avoid delays and extra costs.",
+          "score": 1,
+          "created_utc": "2026-04-08T08:53:44+00:00"
+        },
+        {
+          "comment_id": "of09u00",
+          "body": "I'd like to know too (not to TH though). I'm finding it hard to engage a freight forwarder. I think it's because my initial shipments are small.",
+          "score": 1,
+          "created_utc": "2026-04-08T15:01:37+00:00"
+        },
+        {
+          "comment_id": "of0wzr1",
+          "body": "Check reviews on Google and choose a freight forwarder with good ratings, clear pricing, and services like customs clearance and tracking.\n\nYou can also consider SFL Worldwide for reliable international shipping—just confirm the full cost before booking.",
+          "score": 1,
+          "created_utc": "2026-04-08T16:45:33+00:00"
+        },
+        {
+          "comment_id": "of75m6a",
+          "body": "I mean fortunately for you, my company work directly with Airlines. I'm happy to give you a call or do a meeting with you. Send over your email address, buddy. ",
+          "score": 1,
+          "created_utc": "2026-04-09T14:49:54+00:00"
+        },
+        {
+          "comment_id": "ofdaib4",
+          "body": "Don’t just look at reviews ,check if they handle your route regularly and how they manage customs and local partners in Thailand. Consistency matters more than price in air freight :)\n\nDM sent",
+          "score": 1,
+          "created_utc": "2026-04-10T12:24:25+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
       "post_id": "1sg3lad",
       "url": "https://www.reddit.com/r/logistics/comments/1sg3lad/",
       "subreddit": "logistics",
@@ -3415,7 +4232,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 2,
       "created_utc": "2026-04-08T19:54:04+00:00",
-      "collected_at": "2026-04-13T05:01:24.243335+00:00",
+      "collected_at": "2026-04-13T10:24:43.510821+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -3457,7 +4274,7 @@
       "upvote_ratio": 0.0,
       "num_comments": 3,
       "created_utc": "2026-04-09T19:20:38+00:00",
-      "collected_at": "2026-04-13T05:01:25.355602+00:00",
+      "collected_at": "2026-04-13T10:24:44.347105+00:00",
       "flair": null,
       "is_self_post": true,
       "comments": [
@@ -3490,6 +4307,180 @@
           "body": "🤔",
           "score": 1,
           "created_utc": "2026-04-12T02:08:12+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
+      "post_id": "1sh1rub",
+      "url": "https://www.reddit.com/r/logistics/comments/1sh1rub/",
+      "subreddit": "logistics",
+      "matched_keyword": "ai-filtered",
+      "title": "Alcohol transport",
+      "body": "Hi all\n\nDelete if not allowed\n\nFor a couple of years Ive been in business shipping high end second hand alcoholic beverages (from cellars from people who died) from Belgium to an auction house in New York.\n\nLogistics have always been the pain point of this operation. My stuff needs to go by sea and be climate controlled so it doesn't get cooked.\n\nThere are only 2 companies i trust with this process located in switzerland and the uk. Both outside the EU ofcourse. I have the infrastructure to get a pallet there but i have no idea what paper work i need to get across the borders. Ive had a call with the National body looking over duties and taxes but they also couldn't give me an answer.\n\nI had a guy who got this stuff done but sadly he passend away. \n\nIs this possible as a one man operation?\n\nPerfect scenario would be i drop the pallet at a port near my area and i pick it up in a rental at the port of destination since i have to fly over there anyways to defend the authenticy of the stuff i send.\n\n🤙 ",
+      "author": "Altruistic_Worry5555",
+      "score": 2,
+      "upvote_ratio": 0.0,
+      "num_comments": 4,
+      "created_utc": "2026-04-09T20:44:44+00:00",
+      "collected_at": "2026-04-13T10:24:44.778966+00:00",
+      "flair": null,
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "of9qu2k",
+          "body": "Maybe a talk to a customs broker? \n\nI do mostly us truckload, but I did ship one container to Puerto Rico and we had to hire what was basically a second broker to handle the customs and overseas portion ",
+          "score": 1,
+          "created_utc": "2026-04-09T21:51:03+00:00"
+        },
+        {
+          "comment_id": "of9rnqz",
+          "body": "Most NVOs should (if service is a better value for you than just pure price I would look for a more niche forwarder in this space vs one of the big companies) be able to handle something like this. You’d probably want to book your own dedicated reefer container since reefer LCL isn’t a huge service (or often ends up working due to different commodities and temp points) if the alcohol/product has a large commercial value. ",
+          "score": 1,
+          "created_utc": "2026-04-09T21:55:17+00:00"
+        },
+        {
+          "comment_id": "of9sduj",
+          "body": "Hillebrand Gori. We specialize in global beer, wine and spirits movements. ",
+          "score": 3,
+          "created_utc": "2026-04-09T21:58:59+00:00"
+        },
+        {
+          "comment_id": "ofb9bmr",
+          "body": "I’ve just coordinated this for one of my customers. One shipment from Belgium, another one from France, all going to the US. I’ve literally compiled a guide for them to figure out the paperwork required and when. If you want to chat, my DMs are open. ",
+          "score": 1,
+          "created_utc": "2026-04-10T02:57:51+00:00"
+        },
+        {
+          "comment_id": "ofoftqk",
+          "body": "🤔",
+          "score": 1,
+          "created_utc": "2026-04-12T02:08:03+00:00"
+        },
+        {
+          "comment_id": "ofpry1l",
+          "body": "You can try Demataki\n\nhttps://www.demataki.gr/\n\nThey are very good and cooperative, I do not know if they can help you with the specific request but you can ask them",
+          "score": 1,
+          "created_utc": "2026-04-12T08:06:52+00:00"
+        },
+        {
+          "comment_id": "ofscae8",
+          "body": "This is definitely possible, but alcohol shipments are highly regulated — the challenge is usually compliance and documentation, not the transport itself. You’ll need the right export/import setup in place, otherwise it becomes very difficult to manage consistently.\n\ndm sent",
+          "score": 1,
+          "created_utc": "2026-04-12T17:24:26+00:00"
+        }
+      ],
+      "category": null,
+      "summary": null,
+      "pain_point": null,
+      "severity": null,
+      "blog_potential": null,
+      "suggested_angle": null
+    },
+    {
+      "post_id": "1sinp4g",
+      "url": "https://www.reddit.com/r/logistics/comments/1sinp4g/",
+      "subreddit": "logistics",
+      "matched_keyword": "ai-filtered",
+      "title": "where else can i get competitive parcel rates other than pirateship or bespoke rate from fedex?",
+      "body": "those are my two options for shipping parcel domestically right now… do i have no other options? ",
+      "author": "C_Users_user1",
+      "score": 2,
+      "upvote_ratio": 0.0,
+      "num_comments": 13,
+      "created_utc": "2026-04-11T16:30:29+00:00",
+      "collected_at": "2026-04-13T10:24:46.421341+00:00",
+      "flair": null,
+      "is_self_post": true,
+      "comments": [
+        {
+          "comment_id": "ofll6gl",
+          "body": "Shippo and Shopify ",
+          "score": 1,
+          "created_utc": "2026-04-11T16:58:51+00:00"
+        },
+        {
+          "comment_id": "oflm9n7",
+          "body": "Shipstation rates that are default for users are better and close to these two platforms. Negotiated rates with shipstation as well. ",
+          "score": 1,
+          "created_utc": "2026-04-11T17:03:54+00:00"
+        },
+        {
+          "comment_id": "oflo110",
+          "body": "I work with inxpress. If you’re looking for UPS, I’d love to be able to help you out. ",
+          "score": 1,
+          "created_utc": "2026-04-11T17:12:01+00:00"
+        },
+        {
+          "comment_id": "ofmj52u",
+          "body": "User has no comments or history.  This is another spam solicitation to talk about a TMS or parcel consolidation company. ",
+          "score": 1,
+          "created_utc": "2026-04-11T19:43:35+00:00"
+        },
+        {
+          "comment_id": "ofmy3a9",
+          "body": "If you’ve already checked standard tools, the next step is usually negotiated carrier rates or consolidators — the right setup depends on your volume and shipping profile.\n\nDM sent",
+          "score": 1,
+          "created_utc": "2026-04-11T21:00:05+00:00"
+        },
+        {
+          "comment_id": "ofoflaa",
+          "body": "🤔",
+          "score": 1,
+          "created_utc": "2026-04-12T02:06:37+00:00"
+        },
+        {
+          "comment_id": "ofojmad",
+          "body": "it’s not, i just like privacy ",
+          "score": 1,
+          "created_utc": "2026-04-12T02:31:50+00:00"
+        },
+        {
+          "comment_id": "ofooamr",
+          "body": "Privacy enough to ask a question on a public forum?\nWe all have our comment history public. Yours private.\nDo you know a place to get competitive parcel rates?",
+          "score": 1,
+          "created_utc": "2026-04-12T03:01:18+00:00"
+        },
+        {
+          "comment_id": "ofoon57",
+          "body": "Pirate Ship but more carriers",
+          "score": 1,
+          "created_utc": "2026-04-12T03:03:33+00:00"
+        },
+        {
+          "comment_id": "ofp3zl1",
+          "body": "Hello to all last-mile logistics companies and SME’s,\n\nWe are senior logistics students at Bahrain polytechnic conducting a research study on information flows in last-mile logistics.\n\nWe would really appreciate it if you could take a few minutes to fill this survey. All responses are anonymous and will be used for research purposes only.\n\nSurvey link: https://forms.gle/1SixsTSQyPugqfCK6\n\nThank you in advance for sharing your insights and supporting this research!",
+          "score": 1,
+          "created_utc": "2026-04-12T04:49:45+00:00"
+        },
+        {
+          "comment_id": "ofrdx8l",
+          "body": "have you tried ups at all or is that worse for you.",
+          "score": 1,
+          "created_utc": "2026-04-12T14:45:05+00:00"
+        },
+        {
+          "comment_id": "ofribll",
+          "body": "well, pirateship sort of covers UPS, but maybe it’s worth seeing what kind of volumetric rates i could get with directly. maybe they’d be better than fedex’s",
+          "score": 1,
+          "created_utc": "2026-04-12T15:06:41+00:00"
+        },
+        {
+          "comment_id": "ofsj8j8",
+          "body": "I PM’d you. I’m with WorldWide Express, a partner of UPS. Would love to save you some money as we have lower parcel rates than all of these services mentioned. \n\nFeel free to check out UPS.com/wwex",
+          "score": 1,
+          "created_utc": "2026-04-12T17:55:49+00:00"
+        },
+        {
+          "comment_id": "ofwgpq2",
+          "body": "if you need logistics from China, I can help.",
+          "score": 1,
+          "created_utc": "2026-04-13T08:14:17+00:00"
         }
       ],
       "category": null,
